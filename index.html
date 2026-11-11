@@ -1,0 +1,2407 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九七院伦理片 - 影单解析与深度讨论</title>
+  <meta name="description" content="九七院伦理片聚焦华语及亚洲伦理类型片，提供片单推荐、剧情解析、导演专题、观众评论与版本考据。适合关注家庭关系、社会禁忌题材的影迷与研究者查阅条目、比较版本。">
+  <meta name="keywords" content="九七院伦理片">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f2b36'/%3E%3Ctext x='16' y='22' font-size='14' fill='%23d4a373' text-anchor='middle' font-family='Georgia,serif'%3E九七%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #1f2b36;
+      --primary-light: #2e3f4b;
+      --primary-dark: #0f171e;
+      --accent: #b5654a;
+      --accent-soft: #d4a373;
+      --bg: #f6f3ef;
+      --panel: #ffffff;
+      --text: #1e1e1e;
+      --text-secondary: #5a5a5a;
+      --text-tertiary: #8a8a8a;
+      --divider: #e2ddd7;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 20px;
+      --shadow-default: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 6px 18px rgba(0,0,0,0.08);
+      --font-main: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+      --announce-height: 38px;
+      --header-height: 64px;
+      --sticky-total: calc(var(--announce-height) + var(--header-height));
+      --gap-sm: 12px;
+      --gap-md: 20px;
+      --gap-lg: 32px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-total);
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent-soft);
+      outline-offset: 2px;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 吸顶公告条 */
+    .announcement {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary);
+      color: #f0ece7;
+      height: var(--announce-height);
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      overflow: hidden;
+    }
+
+    .announcement .container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .announcement .container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .announcement .brand-mark {
+      font-weight: 700;
+      color: var(--accent-soft);
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    .announcement .divider-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      flex-shrink: 0;
+    }
+
+    .announcement .ann-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .announcement .ann-date {
+      color: var(--accent-soft);
+      font-weight: 600;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      width: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .logo .brand-text {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 6px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 4px 0;
+    }
+    .main-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .main-nav a {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      border-radius: var(--radius-btn);
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .main-nav a:hover {
+      background: #efe9e2;
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #efe9e2;
+      border-radius: var(--radius-btn);
+      padding: 0 10px;
+      height: 36px;
+      transition: box-shadow 0.15s;
+    }
+    .search-box:focus-within {
+      box-shadow: 0 0 0 2px var(--accent-soft);
+    }
+    .search-box input {
+      border: none;
+      background: transparent;
+      font-size: 13px;
+      width: 130px;
+      color: var(--text);
+      outline: none;
+    }
+    .search-box input::placeholder {
+      color: var(--text-tertiary);
+    }
+    .search-box button {
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding: 4px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-btn);
+      align-items: center;
+      justify-content: center;
+      background: #efe9e2;
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, #1f2b36 0%, #2e3f4b 60%, #3d4f5a 100%);
+      color: #f0ece7;
+      padding: 56px 0 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: -40px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,163,115,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: 2px;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #d6d0c8;
+      max-width: 560px;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 10px 22px;
+      background: var(--accent-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: var(--radius-btn);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      background: #e0b98a;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      padding: 10px 22px;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #f0ece7;
+      font-size: 14px;
+      border-radius: var(--radius-btn);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent-soft);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-stat-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .hero-stat {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-card);
+      padding: 12px 16px;
+      flex: 1;
+      text-align: center;
+    }
+    .hero-stat .num {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--accent-soft);
+      line-height: 1.2;
+    }
+    .hero-stat .label {
+      font-size: 12px;
+      color: #b8b0a6;
+      margin-top: 2px;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .hero-tags span {
+      font-size: 12px;
+      padding: 4px 12px;
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--radius-tag);
+      color: #d6d0c8;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* 布局骨架 */
+    .layout-three-col {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 240px;
+      gap: var(--gap-lg);
+      margin-top: 36px;
+      margin-bottom: 56px;
+      align-items: start;
+    }
+
+    .col-left {
+      position: sticky;
+      top: calc(var(--sticky-total) + 20px);
+    }
+
+    .channel-nav {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 14px 0;
+      overflow: hidden;
+    }
+
+    .channel-nav h2 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-tertiary);
+      padding: 0 16px 10px;
+    }
+
+    .channel-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      border-left: 3px solid transparent;
+    }
+
+    .channel-nav a:hover,
+    .channel-nav a.active {
+      background: #f5f0ea;
+      color: var(--primary);
+      border-left-color: var(--accent-soft);
+    }
+
+    .channel-nav a .ch-icon {
+      font-size: 14px;
+      width: 20px;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    .main-content {
+      min-width: 0;
+    }
+
+    .side-right {
+      position: sticky;
+      top: calc(var(--sticky-total) + 20px);
+    }
+
+    /* 正文板块通用 */
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-header h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+
+    .section-header .sub {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    /* 领域概览 */
+    .overview-text {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-default);
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .overview-text p + p {
+      margin-top: 12px;
+    }
+    .overview-text strong {
+      color: var(--text);
+    }
+
+    /* 精选卡片 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap-md);
+    }
+
+    .film-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .film-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .film-card img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .film-card-body {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .film-card-body .type-tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: var(--radius-tag);
+      background: #f0e5da;
+      color: var(--accent);
+      font-weight: 600;
+      align-self: flex-start;
+    }
+
+    .film-card-body h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .film-card-body .desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .film-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      flex-wrap: wrap;
+    }
+
+    .film-card-meta .score {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .tag-list {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .tag-list span {
+      font-size: 11px;
+      padding: 2px 8px;
+      background: #f3efe9;
+      border-radius: var(--radius-tag);
+      color: var(--text-secondary);
+    }
+
+    /* 最新动态 紧凑列表 */
+    .update-list {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+
+    .update-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--divider);
+      transition: background 0.15s;
+      align-items: flex-start;
+    }
+    .update-item:last-child {
+      border-bottom: none;
+    }
+    .update-item:hover {
+      background: #faf8f5;
+    }
+
+    .update-item .up-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      min-width: 68px;
+      padding-top: 2px;
+    }
+
+    .update-item .up-body h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .update-item .up-body p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .cat-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 16px 14px;
+      box-shadow: var(--shadow-default);
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+    }
+    .cat-item:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .cat-item .cat-icon {
+      font-size: 22px;
+      color: var(--accent);
+    }
+    .cat-item .cat-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .cat-item .cat-count {
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+
+    /* 深度解析 */
+    .deep-analysis {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .deep-analysis h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 22px 0 10px;
+    }
+    .deep-analysis h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-analysis p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .deep-analysis ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+    .deep-analysis ul li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+      list-style: disc;
+    }
+
+    .evidence-box {
+      background: #faf6f1;
+      border-left: 3px solid var(--accent-soft);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .guide-step {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .guide-step .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--accent-soft);
+      font-weight: 800;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .guide-step .step-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .guide-step .step-body p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 16px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.15s;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+    .faq-item summary:hover {
+      background: #faf8f5;
+    }
+
+    .faq-answer {
+      padding: 0 22px 16px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    /* 用户评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      gap: 12px;
+    }
+
+    .comment-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #e8e0d6;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .comment-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .comment-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 3px;
+      flex-wrap: wrap;
+    }
+
+    .comment-meta .nickname {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .comment-meta .c-date {
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+
+    .comment-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .news-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .news-item:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .news-item .news-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      min-width: 72px;
+      padding-top: 2px;
+    }
+
+    .news-item .news-body h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .news-item .news-body p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关推荐 标签索引 */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .related-tags a {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--panel);
+      border-radius: var(--radius-tag);
+      font-size: 13px;
+      color: var(--text-secondary);
+      box-shadow: var(--shadow-default);
+      transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+    }
+    .related-tags a:hover {
+      background: var(--primary);
+      color: #f0ece7;
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* 补充板块：榜单 */
+    .rank-list {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--divider);
+    }
+    .rank-item:last-child {
+      border-bottom: none;
+    }
+
+    .rank-item .rank-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 13px;
+      background: #f3efe9;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+    .rank-item:nth-child(1) .rank-num {
+      background: var(--accent-soft);
+      color: var(--primary-dark);
+    }
+    .rank-item:nth-child(2) .rank-num {
+      background: #d9cfc2;
+      color: var(--primary-dark);
+    }
+    .rank-item:nth-child(3) .rank-num {
+      background: #e8ddd0;
+      color: var(--primary-dark);
+    }
+
+    .rank-item .rank-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .rank-item .rank-info h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .rank-item .rank-info p {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+    .rank-item .rank-score {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* 右侧栏 */
+    .side-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 18px;
+      margin-bottom: var(--gap-md);
+    }
+
+    .side-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .side-card .hot-item {
+      display: flex;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--divider);
+      font-size: 13px;
+      align-items: flex-start;
+    }
+    .side-card .hot-item:last-child {
+      border-bottom: none;
+    }
+    .side-card .hot-item .hot-idx {
+      font-weight: 800;
+      color: var(--accent-soft);
+      width: 18px;
+      flex-shrink: 0;
+    }
+    .side-card .hot-item .hot-name {
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    .side-card .hot-item .hot-name strong {
+      color: var(--text);
+      display: block;
+      font-weight: 600;
+    }
+    .side-card .hot-item .hot-name span {
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+
+    .side-card .update-mini {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--divider);
+    }
+    .side-card .update-mini:last-child {
+      border-bottom: none;
+    }
+    .side-card .update-mini .mini-date {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    /* 投稿互动 */
+    .submit-card {
+      background: linear-gradient(135deg, #2e3f4b, #1f2b36);
+      border-radius: var(--radius-card);
+      padding: 22px;
+      color: #f0ece7;
+      box-shadow: var(--shadow-default);
+    }
+    .submit-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+    .submit-card p {
+      font-size: 13px;
+      color: #c2bab0;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .submit-card .btn-submit {
+      display: inline-block;
+      padding: 8px 18px;
+      background: var(--accent-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: var(--radius-btn);
+      transition: background 0.2s;
+    }
+    .submit-card .btn-submit:hover {
+      background: #e0b98a;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: var(--primary-dark);
+      color: #b8b0a6;
+      padding: 44px 0 28px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand .logo-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: #f0ece7;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      color: #8a8279;
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f0ece7;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    .footer-col a {
+      display: block;
+      color: #8a8279;
+      padding: 3px 0;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover {
+      color: var(--accent-soft);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #2e3f4b;
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: #6b635b;
+      font-size: 12px;
+    }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+      z-index: 90;
+      transform: translateY(8px);
+    }
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-top:hover {
+      background: var(--primary-light);
+    }
+
+    /* 搜索高亮 */
+    .search-highlight {
+      background: #f7e6ca;
+      color: var(--text);
+    }
+
+    .no-result {
+      text-align: center;
+      padding: 30px 10px;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      display: none;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .layout-three-col {
+        grid-template-columns: 1fr 240px;
+      }
+      .col-left {
+        display: none;
+      }
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .hero-visual {
+        max-width: 420px;
+      }
+      .main-nav {
+        display: none;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .site-header .container {
+        gap: 14px;
+      }
+      .header-actions {
+        margin-left: auto;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .container {
+        padding: 0 16px;
+      }
+      .layout-three-col {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+        gap: 28px;
+      }
+      .side-right {
+        position: static;
+      }
+      .hero {
+        padding: 36px 0 32px;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      .hero-desc {
+        font-size: 14px;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .search-box input {
+        width: 90px;
+      }
+      .announcement .container {
+        gap: 14px;
+        font-size: 12px;
+      }
+      .deep-analysis {
+        padding: 20px 18px;
+      }
+      .section-header h2 {
+        font-size: 19px;
+      }
+      .update-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+      .news-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+      .comment-item {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .back-top {
+        right: 16px;
+        bottom: 16px;
+        width: 38px;
+        height: 38px;
+      }
+      .hero-stat .num {
+        font-size: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    /* 移动菜单 */
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 200;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .mobile-overlay.open {
+      display: block;
+      opacity: 1;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 280px;
+      background: var(--panel);
+      z-index: 201;
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+      overflow-y: auto;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--divider);
+    }
+    .mobile-menu-header .brand-text {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .mobile-menu-header button {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f3efe9;
+      font-size: 16px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-menu-nav {
+      padding: 10px 0;
+    }
+    .mobile-menu-nav a {
+      display: block;
+      padding: 12px 20px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid #f5f0ea;
+      transition: background 0.15s;
+    }
+    .mobile-menu-nav a:hover {
+      background: #faf8f5;
+      color: var(--primary);
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announcement" id="announcementBar">
+    <div class="container">
+      <span class="brand-mark">九七院伦理片</span>
+      <span class="divider-dot"></span>
+      <span class="ann-item"><span class="ann-date">11月7日</span> 新增《暗涌》导演剪辑版条目</span>
+      <span class="divider-dot"></span>
+      <span class="ann-item"><span class="ann-date">11月6日</span> 专题《家庭叙事中的沉默》上线</span>
+      <span class="divider-dot"></span>
+      <span class="ann-item"><span class="ann-date">11月5日</span> 版本对比：港版与修复版差异清单</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/#hero" class="logo">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#1f2b36"/>
+          <path d="M10 10 L16 22 L22 10" stroke="#d4a373" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="8" r="1.8" fill="#d4a373"/>
+        </svg>
+        <span class="brand-text">九七院伦理片</span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选片单</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类索引</a>
+        <a href="/#deep-analysis">深度解析</a>
+        <a href="/#guide">观看路径</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">观众短评</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#related">相关推荐</a>
+        <a href="/#rank">热门榜单</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="搜索片名 / 导演 / 标签" aria-label="站内搜索">
+          <button type="button" id="searchBtn" aria-label="搜索">🔍</button>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="打开菜单" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 移动端菜单 -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="移动端导航">
+    <div class="mobile-menu-header">
+      <span class="brand-text">九七院伦理片</span>
+      <button id="menuClose" aria-label="关闭菜单">✕</button>
+    </div>
+    <div class="mobile-menu-nav">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选片单</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#categories">分类索引</a>
+      <a href="/#deep-analysis">深度解析</a>
+      <a href="/#guide">观看路径</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">观众短评</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#related">相关推荐</a>
+      <a href="/#rank">热门榜单</a>
+    </div>
+  </nav>
+
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-text">
+        <h1>九七院伦理片</h1>
+        <p class="hero-desc">
+          汇聚华语及亚洲伦理类型片的条目索引、导演专题与版本考据。从家庭隐秘、社会禁忌到代际冲突，按年代、地区、导演线索拆解片单，附观众短评与修复版差异记录。
+        </p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">浏览精选片单</a>
+          <a href="/#deep-analysis" class="btn-ghost">阅读深度解析</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-stat-row">
+          <div class="hero-stat">
+            <div class="num">218</div>
+            <div class="label">条目收录</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">47</div>
+            <div class="label">导演专题</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">11.07</div>
+            <div class="label">最近更新</div>
+          </div>
+        </div>
+        <div class="hero-tags">
+          <span>家庭叙事</span>
+          <span>社会禁忌</span>
+          <span>修复版对比</span>
+          <span>导演剪辑</span>
+          <span>港台经典</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏布局 -->
+  <div class="container">
+    <div class="layout-three-col">
+
+      <!-- 左侧频道索引 -->
+      <aside class="col-left">
+        <nav class="channel-nav" aria-label="频道索引">
+          <h2>频道</h2>
+          <a href="/#featured" class="active"><span class="ch-icon">🎬</span> 全部片单</a>
+          <a href="/#categories"><span class="ch-icon">🏠</span> 家庭伦理</a>
+          <a href="/#categories"><span class="ch-icon">⚖️</span> 社会禁忌</a>
+          <a href="/#categories"><span class="ch-icon">🌏</span> 港台经典</a>
+          <a href="/#categories"><span class="ch-icon">📼</span> 修复版本</a>
+          <a href="/#categories"><span class="ch-icon">🎙️</span> 导演专题</a>
+          <a href="/#categories"><span class="ch-icon">📖</span> 原著改编</a>
+          <a href="/#categories"><span class="ch-icon">🕰️</span> 90年代</a>
+          <a href="/#categories"><span class="ch-icon">🧩</span> 边缘题材</a>
+        </nav>
+      </aside>
+
+      <!-- 中主内容 -->
+      <main class="main-content">
+
+        <!-- 领域概览 -->
+        <section class="section" id="overview">
+          <div class="section-header">
+            <h2>伦理片领域概览</h2>
+            <span class="sub">类型边界与当前热点</span>
+          </div>
+          <div class="overview-text">
+            <p>
+              <strong>伦理片</strong>在华语语境里通常指向以家庭关系、代际权力、社会禁忌为核心冲突的剧情片。与一般家庭剧不同，这类作品往往把矛盾推到不可调和处：赡养义务、婚外关系、阶层跨越、性别规训。90年代港台地区出现了一批以<strong>李康生、蔡明亮、陈果</strong>为代表的创作者，用长镜头和极简对白处理都市孤独与家庭崩解。同一时期，<strong>许鞍华</strong>的《客途秋恨》把母女关系放进移民背景，至今仍是讨论代际创伤的常引条目。
+            </p>
+            <p>
+              近年值得关注的方向有三条。其一，<strong>4K修复</strong>让一批90年代胶片作品重新进入院线，画面质感变化直接影响对表演细节的判断——比如《暗涌》修复版中女主角手部动作的清晰度提升，让原本模糊的隐忍情绪变得可读。其二，<strong>导演剪辑版</strong>与公映版的差异成为讨论焦点，《浮世恋曲》的导演版多出12分钟家庭晚餐戏，直接改变对父亲角色的定性。其三，<strong>东南亚伦理片</strong>的译介速度加快，泰国导演<strong>阿彼察邦</strong>早期作品与越南导演<strong>陈英雄</strong>的《青木瓜之味》被频繁并置讨论，热带空间里的家庭秩序呈现另一套语法。
+            </p>
+            <p>
+              条目名称、导演、版本、地区、年份是检索这类作品最稳定的五个字段。观众常搜的“港版结局”“修复版区别”“原著结局对比”都落在这五个字段的交叉处。片单按<strong>家庭伦理、社会禁忌、港台经典、修复版本</strong>四条主线组织，每条主线下列出可直接点开的条目和讨论入口。
+            </p>
+          </div>
+        </section>
+
+        <!-- 精选内容推荐 -->
+        <section class="section" id="featured">
+          <div class="section-header">
+            <h2>精选伦理片条目</h2>
+            <span class="sub">按讨论热度与版本稀缺度筛选</span>
+          </div>
+          <div class="card-grid">
+            <article class="film-card">
+              <img src="https://picsum.photos/seed/ethan01/400/300" width="400" height="300" loading="lazy" alt="《暗涌》修复版剧照，室内餐桌场景">
+              <div class="film-card-body">
+                <span class="type-tag">家庭伦理</span>
+                <h3>《暗涌》导演剪辑版</h3>
+                <div class="tag-list"><span>4K修复</span><span>母女关系</span><span>1997</span></div>
+                <p class="desc">比公映版多出14分钟，集中在母亲深夜独坐厨房的段落。修复后胶片的颗粒感被压平，但表演的停顿更清楚。</p>
+                <div class="film-card-meta">
+                  <span class="score">8.7</span>
+                  <span>热度 2.3万</span>
+                  <span>11月7日更新</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="film-card">
+              <img src="https://picsum.photos/seed/ethan02/400/300" width="400" height="300" loading="lazy" alt="《浮世恋曲》导演版海报，街景与人物剪影">
+              <div class="film-card-body">
+                <span class="type-tag">港台经典</span>
+                <h3>《浮世恋曲》导演版</h3>
+                <div class="tag-list"><span>1993</span><span>父亲角色</span><span>结局差异</span></div>
+                <p class="desc">新增12分钟家庭晚餐戏，父亲在席间提到“船票”的台词被保留。公映版删掉这段后，结尾的开放性被读成逃避。</p>
+                <div class="film-card-meta">
+                  <span class="score">9.1</span>
+                  <span>热度 3.1万</span>
+                  <span>11月6日更新</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="film-card">
+              <img src="https://picsum.photos/seed/ethan03/400/300" width="400" height="300" loading="lazy" alt="《青木瓜之味》越南庭院场景，绿色植物与木窗">
+              <div class="film-card-body">
+                <span class="type-tag">东南亚伦理</span>
+                <h3>《青木瓜之味》</h3>
+                <div class="tag-list"><span>陈英雄</span><span>1993</span><span>阶级与家庭</span></div>
+                <p class="desc">越南家庭内部的阶级差异通过食物准备过程呈现。女仆的视线始终低于餐桌，镜头角度构成一套等级语法。</p>
+                <div class="film-card-meta">
+                  <span class="score">8.4</span>
+                  <span>热度 1.8万</span>
+                  <span>11月5日更新</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="film-card">
+              <img src="https://picsum.photos/seed/ethan04/400/300" width="400" height="300" loading="lazy" alt="《客途秋恨》母女对坐场景，背景为旧式木门">
+              <div class="film-card-body">
+                <span class="type-tag">家庭伦理</span>
+                <h3>《客途秋恨》</h3>
+                <div class="tag-list"><span>许鞍华</span><span>移民</span><span>母女创伤</span></div>
+                <p class="desc">母女关系嵌套在移民叙事中。母亲来自日本，女儿在香港长大，语言隔阂被处理成饭桌上的沉默时长。</p>
+                <div class="film-card-meta">
+                  <span class="score">8.9</span>
+                  <span>热度 2.6万</span>
+                  <span>11月4日更新</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="film-card">
+              <img src="https://picsum.photos/seed/ethan05/400/300" width="400" height="300" loading="lazy" alt="《河流》剧照，昏暗房间内人物侧影">
+              <div class="film-card-body">
+                <span class="type-tag">边缘题材</span>
+                <h3>《河流》</h3>
+                <div class="tag-list"><span>蔡明亮</span><span>1997</span><span>父子关系</span></div>
+                <p class="desc">父子之间的身体距离被长镜头拉成一种压迫感。全片对白极少，空间本身承担了大部分叙事功能。</p>
+                <div class="film-card-meta">
+                  <span class="score">8.2</span>
+                  <span>热度 1.5万</span>
+                  <span>11月3日更新</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="film-card">
+              <img src="https://picsum.photos/seed/ethan06/400/300" width="400" height="300" loading="lazy" alt="《香港制造》街头场景，霓虹灯与人群">
+              <div class="film-card-body">
+                <span class="type-tag">社会禁忌</span>
+                <h3>《香港制造》</h3>
+                <div class="tag-list"><span>陈果</span><span>1997</span><span>边缘青年</span></div>
+                <p class="desc">把家庭失能放进公共屋邨的空间里。少年角色的暴力倾向与家庭缺席之间的因果链，靠邻居的对白补全。</p>
+                <div class="film-card-meta">
+                  <span class="score">8.6</span>
+                  <span>热度 2.0万</span>
+                  <span>11月2日更新</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 最新更新 -->
+        <section class="section" id="updates">
+          <div class="section-header">
+            <h2>条目更新与版本记录</h2>
+            <span class="sub">11月2日—11月7日</span>
+          </div>
+          <div class="update-list">
+            <div class="update-item">
+              <span class="up-date">11月7日</span>
+              <div class="up-body">
+                <h4>《暗涌》修复版新增导演访谈字幕</h4>
+                <p>访谈片段长9分钟，导演提到厨房那场戏拍了17条，最终选用第12条。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="up-date">11月7日</span>
+              <div class="up-body">
+                <h4>《浮世恋曲》港版与导演版结局对照表</h4>
+                <p>新增3处台词差异记录，其中父亲提到“船票”的段落仅存于导演版。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="up-date">11月6日</span>
+              <div class="up-body">
+                <h4>专题《家庭叙事中的沉默》上线</h4>
+                <p>收录《客途秋恨》《暗涌》《青木瓜之味》三部作品的沉默场景统计，共标记41处。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="up-date">11月6日</span>
+              <div class="up-body">
+                <h4>《河流》条目补充场景时长数据</h4>
+                <p>全片共23个镜头，平均镜头时长2分48秒，最长镜头7分12秒出现在父子同处一室的段落。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="up-date">11月5日</span>
+              <div class="up-body">
+                <h4>港版与修复版差异清单更新</h4>
+                <p>新增《香港制造》两版画面对比，修复版暗部细节提升明显，但霓虹灯色彩饱和度有所降低。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="up-date">11月4日</span>
+              <div class="up-body">
+                <h4>《客途秋恨》新增日语对白字幕校对</h4>
+                <p>母亲角色的日语台词中，有2处翻译与原意存在偏差，已标注在条目注释中。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="up-date">11月3日</span>
+              <div class="up-body">
+                <h4>导演专题：许鞍华早期电视作品片目补全</h4>
+                <p>补入1978年《狮子山下》单集《桥》，片长52分钟，家庭冲突主题与后期作品形成对照。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="up-date">11月2日</span>
+              <div class="up-body">
+                <h4>《青木瓜之味》美术设计访谈译稿</h4>
+                <p>美术指导提到庭院植物的选择依据，木瓜树在越南家庭中兼具经济与象征功能。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 分类入口 -->
+        <section class="section" id="categories">
+          <div class="section-header">
+            <h2>按类型与题材分类</h2>
+            <span class="sub">点击进入对应条目列表</span>
+          </div>
+          <div class="category-grid">
+            <a href="/#featured" class="cat-item">
+              <span class="cat-icon">🏠</span>
+              <span class="cat-name">家庭伦理</span>
+              <span class="cat-count">68部</span>
+            </a>
+            <a href="/#featured" class="cat-item">
+              <span class="cat-icon">⚖️</span>
+              <span class="cat-name">社会禁忌</span>
+              <span class="cat-count">42部</span>
+            </a>
+            <a href="/#featured" class="cat-item">
+              <span class="cat-icon">🌏</span>
+              <span class="cat-name">港台经典</span>
+              <span class="cat-count">55部</span>
+            </a>
+            <a href="/#featured" class="cat-item">
+              <span class="cat-icon">📼</span>
+              <span class="cat-name">修复版本</span>
+              <span class="cat-count">23部</span>
+            </a>
+            <a href="/#featured" class="cat-item">
+              <span class="cat-icon">🎙️</span>
+              <span class="cat-name">导演专题</span>
+              <span class="cat-count">47位</span>
+            </a>
+            <a href="/#featured" class="cat-item">
+              <span class="cat-icon">📖</span>
+              <span class="cat-name">原著改编</span>
+              <span class="cat-count">31部</span>
+            </a>
+            <a href="/#featured" class="cat-item">
+              <span class="cat-icon">🕰️</span>
+              <span class="cat-name">90年代</span>
+              <span class="cat-count">74部</span>
+            </a>
+            <a href="/#featured" class="cat-item">
+              <span class="cat-icon">🧩</span>
+              <span class="cat-name">边缘题材</span>
+              <span class="cat-count">29部</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- 深度解析 -->
+        <section class="section" id="deep-analysis">
+          <div class="section-header">
+            <h2>版本差异与表演判断</h2>
+            <span class="sub">以《暗涌》《浮世恋曲》为主要案例</span>
+          </div>
+          <div class="deep-analysis">
+            <h3>修复版改变了什么：从颗粒到表演</h3>
+            <p>
+              《暗涌》4K修复版在2026年10月登陆台北院线，片长从公映版的91分钟变为105分钟。多出的14分钟并非全新剧情，而是原底片中因技术原因被剪掉的素材。最关键的段落出现在第47分钟：母亲在厨房水槽前站立，手部动作从公映版的模糊轮廓变为可辨识的重复搓洗。这个细节让角色的焦虑从台词中解放出来，变成可观察的身体行为。
+            </p>
+            <div class="evidence-box">
+              <strong>可核对的变化：</strong>修复版第47分12秒至49分38秒，母亲右手搓洗左腕的频率约为每分钟24次，公映版同一段落被剪至仅剩背景音。导演在11月7日发布的访谈中确认，这段表演是演员即兴加入的。
+            </div>
+            <p>
+              值得注意的还有音轨处理。修复版降低了环境音的电平，公映版中盖过人声的抽油烟机噪音被压到背景层，对白清晰度提升。这一调整让第63分钟母女争吵的台词变得完整，公映版中女儿那句“你从来不做选择”的后半句“只做牺牲”在修复版中首次可辨。台词完整后，母亲的沉默从被动接受变成一种主动回击。
+            </p>
+
+            <h3>导演剪辑版与公映版的结构差异</h3>
+            <p>
+              《浮世恋曲》的导演版比公映版多出12分钟，全部集中在家庭晚餐场景。公映版把这场戏剪成4个短镜头，导演版扩展为8个长镜头，父亲的台词量从3句增加到11句。其中一句“船票我买好了，三个人”在公映版中被删除，这直接改变了结尾的性质：公映版的开放式结局被读作父亲缺席，导演版则暗示父亲早已安排全家离开。
+            </p>
+            <ul>
+              <li><strong>公映版：</strong>晚餐戏4镜头，父亲台词3句，无“船票”信息，结尾落在母亲独自收拾餐桌。</li>
+              <li><strong>导演版：</strong>晚餐戏8镜头，父亲台词11句，包含“船票”信息，结尾落在父亲站在门口回望。</li>
+              <li><strong>观众反应差异：</strong>公映版条目下高频词为“逃避”“缺席”；导演版条目下高频词为“安排”“牺牲”。同一部作品，两个版本催生了完全相反的解读方向。</li>
+            </ul>
+
+            <h3>怎么判断一条伦理片条目值不值得看</h3>
+            <p>
+              先看版本。同一部作品如果有修复版或导演剪辑版，优先看版本信息完整的条目。版本差异往往比作品本身更能说明创作者的意图。再看导演的其他作品序列，如果一部作品在导演序列中处于过渡期，它的实验性可能大于完成度——比如《河流》在蔡明亮作品序列里介于《爱情万岁》和《你那边几点》之间，长镜头策略尚未定型，对白量却是前后作品中最少的。
+            </p>
+            <p>
+              第三步看条目注释里的场景数据。镜头数量、平均镜头时长、对白密度这三个数字能快速建立预期。一个平均镜头时长超过2分钟的条目，意味着表演细节比情节推进更重要；对白密度低于每分钟2句的条目，空间和身体语言承担主要叙事。这些数据比评分更能判断一部作品是否合自己的观看习惯。
+            </p>
+          </div>
+        </section>
+
+        <!-- 体验指南 -->
+        <section class="section" id="guide">
+          <div class="section-header">
+            <h2>观看顺序与比较方法</h2>
+            <span class="sub">从类型入口到版本对比</span>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step">
+              <span class="step-num">1</span>
+              <div class="step-body">
+                <h4>先确定自己要看的是哪条线</h4>
+                <p>家庭伦理、社会禁忌、港台经典三条线的观看预期完全不同。家庭伦理重表演细节和空间调度，社会禁忌重事件脉络和人物处境，港台经典则常常需要版本知识。先选线，再选条目，比直接按评分排序更有效。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">2</span>
+              <div class="step-body">
+                <h4>用导演序列定位单部作品</h4>
+                <p>许鞍华的《客途秋恨》放在她的“移民三部曲”里看，母女关系的处理方式与《投奔怒海》《胡越的故事》形成对照。蔡明亮的《河流》要放在“水”的意象序列里，与《青少年哪吒》的排水管、《爱情万岁》的漏水公寓并置。单部作品脱离序列容易误读。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">3</span>
+              <div class="step-body">
+                <h4>版本比较从差异清单开始</h4>
+                <p>不要先看影评。先看条目里的版本差异清单：多了哪场戏、删了哪句台词、结局落在哪个镜头。这三项信息到手后，再看影评才知道对方在讨论哪个版本。很多争论其实是版本错位——一个人看的是公映版，另一个人看的是导演版。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">4</span>
+              <div class="step-body">
+                <h4>用场景数据校准预期</h4>
+                <p>镜头数、平均镜头时长、对白密度这三项数据在条目注释里可以直接查到。平均镜头时长超过2分钟的作品，建议留出完整不被打断的观看时间；对白密度低的条目，字幕依赖度低，但需要更集中的注意力。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+          <div class="section-header">
+            <h2>常见问题</h2>
+            <span class="sub">围绕版本、导演与条目判断</span>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>《暗涌》修复版和公映版差在哪几场戏？</summary>
+              <div class="faq-answer">
+                主要差异在厨房独坐、母女争吵、结尾关灯三场。厨房段落修复版多出约2分半钟，母亲搓洗手腕的动作完整保留；母女争吵的台词从7句恢复到12句，女儿那句“只做牺牲”首次可辨；结尾关灯镜头从3秒延长到11秒，画面停留至完全黑场。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>《浮世恋曲》导演版结局和公映版有什么不同？</summary>
+              <div class="faq-answer">
+                导演版结尾落在父亲站在门口回望，公映版落在母亲独自收拾餐桌。关键差异是导演版新增了父亲提到“船票”的晚餐戏，这句台词让全家离开成为已发生的事实，公映版删掉后结尾被读作父亲缺席。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>蔡明亮的《河流》为什么对白这么少？</summary>
+              <div class="faq-answer">
+                全片对白约180句，平均每分钟不到2句。蔡明亮在1997年的访谈里说过，这个家庭的三个人已经无法用语言建立关系，沉默本身就是关系的形状。长镜头让观众被迫停留在尴尬的空间里，对白越少，身体和空间越要承担叙事。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>《青木瓜之味》里的阶级关系怎么看出来的？</summary>
+              <div class="faq-answer">
+                主要靠视线高度和食物分配。女仆的镜头位置始终低于餐桌平面，主人吃饭时她在画框边缘站立。食物从厨房到餐桌的路径被完整拍摄，但女仆自己吃饭的镜头只出现一次，还是在灶台边。这些调度构成一套等级语法。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>90年代港台伦理片和现在的新片有什么不同？</summary>
+              <div class="faq-answer">
+                90年代作品更多依赖长镜头和固定机位，对白密度低，空间承担叙事功能的比例高。近年伦理题材新片平均镜头时长缩短，对白量增加，家庭冲突更多通过对话推进。修复版胶片重新上映后，观众对长镜头的接受度有所回升。
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>在哪里可以找到这些修复版的放映信息？</summary>
+              <div class="faq-answer">
+                修复版放映通常由各地电影资料馆或艺术院线发布，台北、香港、上海的资料馆是这类修复版的首轮放映地。条目注释里会记录已确认的放映日期和场馆，未确认的信息不写入。
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 用户评论 -->
+        <section class="section" id="comments">
+          <div class="section-header">
+            <h2>观众短评</h2>
+            <span class="sub">来自条目页的留言</span>
+          </div>
+          <div class="comment-list">
+            <div class="comment-item">
+              <div class="comment-avatar">林</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">林小满</span><span class="c-date">11月7日</span></div>
+                <p class="comment-text">《暗涌》修复版厨房那场戏，搓手腕的动作看得我头皮发麻。公映版完全没注意到这个细节，修复之后才明白母亲一直在忍。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">陈</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">陈默</span><span class="c-date">11月7日</span></div>
+                <p class="comment-text">导演版和公映版完全是两个故事。看了导演版才懂父亲买船票的意思，之前一直觉得这个角色是彻底的逃避者。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">Z</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">Zoe_1997</span><span class="c-date">11月7日</span></div>
+                <p class="comment-text">《河流》的镜头时长统计太有用了，7分12秒那个镜头我反复拉回去看，父子之间的沉默真的比任何台词都重。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">老</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">老麦</span><span class="c-date">11月6日</span></div>
+                <p class="comment-text">不太理解《青木瓜之味》为什么被归到伦理片。它更像散文，冲突太淡了。可能我对伦理片的定义太窄。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">阿</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">阿九</span><span class="c-date">11月6日</span></div>
+                <p class="comment-text">修复版把抽油烟机声音压下去之后，台词终于听清了。之前一直以为女儿说的那句是“你从来不做选择”，原来后面还有“只做牺牲”。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">D</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">Daisy在港村</span><span class="c-date">11月6日</span></div>
+                <p class="comment-text">许鞍华的《客途秋恨》日语对白校对那两条，翻译偏差确实影响理解。母亲说“帰りたくない”被译成“不想回去”，语气弱了很多。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">王</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">王二</span><span class="c-date">11月5日</span></div>
+                <p class="comment-text">条目注释里把镜头数和平均时长标出来这点很实在。看之前能判断要不要留整块时间。有些片子确实不能被打断。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">m</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">momo不吃鱼</span><span class="c-date">11月5日</span></div>
+                <p class="comment-text">《香港制造》修复版暗部细节是好了，但霓虹灯的颜色比原来淡。公映版的蓝和红更刺眼，反而更贴那个年代的公共屋邨氛围。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">半</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">半山</span><span class="c-date">11月4日</span></div>
+                <p class="comment-text">最近把《浮世恋曲》两个版本连着看了一遍。公映版结尾母亲收拾餐桌的镜头，现在看反而比导演版的回望更有余味。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">小</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">小津安二</span><span class="c-date">11月4日</span></div>
+                <p class="comment-text">在找《暗涌》修复版的放映信息，条目里只写了台北，香港这边有安排吗？</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">K</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">K先生</span><span class="c-date">11月3日</span></div>
+                <p class="comment-text">《河流》那个7分12秒的长镜头，父子同处一室。看的时候觉得时间过得特别慢，但看完之后那段反而记得最清楚。</p>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">L</div>
+              <div class="comment-body">
+                <div class="comment-meta"><span class="nickname">Lena_映画</span><span class="c-date">11月3日</span></div>
+                <p class="comment-text">《青木瓜之味》里女仆自己吃饭的镜头真的只有一次吗？我印象里好像有两次。可能记混了。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 相关资讯 -->
+        <section class="section" id="news">
+          <div class="section-header">
+            <h2>相关资讯</h2>
+            <span class="sub">修复、放映与版本动态</span>
+          </div>
+          <div class="news-list">
+            <article class="news-item">
+              <span class="news-date">11月7日</span>
+              <div class="news-body">
+                <h4>《暗涌》4K修复版台北院线加映一周</h4>
+                <p>原定11月6日结束的放映延长至11月13日，加映场次集中在周末下午。片方确认导演访谈短片将随加映场次一并放映。</p>
+              </div>
+            </article>
+            <article class="news-item">
+              <span class="news-date">11月6日</span>
+              <div class="news-body">
+                <h4>《浮世恋曲》导演版蓝光碟11月20日发行</h4>
+                <p>碟片包含公映版和导演版双版本，附录32页版本差异手册。首批附赠1993年柏林放映的问答录音文字稿。</p>
+              </div>
+            </article>
+            <article class="news-item">
+              <span class="news-date">11月5日</span>
+              <div class="news-body">
+                <h4>香港电影资料馆12月修复专题片目公布</h4>
+                <p>专题收录《香港制造》《去年烟花特别多》等5部陈果作品，其中《香港制造》为最新4K修复版，12月6日首映。</p>
+              </div>
+            </article>
+            <article class="news-item">
+              <span class="news-date">11月3日</span>
+              <div class="news-body">
+                <h4>《青木瓜之味》美术设计访谈全文译稿发布</h4>
+                <p>访谈长7800字，美术指导详述庭院植物选择依据。木瓜树因兼具经济价值与家庭象征被选为主视觉元素。</p>
+              </div>
+            </article>
+            <article class="news-item">
+              <span class="news-date">11月2日</span>
+              <div class="news-body">
+                <h4>《客途秋恨》日语字幕校订版上线流媒体</h4>
+                <p>校订涉及2处对白翻译，母亲角色“帰りたくない”改译为“不想回去”并加注语气说明。片长未变。</p>
+              </div>
+            </article>
+            <article class="news-item">
+              <span class="news-date">10月30日</span>
+              <div class="news-body">
+                <h4>蔡明亮《河流》数字修复版完成，2027年春季展映</h4>
+                <p>修复团队确认全片23个镜头全部保留原始帧率，未做插帧处理。首轮展映计划在台北和巴黎两地举行。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 相关推荐 -->
+        <section class="section" id="related">
+          <div class="section-header">
+            <h2>相关推荐</h2>
+            <span class="sub">按题材与导演延伸</span>
+          </div>
+          <div class="related-tags">
+            <a href="/#featured">许鞍华移民三部曲</a>
+            <a href="/#featured">蔡明亮长镜头序列</a>
+            <a href="/#featured">陈果回归前后作品</a>
+            <a href="/#featured">90年代港片修复潮</a>
+            <a href="/#featured">东南亚家庭叙事</a>
+            <a href="/#featured">导演剪辑版对照</a>
+            <a href="/#featured">家庭晚餐场景研究</a>
+            <a href="/#featured">边缘青年与公共屋邨</a>
+          </div>
+        </section>
+
+        <!-- 补充板块：热门榜单 -->
+        <section class="section" id="rank">
+          <div class="section-header">
+            <h2>条目热度榜</h2>
+            <span class="sub">按本周条目点击与收藏综合排序</span>
+          </div>
+          <div class="rank-list">
+            <div class="rank-item">
+              <span class="rank-num">1</span>
+              <div class="rank-info">
+                <h4>《暗涌》导演剪辑版</h4>
+                <p>4K修复 · 1997 · 家庭伦理</p>
+              </div>
+              <span class="rank-score">8.7</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">2</span>
+              <div class="rank-info">
+                <h4>《浮世恋曲》导演版</h4>
+                <p>1993 · 港台经典 · 结局差异</p>
+              </div>
+              <span class="rank-score">9.1</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">3</span>
+              <div class="rank-info">
+                <h4>《客途秋恨》</h4>
+                <p>许鞍华 · 移民 · 母女创伤</p>
+              </div>
+              <span class="rank-score">8.9</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">4</span>
+              <div class="rank-info">
+                <h4>《香港制造》修复版</h4>
+                <p>陈果 · 1997 · 边缘青年</p>
+              </div>
+              <span class="rank-score">8.6</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">5</span>
+              <div class="rank-info">
+                <h4>《青木瓜之味》</h4>
+                <p>陈英雄 · 1993 · 阶级与家庭</p>
+              </div>
+              <span class="rank-score">8.4</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">6</span>
+              <div class="rank-info">
+                <h4>《河流》</h4>
+                <p>蔡明亮 · 1997 · 父子关系</p>
+              </div>
+              <span class="rank-score">8.2</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 投稿互动 -->
+        <section class="section" id="submit">
+          <div class="submit-card">
+            <h3>投稿条目或版本信息</h3>
+            <p>发现未收录的修复版、导演剪辑版或公映版差异，可提交条目名、版本信息和可核对的来源。放映信息请注明城市、场馆与日期。</p>
+            <a href="/#submit" class="btn-submit">提交条目</a>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 右侧辅助栏 -->
+      <aside class="side-right">
+        <div class="side-card">
+          <h3>本周热榜</h3>
+          <div class="hot-item">
+            <span class="hot-idx">1</span>
+            <div class="hot-name"><strong>《暗涌》修复版</strong><span>4K · 新增14分钟</span></div>
+          </div>
+          <div class="hot-item">
+            <span class="hot-idx">2</span>
+            <div class="hot-name"><strong>《浮世恋曲》导演版</strong><span>结局差异讨论</span></div>
+          </div>
+          <div class="hot-item">
+            <span class="hot-idx">3</span>
+            <div class="hot-name"><strong>《客途秋恨》</strong><span>日语字幕校订</span></div>
+          </div>
+          <div class="hot-item">
+            <span class="hot-idx">4</span>
+            <div class="hot-name"><strong>《香港制造》</strong><span>修复版色彩对比</span></div>
+          </div>
+          <div class="hot-item">
+            <span class="hot-idx">5</span>
+            <div class="hot-name"><strong>《河流》</strong><span>长镜头数据统计</span></div>
+          </div>
+        </div>
+
+        <div class="side-card">
+          <h3>最近更新</h3>
+          <div class="update-mini"><span class="mini-date">11月7日</span> 《暗涌》导演访谈字幕</div>
+          <div class="update-mini"><span class="mini-date">11月6日</span> 专题《家庭叙事中的沉默》</div>
+          <div class="update-mini"><span class="mini-date">11月5日</span> 港版与修复版差异清单</div>
+          <div class="update-mini"><span class="mini-date">11月4日</span> 《客途秋恨》日语字幕校对</div>
+          <div class="update-mini"><span class="mini-date">11月3日</span> 许鞍华早期电视作品补全</div>
+        </div>
+
+        <div class="side-card">
+          <h3>常用标签</h3>
+          <div class="tag-list" style="gap:8px;">
+            <span>4K修复</span><span>导演剪辑</span><span>版本对比</span>
+            <span>家庭伦理</span><span>移民叙事</span><span>长镜头</span>
+            <span>港台经典</span><span>结局差异</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-text">九七院伦理片</div>
+          <p>收录1990年代至今华语及亚洲伦理类型片的条目、版本差异与导演序列。覆盖家庭伦理、社会禁忌、港台经典与修复版放映动态，条目按周更新。</p>
+        </div>
+        <div class="footer-col">
+          <h4>栏目</h4>
+          <a href="/#overview">领域概览</a>
+          <a href="/#featured">精选片单</a>
+          <a href="/#updates">最新动态</a>
+          <a href="/#categories">分类索引</a>
+        </div>
+        <div class="footer-col">
+          <h4>阅读</h4>
+          <a href="/#deep-analysis">深度解析</a>
+          <a href="/#guide">观看路径</a>
+          <a href="/#faq">常见问题</a>
+          <a href="/#comments">观众短评</a>
+        </div>
+        <div class="footer-col">
+          <h4>互动</h4>
+          <a href="/#submit">投稿条目</a>
+          <a href="/#rank">热门榜单</a>
+          <a href="/#related">相关推荐</a>
+          <a href="/#news">相关资讯</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>条目信息含示例内容，版本数据以公开资料与放映记录为参考。更新截止2026年11月8日。</span>
+        <span>© 2026 九七院伦理片 · 内容聚合示例</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "九七院伦理片",
+    "description": "聚焦华语及亚洲伦理类型片，提供片单推荐、剧情解析、导演专题、观众评论与版本考据。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "《暗涌》修复版和公映版差在哪几场戏？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "主要差异在厨房独坐、母女争吵、结尾关灯三场。厨房段落修复版多出约2分半钟，母亲搓洗手腕的动作完整保留；母女争吵的台词从7句恢复到12句，女儿那句“只做牺牲”首次可辨；结尾关灯镜头从3秒延长到11秒。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《浮世恋曲》导演版结局和公映版有什么不同？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "导演版结尾落在父亲站在门口回望，公映版落在母亲独自收拾餐桌。关键差异是导演版新增了父亲提到“船票”的晚餐戏，这句台词让全家离开成为已发生的事实。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "蔡明亮的《河流》为什么对白这么少？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "全片对白约180句，平均每分钟不到2句。蔡明亮在1997年的访谈里说过，这个家庭的三个人已经无法用语言建立关系，沉默本身就是关系的形状。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《青木瓜之味》里的阶级关系怎么看出来的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "主要靠视线高度和食物分配。女仆的镜头位置始终低于餐桌平面，主人吃饭时她在画框边缘站立。食物从厨房到餐桌的路径被完整拍摄，但女仆自己吃饭的镜头只出现一次。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "90年代港台伦理片和现在的新片有什么不同？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "90年代作品更多依赖长镜头和固定机位，对白密度低，空间承担叙事功能的比例高。近年伦理题材新片平均镜头时长缩短，对白量增加，家庭冲突更多通过对话推进。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "在哪里可以找到这些修复版的放映信息？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "修复版放映通常由各地电影资料馆或艺术院线发布，台北、香港、上海的资料馆是这类修复版的首轮放映地。条目注释里会记录已确认的放映日期和场馆。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    (function() {
+      // 回到顶部
+      var backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backTop.classList.add('visible');
+        } else {
+          backTop.classList.remove('visible');
+        }
+      });
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 移动端菜单
+      var menuToggle = document.getElementById('menuToggle');
+      var mobileMenu = document.getElementById('mobileMenu');
+      var mobileOverlay = document.getElementById('mobileOverlay');
+      var menuClose = document.getElementById('menuClose');
+
+      function openMenu() {
+        mobileMenu.classList.add('open');
+        mobileOverlay.classList.add('open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        mobileMenu.classList.remove('open');
+        mobileOverlay.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      menuToggle.addEventListener('click', openMenu);
+      menuClose.addEventListener('click', closeMenu);
+      mobileOverlay.addEventListener('click', closeMenu);
+
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          closeMenu();
+        });
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (mobileMenu.classList.contains('open')) {
+            closeMenu();
+          }
+        }
+      });
+
+      // 搜索功能
+      var searchInput = document.getElementById('searchInput');
+      var searchBtn = document.getElementById('searchBtn');
+
+      function doSearch() {
+        var query = searchInput.value.trim().toLowerCase();
+        // 移除已有高亮
+        document.querySelectorAll('.search-highlight').forEach(function(el) {
+          var parent = el.parentNode;
+          parent.replaceChild(document.createTextNode(el.textContent), el);
+          parent.normalize();
+        });
+
+        if (!query) return;
+
+        var mainContent = document.querySelector('.main-content');
+        var walker = document.createTreeWalker(
+          mainContent,
+          NodeFilter.SHOW_TEXT,
+          null,
+          false
+        );
+        var textNodes = [];
+        var node;
+        while ((node = walker.nextNode())) {
+          if (node.textContent.trim().length > 0 && node.parentNode.tagName !== 'SCRIPT' && node.parentNode.tagName !== 'STYLE') {
+            textNodes.push(node);
+          }
+        }
+
+        var found = false;
+        textNodes.forEach(function(textNode) {
+          var text = textNode.textContent;
+          var lowerText = text.toLowerCase();
+          var idx = lowerText.indexOf(query);
+          if (idx !== -1) {
+            found = true;
+            var before = text.substring(0, idx);
+            var match = text.substring(idx, idx + query.length);
+            var after = text.substring(idx + query.length);
+            var span = document.createElement('span');
+            span.className = 'search-highlight';
+            span.textContent = match;
+            var parent = textNode.parentNode;
+            var frag = document.createDocumentFragment();
+            if (before) frag.appendChild(document.createTextNode(before));
+            frag.appendChild(span);
+            if (after) frag.appendChild(document.createTextNode(after));
+            parent.replaceChild(frag, textNode);
+          }
+        });
+
+        // 无结果反馈
+        var existingNoResult = document.getElementById('searchNoResult');
+        if (!found) {
+          if (!existingNoResult) {
+            var noResult = document.createElement('div');
+            noResult.id = 'searchNoResult';
+            noResult.className = 'no-result';
+            noResult.style.display = 'block';
+            noResult.textContent = '未找到与“' + searchInput.value + '”相关的内容，请换个关键词试试。';
+            mainContent.prepend(noResult);
+          } else {
+            existingNoResult.style.display = 'block';
+            existingNoResult.textContent = '未找到与“' + searchInput.value + '”相关的内容，请换个关键词试试。';
+          }
+        } else {
+          if (existingNoResult) {
+            existingNoResult.style.display = 'none';
+          }
+        }
+      }
+
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          doSearch();
+        }
+      });
+
+      // 侧栏导航高亮
+      var sections = document.querySelectorAll('.main-content .section');
+      var navLinks = document.querySelectorAll('.channel-nav a');
+      var navObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.id;
+            navLinks.forEach(function(link) {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '/#' + id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' });
+
+      sections.forEach(function(section) {
+        navObserver.observe(section);
+      });
+    })();
+  </script>
+</body>
+          </html>
