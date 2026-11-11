@@ -1,0 +1,1575 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>树屋轻调灵灵全集 - 内容聚合与观看指南</title>
+<meta name="description" content="树屋轻调灵灵全集汇集树屋轻调灵灵系列各季内容、单集看点、更新动态与观看顺序。适合刚接触轻调灵灵、想补全系列或查找特定单集与幕后花絮的观众。">
+<meta name="keywords" content="树屋轻调灵灵全集">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232d5a3d'/%3E%3Cpath d='M20 62 L50 28 L80 62 Z' fill='%23f5d98b'/%3E%3Crect x='42' y='62' width='16' height='18' rx='3' fill='%23e8b84b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2a22;
+  --ink-2:#3e4f45;
+  --ink-3:#68796e;
+  --line:#dfe6df;
+  --bg:#f3f6f1;
+  --panel:#ffffff;
+  --panel-2:#f8faf6;
+  --brand:#2d5a3d;
+  --brand-mid:#4b7a5b;
+  --brand-light:#dce9df;
+  --accent:#c98a1b;
+  --accent-light:#f7ecd5;
+  --radius-card:14px;
+  --radius-tag:6px;
+  --radius-btn:9px;
+  --shadow:0 1px 2px rgba(28,42,34,.06),0 4px 14px rgba(28,42,34,.05);
+  --shadow-hover:0 2px 6px rgba(28,42,34,.10),0 10px 26px rgba(28,42,34,.10);
+  --announce-h:42px;
+  --header-h:62px;
+  --sticky-offset:calc(var(--announce-h) + var(--header-h) + 14px);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-offset);}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+h1,h2,h3,h4{line-height:1.35;font-weight:700;color:var(--ink);}
+ul{list-style:none;}
+
+/* ===== 吸顶公告条 ===== */
+.announce{
+  position:sticky;top:0;z-index:120;
+  height:var(--announce-h);
+  display:flex;align-items:center;
+  background:linear-gradient(90deg,#254a33,#2d5a3d 55%,#3a6b4a);
+  color:#eaf3ea;
+  font-size:13px;
+  overflow:hidden;
+}
+.announce .wrap{
+  max-width:1320px;margin:0 auto;padding:0 20px;width:100%;
+  display:flex;align-items:center;gap:16px;
+  white-space:nowrap;overflow:hidden;
+}
+.announce .brand-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.22);
+  padding:2px 10px;border-radius:20px;
+  font-weight:600;font-size:12px;letter-spacing:.3px;
+  flex-shrink:0;
+}
+.announce .brand-chip svg{width:14px;height:14px;flex-shrink:0;}
+.announce-list{
+  display:flex;gap:26px;
+  overflow-x:auto;scrollbar-width:none;
+}
+.announce-list::-webkit-scrollbar{display:none;}
+.announce-list li{flex-shrink:0;display:flex;align-items:center;gap:7px;}
+.announce-list .dot{width:5px;height:5px;border-radius:50%;background:#f5d98b;flex-shrink:0;}
+.announce-list b{font-weight:600;color:#f5d98b;}
+.announce-list .muted{color:#b9cfbd;}
+
+/* ===== 吸顶页头 ===== */
+.site-header{
+  position:sticky;top:var(--announce-h);z-index:110;
+  height:var(--header-h);
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1320px;margin:0 auto;padding:0 20px;height:100%;
+  display:flex;align-items:center;gap:22px;
+}
+.logo{display:flex;align-items:center;gap:9px;flex-shrink:0;}
+.logo-mark{width:34px;height:34px;flex-shrink:0;}
+.logo-text{
+  font-size:18px;font-weight:800;letter-spacing:.4px;color:var(--brand);
+  white-space:nowrap;
+}
+.main-nav{display:flex;align-items:center;gap:4px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;}
+.main-nav::-webkit-scrollbar{display:none;}
+.main-nav a{
+  padding:6px 11px;border-radius:8px;font-size:14px;color:var(--ink-2);
+  white-space:nowrap;transition:background .18s,color .18s;
+}
+.main-nav a:hover,.main-nav a:focus-visible{background:var(--brand-light);color:var(--brand);outline:none;}
+.main-nav a:focus-visible{box-shadow:0 0 0 2px var(--brand-mid);}
+.header-tools{margin-left:auto;display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.search-box{
+  display:flex;align-items:center;gap:6px;
+  background:var(--panel-2);border:1px solid var(--line);
+  border-radius:var(--radius-btn);padding:5px 10px;
+}
+.search-box input{
+  border:none;background:transparent;outline:none;
+  font-size:13px;width:140px;color:var(--ink);font-family:inherit;
+}
+.search-box input::placeholder{color:var(--ink-3);}
+.search-box button{
+  border:none;background:var(--brand);color:#fff;
+  border-radius:6px;font-size:12px;padding:4px 10px;
+}
+.search-box button:hover{background:var(--brand-mid);}
+.btn-contribute{
+  background:var(--accent);color:#fff;border:none;
+  padding:7px 14px;border-radius:var(--radius-btn);
+  font-size:13px;font-weight:600;white-space:nowrap;
+  transition:background .18s;
+}
+.btn-contribute:hover{background:#b57a12;}
+.hamburger{
+  display:none;background:none;border:1px solid var(--line);
+  border-radius:8px;width:38px;height:38px;
+  align-items:center;justify-content:center;
+}
+.hamburger svg{width:20px;height:20px;stroke:var(--ink);}
+.mobile-mask{
+  display:none;position:fixed;inset:0;background:rgba(20,32,25,.45);
+  z-index:100;opacity:0;transition:opacity .25s;
+}
+.mobile-mask.show{display:block;opacity:1;}
+
+/* ===== 首屏 ===== */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(201,138,27,.16),transparent 42%),
+    radial-gradient(circle at 14% 78%,rgba(75,122,91,.20),transparent 46%),
+    linear-gradient(135deg,#eef4ec 0%,#e4eee2 48%,#e9f0e4 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  max-width:1320px;margin:0 auto;padding:52px 20px 46px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:center;
+  position:relative;z-index:2;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:#fff;border:1px solid var(--brand-light);
+  color:var(--brand);font-size:12.5px;font-weight:600;
+  padding:4px 12px;border-radius:20px;margin-bottom:16px;
+  box-shadow:var(--shadow);
+}
+.hero-badge .pulse{
+  width:7px;height:7px;border-radius:50%;background:var(--accent);
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.82);}}
+.hero h1{
+  font-size:clamp(30px,4vw,46px);
+  letter-spacing:1px;
+  color:var(--brand);
+  margin-bottom:14px;
+}
+.hero h1 .sub-line{
+  display:block;font-size:15px;font-weight:500;color:var(--ink-2);
+  letter-spacing:.5px;margin-top:10px;
+}
+.hero-desc{
+  font-size:15.5px;color:var(--ink-2);max-width:540px;margin-bottom:24px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--brand);color:#fff;border:none;
+  padding:11px 24px;border-radius:var(--radius-btn);
+  font-size:14.5px;font-weight:600;
+  box-shadow:var(--shadow);transition:background .18s,transform .18s,box-shadow .18s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--brand-mid);transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+.btn-ghost{
+  background:#fff;color:var(--brand);border:1px solid var(--brand-light);
+  padding:11px 24px;border-radius:var(--radius-btn);
+  font-size:14.5px;font-weight:600;
+  transition:border-color .18s,transform .18s,box-shadow .18s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-ghost:hover{border-color:var(--brand-mid);transform:translateY(-2px);box-shadow:var(--shadow);}
+.hero-stats{
+  display:flex;gap:30px;margin-top:28px;flex-wrap:wrap;
+}
+.hero-stats .stat b{display:block;font-size:22px;color:var(--brand);font-weight:800;line-height:1.2;}
+.hero-stats .stat span{font-size:12.5px;color:var(--ink-3);}
+
+/* 首屏视觉 */
+.hero-visual{
+  position:relative;height:340px;
+  display:flex;align-items:center;justify-content:center;
+}
+.treehouse-svg{width:100%;max-width:420px;height:auto;filter:drop-shadow(0 12px 24px rgba(28,42,34,.14));}
+.hero-float-card{
+  position:absolute;background:#fff;border-radius:12px;
+  box-shadow:var(--shadow-hover);padding:10px 14px;
+  font-size:12.5px;line-height:1.5;
+  border:1px solid var(--line);
+}
+.hero-float-card .fc-tag{
+  display:inline-block;background:var(--accent-light);color:#9a6a10;
+  font-size:11px;font-weight:600;padding:1px 7px;border-radius:4px;margin-bottom:4px;
+}
+.hero-float-card .fc-title{font-weight:700;color:var(--ink);}
+.hero-float-card .fc-meta{color:var(--ink-3);font-size:11.5px;}
+.fc-1{top:8px;left:-6px;animation:floatY 6s ease-in-out infinite;}
+.fc-2{bottom:20px;right:-4px;animation:floatY 7s ease-in-out infinite .8s;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
+
+/* ===== 主布局：左侧频道栏 + 右侧主内容 ===== */
+.page-shell{
+  max-width:1320px;margin:0 auto;padding:0 20px;
+  display:grid;grid-template-columns:220px minmax(0,1fr);
+  gap:34px;align-items:start;
+}
+.channel-rail{
+  position:sticky;top:var(--sticky-offset);
+  padding:22px 0 30px;
+}
+.rail-card{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);padding:16px 14px;
+  box-shadow:var(--shadow);margin-bottom:16px;
+}
+.rail-card h3{
+  font-size:13px;color:var(--ink-3);font-weight:600;
+  letter-spacing:.6px;margin-bottom:11px;padding-left:3px;
+}
+.rail-nav li a{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 9px;border-radius:8px;font-size:13.5px;color:var(--ink-2);
+  transition:background .16s,color .16s;
+}
+.rail-nav li a:hover,.rail-nav li a.active{background:var(--brand-light);color:var(--brand);font-weight:600;}
+.rail-nav li a .cnt{
+  font-size:11.5px;color:var(--ink-3);background:var(--panel-2);
+  padding:0 6px;border-radius:10px;
+}
+.rail-nav li a.active .cnt{background:#fff;color:var(--brand-mid);}
+.rail-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+}
+.rail-stats div{
+  background:var(--panel-2);border-radius:8px;padding:8px 10px;text-align:center;
+}
+.rail-stats b{display:block;color:var(--brand);font-size:16px;}
+.rail-stats span{font-size:11px;color:var(--ink-3);}
+.contribute-cta{
+  background:linear-gradient(150deg,#2d5a3d,#3f6d4d);
+  color:#eaf3ea;border-radius:var(--radius-card);padding:16px 15px;
+  box-shadow:var(--shadow);
+}
+.contribute-cta h4{font-size:14px;margin-bottom:6px;color:#fff;}
+.contribute-cta p{font-size:12px;color:#c3d7c8;line-height:1.6;margin-bottom:11px;}
+.contribute-cta a{
+  display:inline-block;background:#f5d98b;color:#3a2b08;
+  font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:7px;
+  transition:background .16s;
+}
+.contribute-cta a:hover{background:#f0cd6e;}
+
+.main-col{min-width:0;padding:22px 0 50px;}
+
+/* 通用 section */
+.section{margin-bottom:38px;scroll-margin-top:var(--sticky-offset);}
+.section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:14px;margin-bottom:16px;flex-wrap:wrap;
+}
+.section-head h2{
+  font-size:21px;letter-spacing:.4px;position:relative;padding-left:13px;
+}
+.section-head h2::before{
+  content:"";position:absolute;left:0;top:5px;bottom:5px;width:4px;
+  border-radius:3px;background:linear-gradient(180deg,var(--brand),var(--accent));
+}
+.section-head .hint{font-size:12.5px;color:var(--ink-3);}
+.section-head .more-link{font-size:13px;color:var(--brand-mid);font-weight:600;}
+.section-head .more-link:hover{text-decoration:underline;}
+
+/* ===== 领域概览 ===== */
+.overview-panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:24px 26px;box-shadow:var(--shadow);
+}
+.overview-panel p{color:var(--ink-2);margin-bottom:13px;font-size:14.5px;}
+.overview-panel p:last-child{margin-bottom:0;}
+.overview-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:16px;border-top:1px dashed var(--line);}
+.overview-tags span{
+  font-size:12.5px;color:var(--brand);background:var(--brand-light);
+  padding:3px 11px;border-radius:20px;
+}
+
+/* ===== 精选卡片 ===== */
+.card-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));
+  gap:16px;
+}
+.content-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  overflow:hidden;box-shadow:var(--shadow);
+  transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;
+}
+.content-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
+.card-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--brand-light);}
+.card-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .35s;}
+.content-card:hover .card-thumb img{transform:scale(1.04);}
+.card-thumb .type-badge{
+  position:absolute;top:9px;left:9px;
+  background:rgba(28,42,34,.78);color:#fff;font-size:11px;
+  padding:2px 9px;border-radius:5px;font-weight:600;backdrop-filter:blur(3px);
+}
+.card-body{padding:13px 15px 15px;display:flex;flex-direction:column;flex:1;}
+.card-body h3{font-size:15.5px;margin-bottom:7px;line-height:1.45;}
+.card-body h3 a:hover{color:var(--brand-mid);}
+.card-look{font-size:13px;color:var(--ink-2);line-height:1.62;margin-bottom:11px;flex:1;}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.card-tags span{
+  font-size:11.5px;color:var(--ink-3);background:var(--panel-2);
+  border:1px solid var(--line);padding:1px 7px;border-radius:4px;
+}
+.card-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:11.5px;color:var(--ink-3);padding-top:9px;border-top:1px solid var(--line);
+}
+.card-meta .heat{color:var(--accent);font-weight:600;}
+
+/* ===== 最新更新列表 ===== */
+.update-list{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  overflow:hidden;box-shadow:var(--shadow);
+}
+.update-item{
+  display:grid;grid-template-columns:76px minmax(0,1fr) auto;
+  gap:14px;align-items:center;
+  padding:14px 18px;border-bottom:1px solid var(--line);
+  transition:background .16s;
+}
+.update-item:last-child{border-bottom:none;}
+.update-item:hover{background:var(--panel-2);}
+.update-date{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;line-height:1.35;}
+.update-date b{display:block;font-size:14px;color:var(--brand);font-weight:700;}
+.update-main .t{font-size:14.5px;font-weight:600;margin-bottom:2px;}
+.update-main .t:hover{color:var(--brand-mid);}
+.update-main .d{font-size:12.5px;color:var(--ink-3);}
+.update-tag{
+  font-size:11.5px;padding:2px 9px;border-radius:5px;
+  background:var(--accent-light);color:#9a6a10;font-weight:600;white-space:nowrap;
+}
+
+/* ===== 分类入口 ===== */
+.cat-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:12px;
+}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:11px;
+  padding:15px 13px;text-align:center;box-shadow:var(--shadow);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.cat-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--brand-light);}
+.cat-item .cat-icon{
+  width:34px;height:34px;margin:0 auto 8px;border-radius:9px;
+  background:var(--brand-light);display:flex;align-items:center;justify-content:center;
+}
+.cat-item .cat-icon svg{width:18px;height:18px;stroke:var(--brand);}
+.cat-item .cat-name{font-size:13.5px;font-weight:600;margin-bottom:3px;}
+.cat-item .cat-cnt{font-size:11.5px;color:var(--ink-3);}
+
+/* ===== 深度解析 ===== */
+.deep-read{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:28px 30px;box-shadow:var(--shadow);
+}
+.deep-read h2{margin-bottom:18px;}
+.deep-read h3{
+  font-size:16.5px;margin:22px 0 10px;color:var(--brand);
+  padding-left:11px;border-left:3px solid var(--accent);
+}
+.deep-read h3:first-of-type{margin-top:0;}
+.deep-read p{color:var(--ink-2);margin-bottom:12px;font-size:14.5px;}
+.deep-read ul{margin:0 0 14px 4px;}
+.deep-read ul li{
+  color:var(--ink-2);font-size:14px;padding-left:16px;position:relative;margin-bottom:7px;
+}
+.deep-read ul li::before{
+  content:"";position:absolute;left:0;top:10px;width:5px;height:5px;
+  border-radius:50%;background:var(--brand-mid);
+}
+.deep-read blockquote{
+  background:var(--panel-2);border-left:3px solid var(--brand);
+  padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;
+  font-size:13.5px;color:var(--ink-2);
+}
+.deep-read blockquote b{color:var(--brand);}
+
+/* ===== 观看指南（时间线/步骤） ===== */
+.guide-steps{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;
+}
+.guide-step{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:17px 18px;box-shadow:var(--shadow);position:relative;
+}
+.guide-step .step-no{
+  position:absolute;top:-11px;left:18px;
+  background:var(--brand);color:#fff;font-size:12px;font-weight:700;
+  width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 8px rgba(45,90,61,.3);
+}
+.guide-step h4{font-size:14.5px;margin:9px 0 7px;}
+.guide-step p{font-size:13px;color:var(--ink-2);line-height:1.66;}
+
+/* ===== FAQ ===== */
+.faq-list{display:flex;flex-direction:column;gap:10px;}
+.faq-list details{
+  background:var(--panel);border:1px solid var(--line);border-radius:11px;
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.faq-list summary{
+  padding:14px 18px;font-size:14.5px;font-weight:600;cursor:pointer;
+  list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  transition:background .16s;
+}
+.faq-list summary::-webkit-details-marker{display:none;}
+.faq-list summary::after{
+  content:"+";font-size:19px;color:var(--brand-mid);font-weight:400;transition:transform .2s;
+  flex-shrink:0;
+}
+.faq-list details[open] summary::after{content:"−";}
+.faq-list summary:hover{background:var(--panel-2);}
+.faq-list details[open] summary{border-bottom:1px solid var(--line);}
+.faq-answer{padding:14px 18px;font-size:13.8px;color:var(--ink-2);line-height:1.72;}
+
+/* ===== 评论 ===== */
+.comment-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:13px;
+}
+.comment-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;box-shadow:var(--shadow);
+}
+.comment-head{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
+.avatar{
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:#fff;
+}
+.comment-head .nick{font-size:13px;font-weight:600;}
+.comment-head .time{font-size:11px;color:var(--ink-3);margin-left:auto;}
+.comment-text{font-size:13px;color:var(--ink-2);line-height:1.66;}
+.comment-text em{font-style:normal;color:var(--brand);font-weight:600;}
+
+/* ===== 资讯 ===== */
+.news-list{display:flex;flex-direction:column;gap:12px;}
+.news-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;box-shadow:var(--shadow);
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:start;
+  transition:transform .18s,box-shadow .18s;
+}
+.news-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+.news-item .nt{font-size:14.5px;font-weight:600;margin-bottom:5px;}
+.news-item .nt:hover{color:var(--brand-mid);}
+.news-item .ns{font-size:13px;color:var(--ink-3);line-height:1.62;}
+.news-date{font-size:12px;color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums;}
+
+/* ===== 相关推荐 标签索引 ===== */
+.tag-index{
+  display:flex;flex-wrap:wrap;gap:9px;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:18px 20px;box-shadow:var(--shadow);
+}
+.tag-index a{
+  font-size:13px;color:var(--ink-2);background:var(--panel-2);
+  border:1px solid var(--line);padding:5px 13px;border-radius:20px;
+  transition:background .16s,color .16s,border-color .16s;
+}
+.tag-index a:hover{background:var(--brand-light);color:var(--brand);border-color:var(--brand-light);}
+
+/* ===== 榜单 + 补充板块 ===== */
+.rank-list{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  overflow:hidden;box-shadow:var(--shadow);
+}
+.rank-item{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 18px;border-bottom:1px solid var(--line);
+  transition:background .16s;
+}
+.rank-item:last-child{border-bottom:none;}
+.rank-item:hover{background:var(--panel-2);}
+.rank-no{
+  width:24px;height:24px;border-radius:7px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12.5px;font-weight:700;background:var(--panel-2);color:var(--ink-3);
+}
+.rank-item:nth-child(1) .rank-no{background:var(--accent);color:#fff;}
+.rank-item:nth-child(2) .rank-no{background:var(--brand-mid);color:#fff;}
+.rank-item:nth-child(3) .rank-no{background:var(--brand-light);color:var(--brand);}
+.rank-main{flex:1;min-width:0;}
+.rank-main .rt{font-size:14px;font-weight:600;}
+.rank-main .rd{font-size:12px;color:var(--ink-3);}
+.rank-val{font-size:12.5px;color:var(--accent);font-weight:600;white-space:nowrap;}
+
+/* 对话/证言 */
+.quote-panel{
+  background:linear-gradient(150deg,#f7f3e8,#f1f5ec);
+  border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:24px 26px;box-shadow:var(--shadow);
+}
+.quote-panel .q-text{
+  font-size:15px;color:var(--ink);line-height:1.75;margin-bottom:12px;
+  padding-left:20px;border-left:3px solid var(--accent);
+}
+.quote-panel .q-author{font-size:12.5px;color:var(--ink-3);}
+
+/* ===== 投稿与互动 ===== */
+.interact-panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:24px 26px;box-shadow:var(--shadow);
+  display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center;
+}
+.interact-panel h3{font-size:17px;margin-bottom:9px;}
+.interact-panel p{font-size:13.5px;color:var(--ink-2);margin-bottom:14px;line-height:1.68;}
+.interact-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-sm{
+  font-size:12.5px;padding:7px 16px;border-radius:8px;font-weight:600;
+  transition:background .16s,transform .16s;
+}
+.btn-sm.solid{background:var(--brand);color:#fff;border:none;}
+.btn-sm.solid:hover{background:var(--brand-mid);transform:translateY(-1px);}
+.btn-sm.outline{background:#fff;color:var(--brand);border:1px solid var(--brand-light);}
+.btn-sm.outline:hover{border-color:var(--brand-mid);}
+.interact-stat{
+  background:var(--panel-2);border-radius:10px;padding:16px 18px;
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:center;
+}
+.interact-stat div b{display:block;font-size:18px;color:var(--brand);}
+.interact-stat div span{font-size:11.5px;color:var(--ink-3);}
+
+/* 筛选无结果 */
+.no-result{
+  display:none;padding:26px;text-align:center;color:var(--ink-3);
+  background:var(--panel);border:1px dashed var(--line);border-radius:12px;font-size:14px;
+}
+.no-result.show{display:block;}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:22px;bottom:26px;z-index:90;
+  width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;border:none;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-hover);
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .25s,visibility .25s,transform .25s,background .16s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.to-top:hover{background:var(--brand-mid);}
+.to-top svg{width:20px;height:20px;stroke:#fff;}
+
+/* ===== 页脚 ===== */
+.site-footer{
+  background:#1f3629;color:#c5d6c9;margin-top:16px;
+  padding:42px 0 26px;font-size:13px;
+}
+.footer-inner{max-width:1320px;margin:0 auto;padding:0 20px;}
+.footer-top{
+  display:grid;grid-template-columns:1.4fr 2fr;gap:40px;padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.footer-brand .f-logo{display:flex;align-items:center;gap:9px;margin-bottom:12px;}
+.footer-brand .f-logo .logo-text{color:#f5d98b;font-size:17px;}
+.footer-brand p{line-height:1.75;color:#a9c0af;max-width:340px;font-size:12.5px;}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.footer-cols h4{font-size:13px;color:#eaf3ea;margin-bottom:11px;font-weight:600;}
+.footer-cols li{margin-bottom:7px;}
+.footer-cols li a{color:#a9c0af;font-size:12.5px;transition:color .16s;}
+.footer-cols li a:hover{color:#f5d98b;}
+.footer-bottom{
+  padding-top:20px;display:flex;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;color:#8aa991;font-size:12px;line-height:1.7;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width:1024px){
+  .page-shell{grid-template-columns:1fr;gap:0;}
+  .channel-rail{
+    position:static;padding:0;order:2;
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:30px;
+  }
+  .rail-card{margin-bottom:0;}
+  .main-col{padding-top:20px;}
+  .hero-inner{grid-template-columns:1fr;gap:26px;padding:38px 20px 34px;}
+  .hero-visual{height:280px;order:-1;}
+  .fc-1,.fc-2{display:none;}
+  .interact-panel{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;gap:26px;}
+}
+@media (max-width:740px){
+  .main-nav{display:none;}
+  .header-tools .search-box{display:none;}
+  .hamburger{display:flex;}
+  .mobile-nav{
+    display:none;position:fixed;top:calc(var(--announce-h) + var(--header-h));
+    left:0;right:0;z-index:105;background:#fff;
+    border-bottom:1px solid var(--line);box-shadow:var(--shadow-hover);
+    padding:12px 18px 18px;max-height:calc(100vh - var(--announce-h) - var(--header-h));
+    overflow-y:auto;
+  }
+  .mobile-nav.show{display:block;}
+  .mobile-nav a{
+    display:block;padding:11px 8px;border-radius:8px;font-size:15px;color:var(--ink-2);
+    border-bottom:1px solid var(--panel-2);
+  }
+  .mobile-nav a:hover{background:var(--brand-light);color:var(--brand);}
+  .mobile-nav .btn-contribute{display:block;text-align:center;margin-top:14px;width:100%;}
+  .channel-rail{grid-template-columns:1fr;}
+  .hero h1{font-size:30px;}
+  .hero-stats{gap:20px;}
+  .card-grid{grid-template-columns:1fr;}
+  .comment-grid{grid-template-columns:1fr;}
+  .update-item{grid-template-columns:64px minmax(0,1fr);gap:10px;padding:12px 14px;}
+  .update-tag{grid-column:2;justify-self:start;}
+  .deep-read{padding:20px 18px;}
+  .to-top{right:14px;bottom:16px;width:40px;height:40px;}
+  .footer-cols{grid-template-columns:1fr 1fr;}
+  .announce .brand-chip{display:none;}
+  .announce-list{gap:18px;}
+  .news-item{grid-template-columns:1fr;}
+  .news-date{justify-self:start;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===== 吸顶公告条 ===== -->
+<div class="announce" id="announceBar">
+  <div class="wrap">
+    <span class="brand-chip">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 15 L12 6 L20 15 Z" fill="#f5d98b"/><rect x="10" y="15" width="4" height="5" rx="1" fill="#e8b84b"/></svg>
+      树屋轻调灵灵全集
+    </span>
+    <ul class="announce-list">
+      <li><span class="dot"></span><b>11-08</b><span>《雾岭回声》第 3 集上线</span><span class="muted">· 时长 24 分</span></li>
+      <li><span class="dot"></span><b>11-07</b><span>灵灵·秋日特别篇「落叶邮局」发布</span></li>
+      <li><span class="dot"></span><b>11-05</b><span>第一季 12 集 4K 修复版补档完成</span><span class="muted">· 新增 3 条音轨</span></li>
+      <li><span class="dot"></span><b>11-03</b><span>第二季幕后花絮第 6 期：录音棚实录</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== 吸顶页头 ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/#" class="logo" aria-label="树屋轻调灵灵全集首页">
+      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" rx="22" fill="#2d5a3d"/>
+        <path d="M20 62 L50 28 L80 62 Z" fill="#f5d98b"/>
+        <rect x="42" y="62" width="16" height="18" rx="3" fill="#e8b84b"/>
+        <rect x="47" y="68" width="6" height="8" rx="1" fill="#2d5a3d"/>
+      </svg>
+      <span class="logo-text">树屋轻调灵灵全集</span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="/#overview">系列概览</a>
+      <a href="/#featured">精选单集</a>
+      <a href="/#updates">更新动态</a>
+      <a href="/#categories">频道分类</a>
+      <a href="/#deepread">深度解析</a>
+      <a href="/#guide">观看顺序</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#comments">观众评论</a>
+    </nav>
+    <div class="header-tools">
+      <div class="search-box">
+        <input type="search" id="searchInput" placeholder="搜索单集/标签…" aria-label="站内搜索">
+        <button type="button" id="searchBtn">查</button>
+      </div>
+      <a href="/#interact" class="btn-contribute">投稿</a>
+      <button class="hamburger" id="hamburger" aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobileNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- 移动端导航 -->
+<nav class="mobile-nav" id="mobileNav" aria-label="移动端导航">
+  <a href="/#overview">系列概览</a>
+  <a href="/#featured">精选单集</a>
+  <a href="/#updates">更新动态</a>
+  <a href="/#categories">频道分类</a>
+  <a href="/#deepread">深度解析</a>
+  <a href="/#guide">观看顺序</a>
+  <a href="/#faq">常见问答</a>
+  <a href="/#comments">观众评论</a>
+  <a href="/#news">相关资讯</a>
+  <a href="/#interact" class="btn-contribute">投稿与互动</a>
+</nav>
+<div class="mobile-mask" id="mobileMask"></div>
+
+<!-- ===== 首屏 ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="hero-badge"><span class="pulse"></span> 系列更新至第二季第 14 集 · 2026-11-08</span>
+      <h1>树屋轻调灵灵全集
+        <span class="sub-line">轻调叙事 · 树屋场景 · 灵灵角色档案</span>
+      </h1>
+      <p class="hero-desc">
+        收录树屋轻调灵灵系列第一季至第二季的全部正片、特别篇与幕后花絮，按播出顺序整理单集看点、角色关系与场景设定，也标注了值得单独回看的段落与导演访谈出处。
+      </p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 3l14 9-14 9V3z"/></svg>
+          从第一集看起
+        </a>
+        <a href="/#guide" class="btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          查看观看顺序
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>2 季</b><span>正片 26 集</span></div>
+        <div class="stat"><b>8 部</b><span>特别篇与番外</span></div>
+        <div class="stat"><b>11-08</b><span>最近更新</span></div>
+        <div class="stat"><b>4.7 分</b><span>观众均分</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg class="treehouse-svg" viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e8f1e4"/><stop offset="1" stop-color="#d3e3d0"/>
+          </linearGradient>
+          <linearGradient id="gTree" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5c8a6a"/><stop offset="1" stop-color="#3a6b4a"/>
+          </linearGradient>
+        </defs>
+        <rect x="30" y="20" width="360" height="270" rx="24" fill="url(#gSky)"/>
+        <circle cx="330" cy="78" r="30" fill="#f5d98b" opacity="0.75"/>
+        <path d="M210 260 L210 150" stroke="#7a5a3a" stroke-width="13" stroke-linecap="round"/>
+        <path d="M210 205 L165 172" stroke="#7a5a3a" stroke-width="8" stroke-linecap="round"/>
+        <path d="M210 185 L252 158" stroke="#7a5a3a" stroke-width="8" stroke-linecap="round"/>
+        <ellipse cx="210" cy="140" rx="112" ry="66" fill="url(#gTree)"/>
+        <ellipse cx="160" cy="118" rx="52" ry="40" fill="#6b9b7a"/>
+        <ellipse cx="262" cy="124" rx="48" ry="38" fill="#4b7a5b"/>
+        <rect x="172" y="176" width="76" height="56" rx="6" fill="#e8b84b"/>
+        <rect x="172" y="176" width="76" height="12" rx="4" fill="#c98a1b"/>
+        <rect x="196" y="198" width="28" height="34" rx="3" fill="#7a5a3a"/>
+        <circle cx="216" cy="214" r="2.5" fill="#f5d98b"/>
+        <rect x="178" y="188" width="14" height="12" rx="2" fill="#fbe9bc"/>
+        <rect x="228" y="188" width="14" height="12" rx="2" fill="#fbe9bc"/>
+        <path d="M150 262 L270 262" stroke="#a8c4ae" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="120" cy="252" r="12" fill="#8fb89a"/>
+        <circle cx="300" cy="250" r="9" fill="#a8c4ae"/>
+        <path d="M60 262 Q90 244 120 262" stroke="#8fb89a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="hero-float-card fc-1">
+        <span class="fc-tag">最新</span>
+        <div class="fc-title">雾岭回声 · 第 3 集</div>
+        <div class="fc-meta">24 分钟 · 11-08 更新</div>
+      </div>
+      <div class="hero-float-card fc-2">
+        <span class="fc-tag">高分</span>
+        <div class="fc-title">落叶邮局 · 特别篇</div>
+        <div class="fc-meta">观众 4.8 分 · 1.2 万条讨论</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页面主体：左栏频道 + 右主内容 ===== -->
+<div class="page-shell">
+
+  <!-- 左侧频道栏 -->
+  <aside class="channel-rail" aria-label="频道索引">
+    <div class="rail-card">
+      <h3>频道索引</h3>
+      <ul class="rail-nav">
+        <li><a href="/#overview" class="active">系列概览 <span class="cnt">8</span></a></li>
+        <li><a href="/#featured">精选单集 <span class="cnt">12</span></a></li>
+        <li><a href="/#updates">更新动态 <span class="cnt">10</span></a></li>
+        <li><a href="/#categories">频道分类 <span class="cnt">8</span></a></li>
+        <li><a href="/#deepread">深度解析 <span class="cnt">4</span></a></li>
+        <li><a href="/#guide">观看顺序 <span class="cnt">5</span></a></li>
+        <li><a href="/#faq">常见问答 <span class="cnt">6</span></a></li>
+        <li><a href="/#comments">观众评论 <span class="cnt">16</span></a></li>
+        <li><a href="/#news">相关资讯 <span class="cnt">6</span></a></li>
+        <li><a href="/#rank">热门榜单 <span class="cnt">8</span></a></li>
+        <li><a href="/#interact">投稿互动 <span class="cnt">—</span></a></li>
+      </ul>
+    </div>
+    <div class="rail-card">
+      <h3>系列数据</h3>
+      <div class="rail-stats">
+        <div><b>26</b><span>正片集数</span></div>
+        <div><b>8</b><span>特别篇</span></div>
+        <div><b>4.7</b><span>均分</span></div>
+        <div><b>11-08</b><span>更新日</span></div>
+      </div>
+    </div>
+    <div class="contribute-cta">
+      <h4>投稿你的单集笔记</h4>
+      <p>写写某一集让你回看三遍的段落，附上时间码更好。</p>
+      <a href="/#interact">去投稿</a>
+    </div>
+  </aside>
+
+  <!-- 主内容 -->
+  <main class="main-col">
+
+    <!-- 1. 领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-head">
+        <h2>树屋轻调灵灵系列概览</h2>
+        <span class="hint">2 季正片 + 8 部特别篇</span>
+      </div>
+      <div class="overview-panel">
+        <p>树屋轻调灵灵是一部以树屋为主要场景的轻调叙事动画系列，第一季 12 集于 2025 年 9 月上线，第二季目前更新到第 14 集，2026 年 11 月 8 日刚放出《雾岭回声》第 3 集。系列围绕主角灵灵在树屋中接待不同访客展开，每集一个独立小故事，但角色背景与树屋空间设定前后连贯。</p>
+        <p>内容方向大致分四块：一是正片单集，每集 22 到 26 分钟，以对话和场景细节推进；二是特别篇，时长更短，多为季节限定或角色生日主题，比如 2026 年 10 月 20 日发布的《落叶邮局》；三是幕后花絮，制作组在官方账号放出录音棚实录和分镜稿；四是观众二次创作，集中在角色关系梳理和场景分析上。</p>
+        <p>目前观众讨论较集中的条目包括第二季第 9 集《旧钥匙》、第 12 集《雨停之前》以及特别篇《落叶邮局》。前三集采用一镜到底式长镜头，在树屋内部空间走位上有明显设计痕迹；《雨停之前》则因为结尾留白被反复解读。想看完整脉络，从第一季第 1 集《门铃响了》开始最稳妥。</p>
+        <div class="overview-tags">
+          <span>树屋场景</span><span>轻调叙事</span><span>灵灵角色档案</span>
+          <span>单集独立故事</span><span>特别篇</span><span>幕后花絮</span>
+          <span>分镜稿</span><span>长镜头</span><span>角色关系图</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-head">
+        <h2>值得单独回看的单集与特别篇</h2>
+        <span class="hint">按观众讨论量排序</span>
+      </div>
+      <div class="card-grid">
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/shwu01/400/300" width="400" height="300" loading="lazy" alt="雾岭回声第3集树屋内部场景">
+            <span class="type-badge">正片</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#updates">雾岭回声 · 第二季第 14 集</a></h3>
+            <p class="card-look">灵灵在树屋阁楼发现一台旧收音机，整集 24 分钟几乎都在同一空间完成，靠声音层次推进情绪。11 月 8 日上线，评论区已出现大量对收音机频道数字的解读。</p>
+            <div class="card-tags"><span>声音叙事</span><span>阁楼场景</span><span>最新更新</span></div>
+            <div class="card-meta"><span class="heat">热度 9.6</span><span>11-08</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/shwu02/400/300" width="400" height="300" loading="lazy" alt="落叶邮局特别篇中秋日树屋外观">
+            <span class="type-badge">特别篇</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#updates">落叶邮局 · 秋日特别篇</a></h3>
+            <p class="card-look">10 月 20 日发布的 15 分钟短篇，灵灵替树屋访客寄出三封没写完的信。画面用了大量暖黄色调，片尾字幕滚动时的背景音是真实落叶录音。</p>
+            <div class="card-tags"><span>季节限定</span><span>书信主题</span><span>暖色调</span></div>
+            <div class="card-meta"><span class="heat">热度 9.1</span><span>10-20</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/shwu03/400/300" width="400" height="300" loading="lazy" alt="旧钥匙一集中灵灵打开木盒的画面">
+            <span class="type-badge">正片</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#featured">旧钥匙 · 第二季第 9 集</a></h3>
+            <p class="card-look">一把生锈钥匙引出树屋地下室的前史。该集在 2026 年 10 月 2 日播出后，观众把地下室墙面涂鸦逐帧截图比对，发现与第一季第 5 集背景里的一幅画同源。</p>
+            <div class="card-tags"><span>前史线索</span><span>地下室</span><span>逐帧比对</span></div>
+            <div class="card-meta"><span class="heat">热度 8.8</span><span>10-02</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/shwu04/400/300" width="400" height="300" loading="lazy" alt="雨停之前结尾窗边空镜">
+            <span class="type-badge">正片</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#featured">雨停之前 · 第二季第 12 集</a></h3>
+            <p class="card-look">整集下雨，树屋屋檐滴水声贯穿始终。结尾灵灵没有回答访客的问题，镜头停在窗边 11 秒。导演在 10 月 15 日的访谈里说这场戏剪了七版。</p>
+            <div class="card-tags"><span>结尾留白</span><span>雨声</span><span>导演访谈</span></div>
+            <div class="card-meta"><span class="heat">热度 8.6</span><span>10-09</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/shwu05/400/300" width="400" height="300" loading="lazy" alt="门铃响了第一季第一集树屋门口">
+            <span class="type-badge">正片</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#guide">门铃响了 · 第一季第 1 集</a></h3>
+            <p class="card-look">系列起点，灵灵第一次打开树屋大门。22 分钟里出现 4 位访客，每位只留一句话。补系列的人从这集开始，后面第 7 集《木梯》会回收其中一个细节。</p>
+            <div class="card-tags"><span>系列起点</span><span>访客结构</span><span>细节回收</span></div>
+            <div class="card-meta"><span class="heat">热度 8.2</span><span>2025-09-12</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/shwu06/400/300" width="400" height="300" loading="lazy" alt="录音棚实录花絮中配音演员对着麦克风">
+            <span class="type-badge">花絮</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#updates">录音棚实录 · 幕后花絮第 6 期</a></h3>
+            <p class="card-look">11 月 3 日放出，记录灵灵配音演员录《雾岭回声》收音机独白的过程。有一段连续 47 秒不换气的台词，现场录了 9 条，最后用的是第 7 条。</p>
+            <div class="card-tags"><span>配音</span><span>幕后</span><span>台词录制</span></div>
+            <div class="card-meta"><span class="heat">热度 7.9</span><span>11-03</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-head">
+        <h2>近期更新与上线动态</h2>
+        <span class="hint">2026-10-10 至 2026-11-08</span>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <div class="update-date"><b>11-08</b>2026</div>
+          <div class="update-main">
+            <div class="t">《雾岭回声》第二季第 14 集上线</div>
+            <div class="d">时长 24 分 12 秒，片尾无预告，官方账号同步放出 3 张收音机特写剧照。</div>
+          </div>
+          <span class="update-tag">正片</span>
+        </div>
+        <div class="update-item">
+          <div class="update-date"><b>11-07</b>2026</div>
+          <div class="update-main">
+            <div class="t">特别篇《落叶邮局》加更 1 段彩蛋</div>
+            <div class="d">彩蛋 47 秒，内容是灵灵把没寄出的第四封信放进抽屉，抽屉标签写着「明年再拆」。</div>
+          </div>
+          <span class="update-tag">特别篇</span>
+        </div>
+        <div class="update-item">
+          <div class="update-date"><b>11-05</b>2026</div>
+          <div class="update-main">
+            <div class="t">第一季 12 集 4K 修复版补档完成</div>
+            <div class="d">新增日语与粤语两条音轨，字幕修正 14 处译名，第 3 集树屋平面图重绘。</div>
+          </div>
+          <span class="update-tag">修复</span>
+        </div>
+        <div class="update-item">
+          <div class="update-date"><b>11-03</b>2026</div>
+          <div class="update-main">
+            <div class="t">幕后花絮第 6 期：录音棚实录</div>
+            <div class="d">12 分钟，含灵灵配音演员录收音机独白的 9 条备选，第 7 条被采用。</div>
+          </div>
+          <span class="update-tag">花絮</span>
+        </div>
+        <div class="update-item">
+          <div class="update-date"><b>10-28</b>2026</div>
+          <div class="update-main">
+            <div class="t">第二季第 13 集《木盒》上线</div>
+            <div class="d">与第 9 集《旧钥匙》共用同一地下室场景，墙面涂鸦新增两处符号。</div>
+          </div>
+          <span class="update-tag">正片</span>
+        </div>
+        <div class="update-item">
+          <div class="update-date"><b>10-20</b>2026</div>
+          <div class="update-main">
+            <div class="t">秋日特别篇《落叶邮局》发布</div>
+            <div class="d">15 分 03 秒，灵灵替三位访客寄信，片尾落叶声为实地录音。</div>
+          </div>
+          <span class="update-tag">特别篇</span>
+        </div>
+        <div class="update-item">
+          <div class="update-date"><b>10-15</b>2026</div>
+          <div class="update-main">
+            <div class="t">导演访谈：关于《雨停之前》的 11 秒空镜</div>
+            <div class="d">访谈 8 分钟，导演提到结尾剪了七版，最终选择不补台词。</div>
+          </div>
+          <span class="update-tag">访谈</span>
+        </div>
+        <div class="update-item">
+          <div class="update-date"><b>10-09</b>2026</div>
+          <div class="update-main">
+            <div class="t">《雨停之前》第二季第 12 集上线</div>
+            <div class="d">26 分钟，雨声贯穿全片，观众讨论集中在结尾灵灵是否听见访客最后一句话。</div>
+          </div>
+          <span class="update-tag">正片</span>
+        </div>
+        <div class="update-item">
+          <div class="update-date"><b>10-02</b>2026</div>
+          <div class="update-main">
+            <div class="t">《旧钥匙》第二季第 9 集上线</div>
+            <div class="d">生锈钥匙打开地下室，墙面涂鸦与第一季第 5 集背景画同源，引发截图比对。</div>
+          </div>
+          <span class="update-tag">正片</span>
+        </div>
+        <div class="update-item">
+          <div class="update-date"><b>09-26</b>2026</div>
+          <div class="update-main">
+            <div class="t">第二季角色关系图 v2 发布</div>
+            <div class="d">新增 6 位访客的关联线，树屋平面图标注三层空间与阁楼入口位置。</div>
+          </div>
+          <span class="update-tag">资料</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-head">
+        <h2>按内容类型查找</h2>
+        <span class="hint">8 个入口</span>
+      </div>
+      <div class="cat-grid">
+        <a href="/#featured" class="cat-item">
+          <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span>
+          <div class="cat-name">正片单集</div>
+          <div class="cat-cnt">26 集 · 两季</div>
+        </a>
+        <a href="/#updates" class="cat-item">
+          <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg></span>
+          <div class="cat-name">特别篇</div>
+          <div class="cat-cnt">8 部</div>
+        </a>
+        <a href="/#updates" class="cat-item">
+          <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 19V5a2 2 0 012-2h12a2 2 0 012 2v14M4 19h16M8 7h8M8 11h8"/></svg></span>
+          <div class="cat-name">幕后花絮</div>
+          <div class="cat-cnt">6 期</div>
+        </a>
+        <a href="/#deepread" class="cat-item">
+          <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+          <div class="cat-name">场景解析</div>
+          <div class="cat-cnt">树屋三层</div>
+        </a>
+        <a href="/#guide" class="cat-item">
+          <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>
+          <div class="cat-name">观看顺序</div>
+          <div class="cat-cnt">含番外</div>
+        </a>
+        <a href="/#rank" class="cat-item">
+          <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M8 21V9m8 12V3M4 21v-5m16 5V7"/></svg></span>
+          <div class="cat-name">单集榜单</div>
+          <div class="cat-cnt">热度前 8</div>
+        </a>
+        <a href="/#comments" class="cat-item">
+          <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+          <div class="cat-name">观众评论</div>
+          <div class="cat-cnt">16 条</div>
+        </a>
+        <a href="/#interact" class="cat-item">
+          <span class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></span>
+          <div class="cat-name">投稿笔记</div>
+          <div class="cat-cnt">开放中</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析 -->
+    <section class="section" id="deepread">
+      <div class="deep-read">
+        <h2>树屋空间、单集结构与灵灵的角色变化</h2>
+        <p>把两季 26 集按播出顺序连起来看，会发现系列把叙事重心放在「树屋内部空间」上。灵灵很少离开树屋，访客进进出出，故事靠谁上楼、谁停在门口、谁坐哪把椅子来区分。这种设计直接影响了单集结构，也解释了为什么《旧钥匙》和《木盒》能靠涂鸦细节串联。</p>
+
+        <h3>树屋三层与访客动线</h3>
+        <p>树屋分三层：一层是门厅与茶桌，二层是阁楼，地下室只在第二季出现。第一季前 6 集几乎只用到一层，第 7 集《木梯》第一次让访客上楼，镜头跟着木梯晃了 8 秒。第二季第 9 集《旧钥匙》打开地下室后，空间变成四层，但灵灵下楼的次数只有两次。</p>
+        <ul>
+          <li>一层门厅：第 1 集、第 4 集、第 11 集访客都坐在靠窗第二把椅子，剧组在分镜稿里标为「固定位」。</li>
+          <li>二层阁楼：第 7 集首次出现，第 14 集《雾岭回声》整集在此完成，收音机放在阁楼东侧木箱上。</li>
+          <li>地下室：第 9 集与第 13 集共用，墙面涂鸦从左到右分别是符号、手印、一行数字。</li>
+        </ul>
+        <p>空间限制带来的直接效果是，每集必须在 22 到 26 分钟内完成一次访客进出，节奏被压得很紧。第 12 集《雨停之前》是例外，雨把访客留住了，整集没有下楼动作，结尾才出现 11 秒空镜。</p>
+
+        <h3>单集结构与「一句话访客」规则</h3>
+        <p>系列早期定过一条规则：每位访客至少有一句话能单独拎出来当标题。第 1 集四位访客各留一句，第 5 集《旧画》只有一句「这画挂反了」，成为后续涂鸦线索的起点。第二季这条规则松动，第 12 集访客说了七句话，最后一句被雨声盖住，观众至今在争论内容。</p>
+        <blockquote>已公开事实：导演在 10 月 15 日访谈里确认，第 12 集结尾那句台词录了三版，最终版本「故意压到雨声下面」。<br>网友推测：观众逐帧放大字幕，认为口型对应「别找了」三个字，官方没有回应。</blockquote>
+        <p>规则松动带来的代价是单集辨识度下降。第二季第 10、11 集访客台词变多，讨论量明显低于第 9 集和第 12 集。观众反馈集中在「话多了反而不记得住」，制作组在花絮第 5 期里也承认这一点。</p>
+
+        <h3>灵灵的角色变化：从接待者到记录者</h3>
+        <p>第一季灵灵更像一个接待者，访客说完话就离开。第二季她开始记录：第 9 集把钥匙收进抽屉，第 13 集在墙面涂鸦旁添了一个小标记，第 14 集用收音机录下阁楼里的声音。记录动作变多，台词反而变少，第 14 集她只说 5 句话。</p>
+        <p>这个变化在配音上也有对应。花絮第 6 期里，配音演员提到第 14 集收音机独白录了 9 条，前 5 条偏「接待」语气，第 6 条之后改成更低的声线，最终采用第 7 条。第 7 条的换气位置比前几条更靠后，47 秒不换气，听起来像在自言自语。</p>
+        <p>记录者身份也把系列从单集独立故事推向轻连载。第 9、13、14 集之间的线索密度明显高于第一季，补系列的人如果跳集，容易错过抽屉标签、涂鸦符号和收音机频道数字这三处关联。这也是观看顺序板块要单独讲清楚的原因。</p>
+      </div>
+    </section>
+
+    <!-- 6. 观看顺序 / 体验指南 -->
+    <section class="section" id="guide">
+      <div class="section-head">
+        <h2>补系列的观看顺序与判断依据</h2>
+        <span class="hint">按线索密度排列</span>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="step-no">1</span>
+          <h4>先看第一季第 1、5、7 集</h4>
+          <p>第 1 集立住树屋门厅，第 5 集《旧画》埋下涂鸦线索，第 7 集《木梯》第一次打开二层。三集看完，空间结构就清楚了。</p>
+        </div>
+        <div class="guide-step">
+          <span class="step-no">2</span>
+          <h4>跳到第二季第 9、13 集</h4>
+          <p>《旧钥匙》和《木盒》共用地下室场景，先看第 9 集再看第 13 集，墙面涂鸦的新增符号才看得懂。</p>
+        </div>
+        <div class="guide-step">
+          <span class="step-no">3</span>
+          <h4>第 12 集《雨停之前》单独看</h4>
+          <p>这集几乎不依赖前史，结尾 11 秒空镜适合自己先看一遍，再去看导演访谈，避免先被解读带偏。</p>
+        </div>
+        <div class="guide-step">
+          <span class="step-no">4</span>
+          <h4>特别篇穿插在季节节点看</h4>
+          <p>《落叶邮局》放在 10 月看最合适，它与正片线索无关，是情绪补完。其他特别篇按角色生日对应月份看即可。</p>
+        </div>
+        <div class="guide-step">
+          <span class="step-no">5</span>
+          <h4>最后补第 14 集与花絮</h4>
+          <p>《雾岭回声》信息密度最高，放在熟悉空间结构之后看，收音机独白和抽屉标签的呼应才接得上。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>关于系列的常见问答</h2>
+        <span class="hint">6 个问题</span>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>第一季和第二季之间需要按顺序看吗？</summary>
+          <p class="faq-answer">第一季前 8 集基本独立，跳着看影响不大。第二季从第 9 集《旧钥匙》开始线索变密，第 9、13、14 集共用地窖与阁楼场景，建议按播出顺序看。第 12 集《雨停之前》可以单独看，但结尾留白最好先自己判断再去翻访谈。</p>
+        </details>
+        <details>
+          <summary>特别篇《落叶邮局》和正片剧情有关联吗？</summary>
+          <p class="faq-answer">关联很弱。特别篇里灵灵寄出的三封信没有指向正片任何角色，彩蛋里第四封信的抽屉标签「明年再拆」是目前唯一可能回收的伏笔。把它当季节限定短篇看更合适，时长 15 分 03 秒，片尾落叶声是实地录音。</p>
+        </details>
+        <details>
+          <summary>第二季第 14 集收音机里的频道数字有什么含义？</summary>
+          <p class="faq-answer">官方目前没有说明。第 14 集《雾岭回声》里收音机调到 87.6，这个数字在第 13 集《木盒》的墙面涂鸦里出现过一次。观众有两种说法：一种认为对应树屋建造年份，另一种认为只是录音时的实际频率。导演访谈没有回应，只有配音花絮提到台词录了 9 条。</p>
+        </details>
+        <details>
+          <summary>树屋地下室在第几集出现？</summary>
+          <p class="faq-answer">地下室首次出现在第二季第 9 集《旧钥匙》，灵灵用生锈钥匙打开。第 13 集《木盒》再次下到地下室，墙面涂鸦新增两处符号。第一季没有地下室场景，但第 5 集《旧画》背景里那幅画与地下室涂鸦同源，是补线索的关键一集。</p>
+        </details>
+        <details>
+          <summary>4K 修复版和原版有什么不同？</summary>
+          <p class="faq-answer">2026 年 11 月 5 日补档的修复版新增日语与粤语两条音轨，修正 14 处译名，第 3 集树屋平面图重绘。画面本身没有重新剪辑，时长与原版一致。想对比的话，第 3 集平面图是最容易看出差别的地方。</p>
+        </details>
+        <details>
+          <summary>灵灵在第二季为什么话变少了？</summary>
+          <p class="faq-answer">角色从接待者转向记录者，动作变多、台词变少。第 14 集她只说 5 句话，主要靠收音机独白推进。配音花絮第 6 期提到，后半段录制时刻意把声线压低，第 7 条备选的 47 秒不换气独白被采用，听感更接近自言自语。</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-head">
+        <h2>观众在说什么</h2>
+        <span class="hint">16 条 · 2026-10-12 至 2026-11-08</span>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#4b7a5b">阿</span><span class="nick">阿野</span><span class="time">11-08 22:14</span></div>
+          <p class="comment-text">第 14 集收音机独白那段，<em>47 秒不换气</em>，我反复听了三遍才发现第 7 条备选真的比前几条稳。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#c98a1b">木</span><span class="nick">木鱼不吃鱼</span><span class="time">11-08 20:02</span></div>
+          <p class="comment-text">87.6 这个数字到底啥意思，第 13 集涂鸦里也有。官方不解释我就当它是彩蛋了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#6b9b7a">小</span><span class="nick">小满</span><span class="time">11-07 23:41</span></div>
+          <p class="comment-text">落叶邮局加更那段彩蛋，抽屉标签「明年再拆」，我直接坐起来了。第四封信肯定是给第二季没出场的某个访客。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#8a6b3a">北</span><span class="nick">北山</span><span class="time">11-06 18:30</span></div>
+          <p class="comment-text">第一季 4K 修复版第 3 集平面图重绘了，原来阁楼入口位置画错了？我对比了一下确实不一样。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#5a7a9b">林</span><span class="nick">林间有雾</span><span class="time">11-05 12:08</span></div>
+          <p class="comment-text">雨停之前那 11 秒空镜，我第一遍看觉得是拖时间，第二遍看觉得就该停在那。导演说剪了七版，有点好奇另外六版长啥样。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#9b6b8a">晚</span><span class="nick">晚风</span><span class="time">11-04 21:55</span></div>
+          <p class="comment-text">第 10、11 集确实话太多，访客一人说七八句，看完记不住任何一个。第 9 集那种一句话访客反而有味道。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#3a6b4a">茶</span><span class="nick">茶桌第二把椅子</span><span class="time">11-03 09:12</span></div>
+          <p class="comment-text">注意到一层靠窗第二把椅子从第 1 集坐到现在，剧组分镜稿标「固定位」，这种细节比台词有用。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#b57a12">冬</span><span class="nick">冬眠的猫</span><span class="time">11-02 16:47</span></div>
+          <p class="comment-text">说实话第二季前几集我有点追不动，直到旧钥匙出来才重新上头。地下室一开，整个系列的空间感就不一样了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#6a7a5a">一</span><span class="nick">一只树懒</span><span class="time">10-30 13:20</span></div>
+          <p class="comment-text">配音花絮第 6 期值回票价，第 7 条换气位置真的不一样，前几条听起来像在念稿。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#7a5a8a">路</span><span class="nick">路过打酱油</span><span class="time">10-28 19:03</span></div>
+          <p class="comment-text">木盒这集涂鸦新符号，我截图和旧钥匙对比了，右边多了一个类似门的形状。不知道是巧合还是有意的。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#4a8a7a">南</span><span class="nick">南窗</span><span class="time">10-25 11:36</span></div>
+          <p class="comment-text">灵灵话变少我一开始不适应，后来觉得挺对的，她忙着记录，哪有空聊天。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#8a5a4a">七</span><span class="nick">七分糖</span><span class="time">10-22 20:41</span></div>
+          <p class="comment-text">落叶邮局片尾落叶声是实地录音？我在北方听了一整个秋天，确实像。特别篇比正片某些集数还耐看。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#5a6a9b">海</span><span class="nick">海盐汽水</span><span class="time">10-20 15:09</span></div>
+          <p class="comment-text">今天刚上线就看了，15 分钟有点短，不过彩蛋补了第四封信，算是有交代。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#9b8a3a">慢</span><span class="nick">慢半拍</span><span class="time">10-17 08:22</span></div>
+          <p class="comment-text">导演访谈里说结尾那句台词故意压到雨声下面，这操作有点狠。我回去又听了两遍，还是听不清。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#3a7a5a">青</span><span class="nick">青苔</span><span class="time">10-14 22:30</span></div>
+          <p class="comment-text">希望后面能出树屋平面图的高清版，现在网传那张分辨率太低了，看不清阁楼东侧到底放了几个木箱。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar" style="background:#8a4a5a">不</span><span class="nick">不熬夜了</span><span class="time">10-12 01:15</span></div>
+          <p class="comment-text">看完雨停之前失眠，不是吓的，是那个空镜让我一直在想他们到底说了什么。第二天上班困死了。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-head">
+        <h2>系列相关资讯</h2>
+        <span class="hint">6 条</span>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div>
+            <div class="nt">《雾岭回声》上线首日播放量破 120 万</div>
+            <div class="ns">11 月 8 日 21 时官方账号公布数据，比第 13 集《木盒》首日高 18%。评论区前 50 条有 31 条在讨论收音机频道数字。</div>
+          </div>
+          <span class="news-date">11-08</span>
+        </article>
+        <article class="news-item">
+          <div>
+            <div class="nt">第一季 4K 修复版补档，新增粤语与日语音轨</div>
+            <div class="ns">11 月 5 日完成，修正 14 处译名。第 3 集树屋平面图重绘后，阁楼入口位置与原版不同，已有观众上传对比截图。</div>
+          </div>
+          <span class="news-date">11-05</span>
+        </article>
+        <article class="news-item">
+          <div>
+            <div class="nt">配音花絮第 6 期公开 47 秒不换气独白备选</div>
+            <div class="ns">11 月 3 日放出 12 分钟花絮，9 条备选中第 7 条被采用。制作组提到第 6 条之后调整了声线位置。</div>
+          </div>
+          <span class="news-date">11-03</span>
+        </article>
+        <article class="news-item">
+          <div>
+            <div class="nt">《落叶邮局》加更彩蛋，第四封信标签「明年再拆」</div>
+            <div class="ns">11 月 7 日追加 47 秒，灵灵把没寄出的信放进抽屉。彩蛋未说明收信人，观众推测与第二季未出场访客有关。</div>
+          </div>
+          <span class="news-date">11-07</span>
+        </article>
+        <article class="news-item">
+          <div>
+            <div class="nt">导演访谈回应《雨停之前》结尾：剪了七版</div>
+            <div class="ns">10 月 15 日发布 8 分钟访谈，导演确认结尾台词录了三版，最终版本压到雨声下面，理由是「不想让答案太清楚」。</div>
+          </div>
+          <span class="news-date">10-15</span>
+        </article>
+        <article class="news-item">
+          <div>
+            <div class="nt">第二季角色关系图 v2 更新，新增 6 位访客关联线</div>
+            <div class="ns">9 月 26 日发布，平面图标注树屋三层空间与阁楼入口。地下室部分标注为「待第 13 集补充」，后续已更新。</div>
+          </div>
+          <span class="news-date">09-26</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="section" id="related">
+      <div class="section-head">
+        <h2>沿这些方向继续找</h2>
+        <span class="hint">8 个索引</span>
+      </div>
+      <div class="tag-index">
+        <a href="/#featured">旧钥匙涂鸦比对</a>
+        <a href="/#deepread">树屋三层平面图</a>
+        <a href="/#updates">落叶邮局彩蛋解析</a>
+        <a href="/#guide">第二季补看顺序</a>
+        <a href="/#comments">雨停之前结尾讨论</a>
+        <a href="/#updates">录音棚 47 秒独白</a>
+        <a href="/#rank">一句话访客单集榜</a>
+        <a href="/#interact">单集笔记投稿</a>
+      </div>
+    </section>
+
+    <!-- 11. 热门榜单 -->
+    <section class="section" id="rank">
+      <div class="section-head">
+        <h2>单集热度榜</h2>
+        <span class="hint">按 30 天讨论量</span>
+      </div>
+      <div class="rank-list">
+        <div class="rank-item"><span class="rank-no">1</span><div class="rank-main"><div class="rt">雾岭回声 · 第二季第 14 集</div><div class="rd">收音机独白 + 频道数字 87.6</div></div><span class="rank-val">9.6</span></div>
+        <div class="rank-item"><span class="rank-no">2</span><div class="rank-main"><div class="rt">落叶邮局 · 秋日特别篇</div><div class="rd">第四封信彩蛋 · 实地落叶录音</div></div><span class="rank-val">9.1</span></div>
+        <div class="rank-item"><span class="rank-no">3</span><div class="rank-main"><div class="rt">旧钥匙 · 第二季第 9 集</div><div class="rd">地下室首次出现 · 涂鸦同源</div></div><span class="rank-val">8.8</span></div>
+        <div class="rank-item"><span class="rank-no">4</span><div class="rank-main"><div class="rt">雨停之前 · 第二季第 12 集</div><div class="rd">11 秒空镜 · 台词压雨声</div></div><span class="rank-val">8.6</span></div>
+        <div class="rank-item"><span class="rank-no">5</span><div class="rank-main"><div class="rt">木盒 · 第二季第 13 集</div><div class="rd">墙面涂鸦新增两处符号</div></div><span class="rank-val">8.3</span></div>
+        <div class="rank-item"><span class="rank-no">6</span><div class="rank-main"><div class="rt">门铃响了 · 第一季第 1 集</div><div class="rd">系列起点 · 四位访客各一句</div></div><span class="rank-val">8.2</span></div>
+        <div class="rank-item"><span class="rank-no">7</span><div class="rank-main"><div class="rt">旧画 · 第一季第 5 集</div><div class="rd">「这画挂反了」· 涂鸦线索起点</div></div><span class="rank-val">7.9</span></div>
+        <div class="rank-item"><span class="rank-no">8</span><div class="rank-main"><div class="rt">木梯 · 第一季第 7 集</div><div class="rd">二层阁楼首次出现 · 8 秒跟拍</div></div><span class="rank-val">7.7</span></div>
+      </div>
+    </section>
+
+    <!-- 12. 投稿与互动 -->
+    <section class="section" id="interact">
+      <div class="section-head">
+        <h2>投稿你的单集笔记</h2>
+        <span class="hint">开放中</span>
+      </div>
+      <div class="interact-panel">
+        <div>
+          <h3>写写哪一集让你回看了三遍</h3>
+          <p>可以是一段台词、一个镜头、一处涂鸦细节。附上时间码和截图位置更好，编辑会按集数归档。投稿内容以单集观察为主，不接受纯情绪短评。</p>
+          <div class="interact-actions">
+            <a href="/#interact" class="btn-sm solid">提交笔记</a>
+            <a href="/#comments" class="btn-sm outline">先看别人的</a>
+          </div>
+        </div>
+        <div class="interact-stat">
+          <div><b>128</b><span>已收笔记</span></div>
+          <div><b>46</b><span>本周新增</span></div>
+          <div><b>19</b><span>覆盖集数</span></div>
+          <div><b>7</b><span>精选展示</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. 创作者证言 -->
+    <section class="section" id="quote">
+      <div class="section-head">
+        <h2>制作组一句话</h2>
+        <span class="hint">出自花絮与访谈</span>
+      </div>
+      <div class="quote-panel">
+        <p class="q-text">「第 14 集那段独白，我们希望听起来像一个人在自己跟自己说话。第 7 条之后，换气位置往后挪了一点，就对了。」</p>
+        <p class="q-author">—— 录音棚实录第 6 期，配音导演原话，2026 年 11 月 3 日</p>
+      </div>
+    </section>
+
+    <!-- 无结果提示 -->
+    <div class="no-result" id="noResult">没有找到匹配的单集或标签，换个关键词试试，比如「旧钥匙」「落叶邮局」「雾岭回声」。</div>
+
+  </main>
+</div>
+
+<!-- 回到顶部 -->
+<button class="to-top" id="toTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ===== 页脚 ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="f-logo">
+          <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
+            <rect width="100" height="100" rx="22" fill="#3a6b4a"/>
+            <path d="M20 62 L50 28 L80 62 Z" fill="#f5d98b"/>
+            <rect x="42" y="62" width="16" height="18" rx="3" fill="#e8b84b"/>
+          </svg>
+          <span class="logo-text">树屋轻调灵灵全集</span>
+        </div>
+        <p>内容覆盖 2025 年 9 月第一季开播至 2026 年 11 月 8 日第二季第 14 集，条目类型包含正片、特别篇、幕后花絮、导演访谈与角色资料。更新节奏跟随播出，正片上线当天补档，花絮与访谈延后 1 至 3 天。</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>系列内容</h4>
+          <ul>
+            <li><a href="/#overview">系列概览</a></li>
+            <li><a href="/#featured">精选单集</a></li>
+            <li><a href="/#updates">更新动态</a></li>
+            <li><a href="/#rank">单集热度榜</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>观看辅助</h4>
+          <ul>
+            <li><a href="/#guide">观看顺序</a></li>
+            <li><a href="/#faq">常见问答</a></li>
+            <li><a href="/#deepread">深度解析</a></li>
+            <li><a href="/#related">方向索引</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>互动与投稿</h4>
+          <ul>
+            <li><a href="/#comments">观众评论</a></li>
+            <li><a href="/#interact">单集笔记投稿</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#quote">制作组一句话</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>页面内容为示例条目聚合，单集名称、日期与数据用于展示结构，非官方发布信息。版权归原制作方所有。</span>
+      <span>最近核对：2026-11-08 · 对应《雾岭回声》第 14 集上线</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WebSite 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"树屋轻调灵灵全集",
+  "description":"树屋轻调灵灵系列正片、特别篇、幕后花絮与观众讨论的内容聚合，按播出顺序整理单集看点与观看顺序。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<!-- FAQPage 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"第一季和第二季之间需要按顺序看吗？","acceptedAnswer":{"@type":"Answer","text":"第一季前 8 集基本独立，跳着看影响不大。第二季从第 9 集《旧钥匙》开始线索变密，第 9、13、14 集共用地窖与阁楼场景，建议按播出顺序看。"}},
+    {"@type":"Question","name":"特别篇《落叶邮局》和正片剧情有关联吗？","acceptedAnswer":{"@type":"Answer","text":"关联很弱。特别篇里灵灵寄出的三封信没有指向正片任何角色，彩蛋里第四封信的抽屉标签「明年再拆」是目前唯一可能回收的伏笔。"}},
+    {"@type":"Question","name":"第二季第 14 集收音机里的频道数字有什么含义？","acceptedAnswer":{"@type":"Answer","text":"官方目前没有说明。第 14 集《雾岭回声》里收音机调到 87.6，这个数字在第 13 集《木盒》的墙面涂鸦里出现过一次，观众有两种不同推测。"}},
+    {"@type":"Question","name":"树屋地下室在第几集出现？","acceptedAnswer":{"@type":"Answer","text":"地下室首次出现在第二季第 9 集《旧钥匙》，第 13 集《木盒》再次下到地下室，墙面涂鸦新增两处符号。第一季没有地下室场景。"}},
+    {"@type":"Question","name":"4K 修复版和原版有什么不同？","acceptedAnswer":{"@type":"Answer","text":"2026 年 11 月 5 日补档的修复版新增日语与粤语两条音轨，修正 14 处译名，第 3 集树屋平面图重绘，画面本身没有重新剪辑。"}},
+    {"@type":"Question","name":"灵灵在第二季为什么话变少了？","acceptedAnswer":{"@type":"Answer","text":"角色从接待者转向记录者，动作变多、台词变少。第 14 集她只说 5 句话，主要靠收音机独白推进，配音花絮第 6 期提到声线刻意压低。"}}
+  ]
+}
+</script>
+
+<script>
+(function(){
+  // 移动端菜单
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  var mask = document.getElementById('mobileMask');
+
+  function openMenu(){
+    mobileNav.classList.add('show');
+    mask.classList.add('show');
+    hamburger.setAttribute('aria-expanded','true');
+  }
+  function closeMenu(){
+    mobileNav.classList.remove('show');
+    mask.classList.remove('show');
+    hamburger.setAttribute('aria-expanded','false');
+  }
+  hamburger.addEventListener('click', function(){
+    if(mobileNav.classList.contains('show')){ closeMenu(); } else { openMenu(); }
+  });
+  mask.addEventListener('click', closeMenu);
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mobileNav.classList.contains('show')){ closeMenu(); }
+  });
+
+  // 搜索：简单本地筛选（对单集卡片标题与标签、更新条目、推荐标签）
+  var searchInput = document.getElementById('searchInput');
+  var searchBtn = document.getElementById('searchBtn');
+  var noResult = document.getElementById('noResult');
+  var cards = document.querySelectorAll('.content-card');
+  var updates = document.querySelectorAll('.update-item');
+  var rankItems = document.querySelectorAll('.rank-item');
+
+  function doSearch(){
+    var q = (searchInput.value || '').trim();
+    if(!q){
+      cards.forEach(function(c){ c.style.display=''; });
+      updates.forEach(function(u){ u.style.display=''; });
+      rankItems.forEach(function(r){ r.style.display=''; });
+      noResult.classList.remove('show');
+      return;
+    }
+    var lower = q.toLowerCase();
+    var any = false;
+    cards.forEach(function(c){
+      var txt = c.textContent.toLowerCase();
+      var hit = txt.indexOf(lower) > -1;
+      c.style.display = hit ? '' : 'none';
+      if(hit) any = true;
+    });
+    updates.forEach(function(u){
+      var txt = u.textContent.toLowerCase();
+      var hit = txt.indexOf(lower) > -1;
+      u.style.display = hit ? '' : 'none';
+      if(hit) any = true;
+    });
+    rankItems.forEach(function(r){
+      var txt = r.textContent.toLowerCase();
+      var hit = txt.indexOf(lower) > -1;
+      r.style.display = hit ? '' : 'none';
+      if(hit) any = true;
+    });
+    noResult.classList.toggle('show', !any);
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+  });
+
+  // 回到顶部
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > window.innerHeight * 0.8){
+      toTop.classList.add('show');
+    } else {
+      toTop.classList.remove('show');
+    }
+    // 侧栏高亮
+    highlightRail();
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 侧栏高亮
+  var railLinks = document.querySelectorAll('.rail-nav li a');
+  var sections = [];
+  railLinks.forEach(function(link){
+    var href = link.getAttribute('href');
+    if(href && href.indexOf('/#') === 0){
+      var id = href.slice(2);
+      var el = document.getElementById(id);
+      if(el) sections.push({el:el, link:link});
+    }
+  });
+  function highlightRail(){
+    var scrollPos = window.scrollY + 140;
+    var current = null;
+    sections.forEach(function(s){
+      if(s.el.offsetTop <= scrollPos) current = s;
+    });
+    railLinks.forEach(function(l){ l.classList.remove('active'); });
+    if(current) current.link.classList.add('active');
+  }
+  highlightRail();
+})();
+</script>
+</body>
+          </html>
