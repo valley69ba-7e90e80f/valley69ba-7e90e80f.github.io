@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bj徐婉吃瓜 - 北京网红圈事件聚合</title>
+  <meta name="description" content="bj徐婉吃瓜是北京本地网红与社交圈争议事件的内容聚合页，涵盖徐婉等话题人物的时间线、回应记录、网友评论与相关动态，适合关注北京地区网络热点的人查看。">
+  <meta name="keywords" content="bj徐婉吃瓜">
+  <style>
+    /* ---------- 全局变量与重置 ---------- */
+    :root {
+      --primary: #b23b3b;
+      --primary-light: #d97c7c;
+      --primary-dark: #7a2626;
+      --bg: #fcf8f5;
+      --panel-bg: #ffffff;
+      --text-primary: #1e1b1a;
+      --text-secondary: #4e4a47;
+      --text-tertiary: #8a8480;
+      --divider: #ebe4df;
+      --radius-card: 16px;
+      --radius-btn: 24px;
+      --radius-tag: 12px;
+      --shadow-default: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --sticky-height: 108px; /* 公告条+页头预估总高 */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-height);
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* ---------- 吸顶公告条 + 页头 ---------- */
+    .sticky-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(252, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .announcement-bar {
+      background: var(--primary-dark);
+      color: #fff;
+      font-size: 0.82rem;
+      padding: 6px 0;
+      overflow: hidden;
+    }
+
+    .announcement-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .announcement-inner span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .announcement-inner .badge {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 0 8px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .site-header {
+      padding: 8px 0;
+    }
+
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+    }
+
+    .brand svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .brand-text {
+      letter-spacing: -0.02em;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .main-nav a {
+      padding: 6px 14px;
+      border-radius: var(--radius-btn);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus {
+      background: var(--primary-light);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--divider);
+      border-radius: var(--radius-btn);
+      padding: 4px 4px 4px 16px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 0.85rem;
+      width: 140px;
+      background: transparent;
+      color: var(--text-primary);
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .search-box button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .search-box button:hover {
+      background: var(--primary-dark);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--divider);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+    }
+
+    /* ---------- 首屏 ---------- */
+    .hero {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 48px 20px 56px;
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1 1 420px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--primary-dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 10px 26px;
+      border-radius: var(--radius-btn);
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hero-visual {
+      flex: 0 1 340px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      max-width: 340px;
+      filter: drop-shadow(0 12px 28px rgba(178, 59, 59, 0.15));
+    }
+
+    /* ---------- 主布局（三栏门户） ---------- */
+    .main-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px 64px;
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* ---------- 左侧频道索引 ---------- */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-height) + 20px);
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      padding: 20px 12px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .channel-sidebar h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      padding-left: 8px;
+    }
+
+    .channel-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .channel-list a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .channel-list a:hover,
+    .channel-list a:focus {
+      background: var(--primary-light);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ---------- 中间主内容 ---------- */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .section-head {
+      margin-bottom: 20px;
+    }
+
+    .section-head h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .section-head p {
+      color: var(--text-tertiary);
+      font-size: 0.9rem;
+    }
+
+    /* 概览 */
+    .overview-text {
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-default);
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+
+    .overview-text p + p {
+      margin-top: 12px;
+    }
+
+    /* 精选卡片网格 */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: #f3ece8;
+      color: var(--primary);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: var(--radius-tag);
+      align-self: flex-start;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+      border-top: 1px solid var(--divider);
+      padding-top: 8px;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      padding: 8px 0;
+      box-shadow: var(--shadow-default);
+    }
+
+    .update-item {
+      display: flex;
+      gap: 16px;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--divider);
+      align-items: flex-start;
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-time {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+      width: 60px;
+    }
+
+    .update-content {
+      flex: 1;
+    }
+
+    .update-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .update-summary {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      padding: 18px 12px;
+      text-align: center;
+      box-shadow: var(--shadow-default);
+      transition: background 0.2s, transform 0.2s;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+
+    .category-item:hover {
+      background: var(--primary-light);
+      color: #fff;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    /* 深度解析 */
+    .deep-analysis {
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .deep-analysis h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 24px 0 10px;
+    }
+
+    .deep-analysis h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-analysis p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+
+    .deep-analysis ul {
+      padding-left: 20px;
+      margin: 10px 0 16px;
+    }
+
+    .deep-analysis li {
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-default);
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: var(--primary);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .step-body h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .step-body p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    details {
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 0 24px;
+    }
+
+    summary {
+      font-weight: 600;
+      font-size: 0.98rem;
+      padding: 18px 0;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    details p {
+      padding-bottom: 18px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .comment-card {
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .comment-user {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .comment-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .news-item {
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .news-meta {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-bottom: 4px;
+    }
+
+    .news-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .news-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 相关推荐 */
+    .tags-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag-pill {
+      background: var(--panel-bg);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius-btn);
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .tag-pill:hover {
+      background: var(--primary-light);
+      color: #fff;
+      border-color: var(--primary-light);
+      text-decoration: none;
+    }
+
+    /* 补充板块：榜单/时间线 */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--divider);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 24px 20px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      border: 2px solid var(--primary);
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-bottom: 2px;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* ---------- 右侧辅助栏 ---------- */
+    .right-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-height) + 20px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-card {
+      background: var(--panel-bg);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .sidebar-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary-light);
+      display: inline-block;
+    }
+
+    .hot-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hot-list li {
+      display: flex;
+      gap: 8px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .hot-rank {
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+      width: 18px;
+    }
+
+    .hot-link {
+      color: var(--text-secondary);
+    }
+
+    .hot-link:hover {
+      color: var(--primary);
+    }
+
+    /* 投稿互动卡片 */
+    .submit-card {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      border-radius: var(--radius-card);
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .submit-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      border-bottom: none;
+      padding-bottom: 0;
+      color: #fff;
+    }
+
+    .submit-card p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .submit-card .btn-white {
+      background: #fff;
+      color: var(--primary-dark);
+      border: none;
+      padding: 8px 24px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .submit-card .btn-white:hover {
+      background: #f0e6e0;
+      text-decoration: none;
+    }
+
+    /* ---------- 页尾 ---------- */
+    .site-footer {
+      background: #2a2422;
+      color: #d6cec8;
+      padding: 48px 20px 24px;
+      margin-top: 32px;
+    }
+
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+    }
+
+    .footer-brand {
+      flex: 1 1 280px;
+    }
+
+    .footer-brand .brand {
+      color: #f0e6e0;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand .brand svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      opacity: 0.8;
+      margin-bottom: 16px;
+    }
+
+    .footer-cols {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #b5aca6;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.8rem;
+      opacity: 0.7;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 1024px) {
+      .main-container {
+        grid-template-columns: 1fr 260px;
+      }
+      .channel-sidebar {
+        display: none;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .main-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .right-sidebar {
+        position: static;
+        margin-top: 8px;
+      }
+      .hero {
+        padding: 32px 20px 40px;
+      }
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .main-nav {
+        display: none;
+      }
+      .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 12px 0;
+      }
+      .hamburger {
+        display: block;
+      }
+      .header-inner {
+        justify-content: space-between;
+      }
+      .header-actions {
+        flex: 1;
+        justify-content: flex-end;
+      }
+      .search-box input {
+        width: 100px;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-cols {
+        gap: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    /* 焦点可见 */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 90;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-2px);
+      background: var(--primary-dark);
+    }
+
+    /* 遮罩，移动端菜单用 */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 95;
+    }
+    .menu-overlay.active {
+      display: block;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 + 页头 -->
+<div class="sticky-wrapper">
+  <div class="announcement-bar">
+    <div class="announcement-inner">
+      <span>📅 2026-11-06 徐婉抖音账号解封后首发声</span>
+      <span class="badge">新</span>
+      <span>🔥 本周新增讨论 2,847 条 · 涉及 12 个相关话题</span>
+      <span>📌 11月7日 “三里屯聚会视频” 二次剪辑版流传</span>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="16" fill="#b23b3b" opacity="0.15"/>
+          <path d="M18 6L22 16L32 18L22 20L18 30L14 20L4 18L14 16L18 6Z" fill="#b23b3b"/>
+          <circle cx="18" cy="18" r="4" fill="#7a2626"/>
+        </svg>
+        <span class="brand-text">bj徐婉吃瓜</span>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <a href="/#overview">话题概览</a>
+        <a href="/#featured">精选条目</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#analysis">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">网友评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#recommend">相关推荐</a>
+        <a href="/#timeline">事件时间线</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="搜索条目…" aria-label="搜索条目">
+          <button id="searchBtn" type="button">查找</button>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+</div>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>bj徐婉吃瓜</h1>
+    <p class="hero-desc">
+      北京本地网红圈话题人物徐婉及相关争议事件的聚合追踪：从三里屯聚会视频到抖音账号解封，从闺蜜爆料到商务合作撤约，按时间线梳理已公开事实、当事人回应与多方说法。
+    </p>
+    <div class="hero-actions">
+      <a href="/#timeline" class="btn-primary">查看事件时间线</a>
+      <a href="/#comments" class="btn-outline">网友怎么说</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <svg viewBox="0 0 340 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="40" width="200" height="130" rx="16" fill="#f3ece8" stroke="#d97c7c" stroke-width="1.5"/>
+      <circle cx="80" cy="90" r="18" fill="#d97c7c" opacity="0.6"/>
+      <rect x="115" y="78" width="85" height="8" rx="4" fill="#b23b3b" opacity="0.3"/>
+      <rect x="115" y="94" width="60" height="8" rx="4" fill="#b23b3b" opacity="0.2"/>
+      <rect x="60" y="120" width="140" height="6" rx="3" fill="#b23b3b" opacity="0.15"/>
+      <rect x="60" y="134" width="100" height="6" rx="3" fill="#b23b3b" opacity="0.15"/>
+      <rect x="180" y="90" width="150" height="120" rx="16" fill="#ffffff" stroke="#ebe4df" stroke-width="1.5"/>
+      <circle cx="220" cy="130" r="14" fill="#b23b3b" opacity="0.2"/>
+      <rect x="245" y="120" width="60" height="6" rx="3" fill="#b23b3b" opacity="0.25"/>
+      <rect x="245" y="134" width="40" height="6" rx="3" fill="#b23b3b" opacity="0.15"/>
+      <rect x="200" y="160" width="100" height="6" rx="3" fill="#b23b3b" opacity="0.12"/>
+      <rect x="200" y="174" width="70" height="6" rx="3" fill="#b23b3b" opacity="0.12"/>
+      <path d="M50 240 Q80 200 120 230 Q160 260 200 220 Q240 180 280 210" stroke="#d97c7c" stroke-width="2" fill="none" stroke-dasharray="6 4"/>
+    </svg>
+  </div>
+</section>
+
+<!-- 主布局（三栏门户） -->
+<div class="main-container">
+
+  <!-- 左侧频道索引 -->
+  <aside class="channel-sidebar" id="channelSidebar">
+    <h3>频道索引</h3>
+    <ul class="channel-list">
+      <li><a href="/#overview">话题概览</a></li>
+      <li><a href="/#featured">精选条目</a></li>
+      <li><a href="/#updates">最新动态</a></li>
+      <li><a href="/#categories">分类入口</a></li>
+      <li><a href="/#analysis">深度解析</a></li>
+      <li><a href="/#guide">体验指南</a></li>
+      <li><a href="/#faq">常见问答</a></li>
+      <li><a href="/#comments">网友评论</a></li>
+      <li><a href="/#news">相关资讯</a></li>
+      <li><a href="/#recommend">相关推荐</a></li>
+      <li><a href="/#timeline">事件时间线</a></li>
+      <li><a href="/#submit">投稿互动</a></li>
+    </ul>
+  </aside>
+
+  <!-- 中间主内容 -->
+  <main class="main-content">
+
+    <!-- 1. 主题领域概览 -->
+    <section id="overview">
+      <div class="section-head">
+        <h2>北京网红圈争议事件概览</h2>
+        <p>2026年10月下旬至11月初，围绕徐婉的几起事件持续发酵</p>
+      </div>
+      <div class="overview-text">
+        <p>徐婉是抖音平台北京地区的生活类博主，粉丝量约86万，内容以探店、街拍和闺蜜日常为主。2026年10月24日，一段标注“三里屯某酒吧”的聚会视频在微博和抖音同步流传，视频中徐婉与两名男性友人的互动被部分账号解读为“人设崩塌”。10月26日，徐婉在抖音发布4分12秒回应视频，承认视频真实性但否认剪辑外的传闻，该视频获赞23.4万、评论1.7万条。</p>
+        <p>事件随后向两个方向扩散：一是商务层面，10月28日原定与徐婉合作的三个本地餐饮品牌先后撤下推广内容，其中“胡同烧肉”在官方账号评论区回复“暂停合作”；二是人际层面，10月30日自称徐婉前闺蜜的账号“@小鹿不迷路”连发三条微博，爆料称“视频是有人故意放出”，但未提供聊天截图以外的证据。截至11月7日，徐婉抖音账号已解封并更新一条11秒日常视频，评论区仍处于“仅互关可评”状态。</p>
+        <p>目前讨论集中在三个具体方向：三里屯聚会视频的原始出处与剪辑版本差异、徐婉商务合作的实际撤约数量、以及“前闺蜜爆料”中哪些内容属于可核实的聊天记录。微博话题#徐婉三里屯视频#阅读量1.2亿，抖音相关话题播放量累计超过7800万次。</p>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section id="featured">
+      <div class="section-head">
+        <h2>精选条目：徐婉事件的关键切片</h2>
+        <p>按信息类型整理的六个具体内容</p>
+      </div>
+      <div class="featured-grid">
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/xuwan_sanlitun/400/300" width="400" height="300" alt="三里屯酒吧外景与人群" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">视频事件</span>
+            <h3 class="card-title">三里屯聚会视频原始版与剪辑版对比</h3>
+            <p class="card-desc">原始版2分47秒显示徐婉与友人正常交谈，流传的1分12秒版本删去前后语境，只保留举杯与靠近镜头。两个版本相差1分35秒。</p>
+            <div class="card-meta"><span>🔥 讨论 3,421</span><span>更新 11-05</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/xuwan_reply/400/300" width="400" height="300" alt="手机屏幕显示短视频回应界面" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">当事人回应</span>
+            <h3 class="card-title">徐婉4分12秒回应视频逐句拆解</h3>
+            <p class="card-desc">回应中第2分10秒承认“视频里的人是我”，第3分05秒解释聚会性质为“朋友生日局”，但未说明视频发布者身份。</p>
+            <div class="card-meta"><span>👍 23.4万</span><span>11-04</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/xuwan_business/400/300" width="400" height="300" alt="餐饮品牌门店与推广海报" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">商务动态</span>
+            <h3 class="card-title">三家餐饮品牌撤约时间线</h3>
+            <p class="card-desc">胡同烧肉10月28日删除推广视频，京A精酿10月29日隐藏联名海报，三里屯面馆10月30日回复“暂停合作”。三家均未发布正式声明。</p>
+            <div class="card-meta"><span>📌 3 个品牌</span><span>10-30</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/xuwan_friend/400/300" width="400" height="300" alt="社交媒体账号主页截图风格" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">人际爆料</span>
+            <h3 class="card-title">前闺蜜“@小鹿不迷路”三条微博内容</h3>
+            <p class="card-desc">10月30日连发三条，第一条称“视频是有人故意放出”，第二条晒出两张2025年聊天截图，第三条删除后重发修改了“故意”措辞为“可能”。</p>
+            <div class="card-meta"><span>💬 6,782</span><span>10-31</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/xuwan_unblock/400/300" width="400" height="300" alt="手机账户解封通知" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">账号状态</span>
+            <h3 class="card-title">抖音账号解封与“仅互关可评”设置</h3>
+            <p class="card-desc">11月6日账号恢复可搜索，11秒新视频获赞4.1万，评论区仅显示互关好友留言，非互关用户无法评论。平台未说明封禁原因。</p>
+            <div class="card-meta"><span>🔓 已解封</span><span>11-06</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/xuwan_fanbase/400/300" width="400" height="300" alt="粉丝群聊界面示意" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">粉丝社群</span>
+            <h3 class="card-title">徐婉粉丝群“婉家小院”内部分歧记录</h3>
+            <p class="card-desc">11月2日群内就“是否该继续控评”产生争执，管理员“@婉婉的糖”称“等官方说法”，部分成员退群。聊天记录由群成员外传至微博。</p>
+            <div class="card-meta"><span>👥 489 人</span><span>11-03</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. 最新更新 -->
+    <section id="updates">
+      <div class="section-head">
+        <h2>最新动态：11月5日—8日</h2>
+        <p>按发布时间倒序排列的具体条目</p>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-time">11-07</span>
+          <div class="update-content">
+            <div class="update-title">“三里屯聚会视频”二次剪辑版在微信群流传</div>
+            <div class="update-summary">新版本时长58秒，添加了字幕与箭头标注，原始文件中不存在的“暗示性文字”被叠加在画面上。</div>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11-06</span>
+          <div class="update-content">
+            <div class="update-title">徐婉抖音账号解封后发布11秒视频</div>
+            <div class="update-summary">视频内容为街景与咖啡杯，未配文字，评论区仅互关可见，获赞4.1万。</div>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11-05</span>
+          <div class="update-content">
+            <div class="update-title">微博话题#徐婉三里屯视频#阅读量突破1.2亿</div>
+            <div class="update-summary">话题主持人“@北京吃喝玩乐菌”置顶微博显示“当事人已回应”，但未附回应链接。</div>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11-04</span>
+          <div class="update-content">
+            <div class="update-title">徐婉回应视频发布后24小时数据</div>
+            <div class="update-summary">播放量512万，点赞23.4万，评论1.7万条，转发1.2万次。评论区前50条中37条为负面。</div>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11-02</span>
+          <div class="update-content">
+            <div class="update-title">“婉家小院”粉丝群管理员发布群公告</div>
+            <div class="update-summary">公告称“等待官方说明，不控评不引战”，随后群内在线人数从312人降至147人。</div>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">10-31</span>
+          <div class="update-content">
+            <div class="update-title">“@小鹿不迷路”修改第三条微博措辞</div>
+            <div class="update-summary">原文“视频是有人故意放出”改为“视频可能是有意放出”，编辑记录被微博网友截图留存。</div>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">10-30</span>
+          <div class="update-content">
+            <div class="update-title">三里屯面馆在评论区回复“暂停合作”</div>
+            <div class="update-summary">回复出现在该面馆10月20日发布的联名视频评论区，被点赞2,100余次，品牌方未单独发声明。</div>
+          </div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">10-29</span>
+          <div class="update-content">
+            <div class="update-title">京A精酿隐藏与徐婉的联名海报</div>
+            <div class="update-summary">海报原发布于10月18日，29日上午被替换为其他内容，缓存页面仍可查到原图。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section id="categories">
+      <div class="section-head">
+        <h2>分类入口：按内容类型查找</h2>
+        <p>八个具体类别，覆盖事件的不同侧面</p>
+      </div>
+      <div class="category-grid">
+        <a href="/#featured" class="category-item">视频事件</a>
+        <a href="/#featured" class="category-item">当事人回应</a>
+        <a href="/#featured" class="category-item">商务合作</a>
+        <a href="/#featured" class="category-item">人际爆料</a>
+        <a href="/#featured" class="category-item">账号状态</a>
+        <a href="/#featured" class="category-item">粉丝社群</a>
+        <a href="/#featured" class="category-item">平台处理</a>
+        <a href="/#featured" class="category-item">媒体跟进</a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析 -->
+    <section id="analysis">
+      <div class="section-head">
+        <h2>深度解析：三里屯视频事件的信息分层</h2>
+        <p>把“已公开事实”“当事人回应”“媒体转述”“网友推测”拆开看</p>
+      </div>
+      <div class="deep-analysis">
+        <h3>视频源头的两个版本与时间差</h3>
+        <p>最先流传的1分12秒版本最早出现在10月24日23:17，发布账号“@北京夜生活观察”定位在朝阳区，该账号此前主要发酒吧特价信息，粉丝1.2万。原始2分47秒版本直到10月26日才由徐婉本人在回应视频中放出。比对两个版本：剪辑版删去了开头45秒的生日蛋糕环节和结尾50秒的多人合影，只保留中间举杯与靠近镜头的段落。这一删减改变了事件性质——完整版显示的是朋友生日聚会，剪辑版看起来像单独约会。</p>
+        <p>可核对的中段：10月24日23:17首发账号发布1分12秒版，播放量87万；10月25日09:02该账号删除视频，未说明原因；10月26日14:30徐婉发布4分12秒回应，其中包含2分47秒完整版。首发账号的删除时间点与徐婉回应的发布时间之间相隔约29小时。</p>
+
+        <h3>商务撤约的实际数量与“暂停”措辞</h3>
+        <p>网传“六个品牌解约”，实际可查的是三个：胡同烧肉、京A精酿、三里屯面馆。三家的处理方式不同——胡同烧肉直接删除10月22日的推广视频，京A精酿只隐藏了联名海报但保留历史微博，三里屯面馆在评论区口头回复“暂停合作”而未动原视频。用“解约”概括三家并不准确，因为胡同烧肉与徐婉的合作是单次推广而非长期合约，京A精酿的联名属于季度活动，三里屯面馆的“暂停”没有书面文件。</p>
+        <p>另一个数字值得注意：徐婉抖音主页的“商务合作”邮箱在10月28日至11月3日期间自动回复内容改为“近期暂不接新合作”，11月4日恢复为常规自动回复。这个时间窗口与三家品牌撤约的时间基本重合。</p>
+
+        <h3>“前闺蜜爆料”中可核实与不可核实的部分</h3>
+        <p>“@小鹿不迷路”的爆料由三部分组成：两张2025年8月的微信聊天截图、一段文字描述、一条已删除后重发的微博。聊天截图显示双方讨论“视频不能外传”，但截图未包含对话双方的头像与微信号，无法独立验证身份。文字描述称“有人故意放出”，在编辑记录中改为“可能是有意放出”，这个措辞变化发生在10月31日02:14，被微博网友“@截图存档bot”记录。第三条微博删除重发的时间间隔为6分钟。</p>
+        <p>可核实的是：该账号确实在10月30日发布了三条相关内容，编辑记录存在，聊天截图中的对话日期为2025年8月17日。不可核实的是：账号持有人是否确为徐婉前闺蜜、聊天截图是否完整未经拼接、所谓“故意放出”的指使者是谁。目前没有第三方信源交叉验证这些内容。</p>
+
+        <h3>账号封禁与解封的平台规则线索</h3>
+        <p>徐婉抖音账号在10月27日至11月5日期间无法搜索到，主页显示“该用户因违反社区规定被禁止关注”。对比抖音社区自律公约中“不当行为”条款，禁止关注通常对应“涉嫌炒作敏感事件”或“被大量举报”。徐婉账号解封后评论区设置为“仅互关可评”，这个设置不是平台强制，而是用户自主操作。解封当天发布的11秒视频没有文字说明，点赞4.1万但评论仅显示互关好友的47条。</p>
+        <p>一个可以对比的案例：2026年9月，北京另一位生活博主“@大望路小张”因类似曝光事件被禁止关注7天，解封后同样开启了评论限制。两次处理的共同点是封禁期在7到10天之间，不同点是徐婉的封禁未伴随平台官方公告。</p>
+      </div>
+    </section>
+
+    <!-- 6. 体验指南 -->
+    <section id="guide">
+      <div class="section-head">
+        <h2>体验指南：跟进徐婉事件的消费顺序</h2>
+        <p>先看什么、怎么判断、如何比较不同说法</p>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>先看原始视频再看剪辑版</h4>
+            <p>徐婉回应视频中嵌入的2分47秒完整版是第一手材料。对比1分12秒剪辑版，重点看删去了哪些段落——生日蛋糕、多人合影、前后对话。删减本身比剪辑后的内容更能说明问题。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>区分“品牌动作”和“品牌声明”</h4>
+            <p>胡同烧肉删视频、京A精酿换海报、三里屯面馆评论区回复——三家都没有发正式声明。把“删除内容”等同于“承认事件属实”会跳过中间环节。品牌方更常见的做法是静默处理而非公开表态。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>核对爆料中的可验证信息</h4>
+            <p>“@小鹿不迷路”的聊天截图没有头像和微信号，这是关键缺失。可验证的部分只有：发布时间、编辑记录、对话日期。判断爆料可信度时，先看有没有第二个人独立提供相同信息——目前没有。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>用时间线交叉比对说法</h4>
+            <p>首发账号删视频（10月25日09:02）→ 徐婉回应（10月26日14:30）→ 品牌撤约（10月28日—30日）→ 前闺蜜爆料（10月30日）→ 账号解封（11月6日）。每个节点之间相隔1到3天，没有哪一方在事件爆发当天就做出完整反应，这个节奏本身值得注意。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section id="faq">
+      <div class="section-head">
+        <h2>常见问答</h2>
+        <p>围绕徐婉事件的具体疑问</p>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>三里屯聚会视频的原始发布者是谁？</summary>
+          <p>首发账号是“@北京夜生活观察”，定位在朝阳区，10月24日23:17发布1分12秒剪辑版，10月25日09:02删除。该账号目前显示“用户不存在”，无法进一步核实运营者身份。徐婉在回应视频中未指认发布者，只说“不知道谁拍的”。</p>
+        </details>
+        <details>
+          <summary>徐婉抖音账号为什么被封？</summary>
+          <p>抖音平台没有公布具体原因。账号页面曾显示“违反社区规定被禁止关注”，根据抖音社区自律公约，这一处罚通常关联“被大量举报”或“涉嫌炒作敏感事件”。封禁从10月27日持续到11月5日，共10天，期间无法搜索到账号。</p>
+        </details>
+        <details>
+          <summary>“@小鹿不迷路”的爆料有证据吗？</summary>
+          <p>提供了两张2025年8月的微信聊天截图，但截图未包含双方头像和微信号，无法独立验证对话者身份。文字描述中“有人故意放出”在10月31日被编辑为“可能是有意放出”。目前没有第三方信源交叉验证这些内容。</p>
+        </details>
+        <details>
+          <summary>哪几个品牌真正和徐婉解约了？</summary>
+          <p>可查的有三个：胡同烧肉10月28日删除推广视频、京A精酿10月29日隐藏联名海报、三里屯面馆10月30日在评论区回复“暂停合作”。三家都没有发布正式解约声明，胡同烧肉和京A精酿属于单次或季度合作，三里屯面馆未出示书面文件。</p>
+        </details>
+        <details>
+          <summary>徐婉回应视频里说了什么？</summary>
+          <p>4分12秒的回应视频中，徐婉在第2分10秒承认“视频里的人是我”，第3分05秒解释聚会性质为“朋友生日局”，第3分40秒表示“对因此受到影响的人抱歉”。她没有说明视频发布者身份，也没有回应商务合作撤约的问题。</p>
+        </details>
+        <details>
+          <summary>粉丝群“婉家小院”后来怎么样了？</summary>
+          <p>11月2日管理员“@婉婉的糖”发布群公告称“等待官方说明，不控评不引战”，群内在线人数从312人降至147人。部分退群成员将聊天记录外传至微博，其中一条记录显示有成员说“等不到了”。群目前仍在运行，但发言频率大幅下降。</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section id="comments">
+      <div class="section-head">
+        <h2>网友评论：来自微博、抖音、小红书</h2>
+        <p>12条评论，围绕具体条目展开</p>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card">
+          <div class="comment-user">@豆汁儿配焦圈</div>
+          <div class="comment-text">三里屯那个完整版我看了，就是朋友过生日切蛋糕，剪辑版把蛋糕那段掐了，看起来完全变了。剪的人挺会挑。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@朝阳区群众小王</div>
+          <div class="comment-text">胡同烧肉删视频删得挺快，但之前那条推广里徐婉说“这家我常来”，现在再去翻已经没了。品牌方一句话没说，评论区问的全被删了。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@小鹿不迷路本人？</div>
+          <div class="comment-text">截图没头像没微信号，这年头谁还信这个。编辑记录倒是真的，02:14改的措辞，截图存档bot那里有。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@五道口熬夜冠军</div>
+          <div class="comment-text">京A那个联名海报我10月18号还截图了，29号就没了，速度可以。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@今天也不想上班</div>
+          <div class="comment-text">说实话不太关心谁对谁错，就想知道三里屯那家酒吧叫什么，视频里环境看着不错。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@婉婉的糖（已退群）</div>
+          <div class="comment-text">群公告发了之后还有人来私信骂我，说我护主。我就一管理员，等官方说法有错吗。退了退了。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@截图存档bot</div>
+          <div class="comment-text">编辑记录：10-30 21:47 原微博发布；10-31 02:14 编辑“故意”为“可能”；10-31 02:20 删除重发。间隔6分钟。共存档3张截图。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@北三环李荣浩</div>
+          <div class="comment-text">徐婉那个回应视频前面两分钟都在说“我本来不想回应”，结果讲了四分钟。这算不算反向公关。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@只喝冰美式</div>
+          <div class="comment-text">三里屯面馆那个“暂停合作”是在别人评论区回的，自己主页一点动静没有，这操作也是迷。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@东城吃瓜群众</div>
+          <div class="comment-text">粉丝群489人变147人，这个数字比什么都有说服力。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@夜跑经过工体</div>
+          <div class="comment-text">所以那个首发账号到底是谁啊，1.2万粉的小号能拍到这种视频，有点巧。</div>
+        </div>
+        <div class="comment-card">
+          <div class="comment-user">@今天吃什么好呢</div>
+          <div class="comment-text">评论区关了只看互关，这招挺聪明，外面看着还有47条评论，实际上普通用户根本插不上话。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section id="news">
+      <div class="section-head">
+        <h2>相关资讯</h2>
+        <p>2026年10月24日—11月7日</p>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="news-meta">2026-11-07 · 微博</div>
+          <h3 class="news-title">“三里屯聚会视频”二次剪辑版在微信群流传，新增字幕标注</h3>
+          <p class="news-summary">新版本时长58秒，添加了红色箭头和“注意看”等字幕，原始文件中不存在的暗示性文字被叠加在画面上。多个北京本地微信群出现转发，部分群主已开启“群内禁止分享”设置。</p>
+        </article>
+        <article class="news-item">
+          <div class="news-meta">2026-11-06 · 抖音</div>
+          <h3 class="news-title">徐婉账号解封后首发11秒视频，评论区仍限制互关</h3>
+          <p class="news-summary">视频内容为街景与咖啡杯，无文字说明，发布两小时获赞4.1万。非互关用户点击评论框显示“仅互关好友可评论”，平台未说明解封理由。</p>
+        </article>
+        <article class="news-item">
+          <div class="news-meta">2026-11-03 · 小红书</div>
+          <h3 class="news-title">“婉家小院”粉丝群人数从312降至147，部分聊天记录外传</h3>
+          <p class="news-summary">管理员“@婉婉的糖”于11月2日发布群公告称“等待官方说明”，随后群内出现退群潮。外传截图显示有成员表示“等不到了”，另一成员回复“散了散了”。</p>
+        </article>
+        <article class="news-item">
+          <div class="news-meta">2026-10-31 · 微博</div>
+          <h3 class="news-title">“@小鹿不迷路”编辑爆料微博措辞，“故意”改为“可能”</h3>
+          <p class="news-summary">编辑记录显示修改发生于10月31日02:14，原微博在6分钟后删除重发。网友“@截图存档bot”存档了三个版本的截图，时间戳完整。</p>
+        </article>
+        <article class="news-item">
+          <div class="news-meta">2026-10-30 · 大众点评</div>
+          <h3 class="news-title">三里屯面馆在联名视频评论区回复“暂停合作”，未发正式声明</h3>
+          <p class="news-summary">回复出现在该面馆10月20日发布的联名视频下方，被点赞2,100余次。品牌方主页和官方微博均未单独发布合作变动信息。</p>
+        </article>
+        <article class="news-item">
+          <div class="news-meta">2026-10-28 · 抖音</div>
+          <h3 class="news-title">胡同烧肉删除徐婉推广视频，此前视频保留12天</h3>
+          <p class="news-summary">该推广视频发布于10月16日，10月28日上午被删除。品牌方在评论区回复网友询问时仅表示“暂停合作”，未提供进一步说明。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section id="recommend">
+      <div class="section-head">
+        <h2>相关推荐</h2>
+        <p>具体内容方向与条目名</p>
+      </div>
+      <div class="tags-cloud">
+        <a href="/#featured" class="tag-pill">三里屯聚会视频剪辑对比</a>
+        <a href="/#featured" class="tag-pill">徐婉4分12秒回应</a>
+        <a href="/#featured" class="tag-pill">胡同烧肉撤约时间线</a>
+        <a href="/#featured" class="tag-pill">@小鹿不迷路聊天截图</a>
+        <a href="/#featured" class="tag-pill">抖音账号封禁10天</a>
+        <a href="/#featured" class="tag-pill">婉家小院人数变化</a>
+        <a href="/#timeline" class="tag-pill">11月6日解封后首条视频</a>
+        <a href="/#timeline" class="tag-pill">京A精酿联名海报隐藏</a>
+      </div>
+    </section>
+
+    <!-- 11. 补充板块：事件时间线 -->
+    <section id="timeline">
+      <div class="section-head">
+        <h2>事件时间线：10月24日—11月7日</h2>
+        <p>按日期排列的关键节点</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2026-10-24 23:17</div>
+          <div class="timeline-title">“@北京夜生活观察”发布1分12秒剪辑版视频</div>
+          <div class="timeline-desc">定位朝阳区，播放量87万，次日09:02删除。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-10-26 14:30</div>
+          <div class="timeline-title">徐婉发布4分12秒回应视频</div>
+          <div class="timeline-desc">含2分47秒完整版，承认视频真实性，获赞23.4万。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-10-27</div>
+          <div class="timeline-title">徐婉抖音账号被禁止关注</div>
+          <div class="timeline-desc">页面提示“违反社区规定”，无法搜索到账号。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-10-28</div>
+          <div class="timeline-title">胡同烧肉删除推广视频</div>
+          <div class="timeline-desc">评论区回复“暂停合作”，未发正式声明。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-10-30</div>
+          <div class="timeline-title">“@小鹿不迷路”连发三条微博爆料</div>
+          <div class="timeline-desc">含两张2025年8月聊天截图，称“视频是有人故意放出”。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-10-31 02:14</div>
+          <div class="timeline-title">“@小鹿不迷路”编辑措辞“故意”改为“可能”</div>
+          <div class="timeline-desc">6分钟后删除重发，编辑记录被截图存档。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-11-02</div>
+          <div class="timeline-title">“婉家小院”粉丝群发布群公告</div>
+          <div class="timeline-desc">管理员称“等待官方说明”，在线人数从312降至147。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-11-06</div>
+          <div class="timeline-title">徐婉抖音账号解封，发布11秒视频</div>
+          <div class="timeline-desc">评论区仅互关可见，获赞4.1万。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-11-07</div>
+          <div class="timeline-title">58秒二次剪辑版在微信群流传</div>
+          <div class="timeline-desc">新增字幕标注，原始文件中不存在暗示性文字。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 互动投稿板块 -->
+    <section id="submit">
+      <div class="section-head">
+        <h2>投稿与交流</h2>
+        <p>分享你看到的相关线索或现场记录</p>
+      </div>
+      <div class="sidebar-card" style="text-align:left;">
+        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:16px;">如果你有三里屯聚会视频的原始文件、其他品牌的合作变动截图，或者徐婉事件的时间线补充，可以通过站内投稿入口提交。提交内容会经人工核对后决定是否公开，不保证全部采用。</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn-primary" style="font-size:0.9rem;padding:10px 24px;" onclick="alert('示例功能：投稿入口仅作展示，未连接实际后台。')">投稿线索</button>
+          <button class="btn-outline" style="font-size:0.9rem;padding:8px 24px;" onclick="alert('示例功能：上传入口仅作展示，未连接实际后台。')">上传截图</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="right-sidebar">
+    <div class="sidebar-card">
+      <h3>本周热榜</h3>
+      <ol class="hot-list">
+        <li><span class="hot-rank">1</span><a href="/#featured" class="hot-link">三里屯视频原始版vs剪辑版</a></li>
+        <li><span class="hot-rank">2</span><a href="/#featured" class="hot-link">徐婉回应视频逐句拆解</a></li>
+        <li><span class="hot-rank">3</span><a href="/#timeline" class="hot-link">抖音账号10天封禁记录</a></li>
+        <li><span class="hot-rank">4</span><a href="/#featured" class="hot-link">三家餐饮品牌撤约时间线</a></li>
+        <li><span class="hot-rank">5</span><a href="/#featured" class="hot-link">@小鹿不迷路聊天截图可信度</a></li>
+        <li><span class="hot-rank">6</span><a href="/#featured" class="hot-link">婉家小院粉丝群人数变化</a></li>
+      </ol>
+    </div>
+    <div class="sidebar-card">
+      <h3>最近更新</h3>
+      <ul class="hot-list" style="list-style:none;">
+        <li><span style="color:var(--text-tertiary);font-size:0.8rem;">11-07</span><a href="/#news" class="hot-link">二次剪辑版微信群流传</a></li>
+        <li><span style="color:var(--text-tertiary);font-size:0.8rem;">11-06</span><a href="/#timeline" class="hot-link">账号解封首发视频</a></li>
+        <li><span style="color:var(--text-tertiary);font-size:0.8rem;">11-03</span><a href="/#featured" class="hot-link">粉丝群聊天记录外传</a></li>
+        <li><span style="color:var(--text-tertiary);font-size:0.8rem;">10-31</span><a href="/#news" class="hot-link">爆料微博措辞修改</a></li>
+      </ul>
+    </div>
+    <div class="submit-card">
+      <h3>有料要爆？</h3>
+      <p>如果你有三里屯视频的原始文件或其他品牌合作变动的截图，欢迎投稿。</p>
+      <a href="/#submit" class="btn-white">前往投稿</a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="16" fill="#d97c7c" opacity="0.2"/>
+          <path d="M18 6L22 16L32 18L22 20L18 30L14 20L4 18L14 16L18 6Z" fill="#d97c7c"/>
+          <circle cx="18" cy="18" r="4" fill="#f0e6e0"/>
+        </svg>
+        <span class="brand-text">bj徐婉吃瓜</span>
+      </div>
+      <p class="footer-desc">
+        追踪北京网红圈争议事件的时间跨度从2026年10月24日至11月8日，覆盖视频事件、商务动态、账号状态、粉丝社群四类条目。信息以公开可查的微博、抖音页面和品牌回复为准，不定期更新。
+      </p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>内容</h4>
+        <a href="/#overview">话题概览</a>
+        <a href="/#featured">精选条目</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#analysis">深度解析</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <a href="/#comments">网友评论</a>
+        <a href="/#submit">投稿线索</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#timeline">事件时间线</a>
+      </div>
+      <div class="footer-col">
+        <h4>信息</h4>
+        <a href="/#news">相关资讯</a>
+        <a href="/#recommend">相关推荐</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#guide">体验指南</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 bj徐婉吃瓜 · 内容聚合页，示例条目仅供参考</span>
+    <span>页面信息更新至 2026-11-08</span>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "bj徐婉吃瓜",
+  "description": "北京本地网红与社交圈争议事件的内容聚合页，涵盖徐婉等话题人物的时间线、回应记录、网友评论与相关动态。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "三里屯聚会视频的原始发布者是谁？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "首发账号是“@北京夜生活观察”，定位在朝阳区，10月24日23:17发布1分12秒剪辑版，10月25日09:02删除。该账号目前显示“用户不存在”，无法进一步核实运营者身份。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "徐婉抖音账号为什么被封？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "抖音平台没有公布具体原因。账号页面曾显示“违反社区规定被禁止关注”，根据抖音社区自律公约，这一处罚通常关联“被大量举报”或“涉嫌炒作敏感事件”。封禁从10月27日持续到11月5日。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "“@小鹿不迷路”的爆料有证据吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "提供了两张2025年8月的微信聊天截图，但截图未包含双方头像和微信号，无法独立验证对话者身份。文字描述中“有人故意放出”在10月31日被编辑为“可能是有意放出”。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "哪几个品牌真正和徐婉解约了？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可查的有三个：胡同烧肉10月28日删除推广视频、京A精酿10月29日隐藏联名海报、三里屯面馆10月30日在评论区回复“暂停合作”。三家都没有发布正式解约声明。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "徐婉回应视频里说了什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4分12秒的回应视频中，徐婉在第2分10秒承认“视频里的人是我”，第3分05秒解释聚会性质为“朋友生日局”，第3分40秒表示“对因此受到影响的人抱歉”。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "粉丝群“婉家小院”后来怎么样了？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11月2日管理员“@婉婉的糖”发布群公告称“等待官方说明，不控评不引战”，群内在线人数从312人降至147人。部分退群成员将聊天记录外传至微博。"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- 交互脚本 -->
+<script>
+  (function() {
+    // 移动端菜单
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mainNav = document.getElementById('mainNav');
+    const overlay = document.getElementById('menuOverlay');
+    if (hamburger && mainNav) {
+      hamburger.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        mainNav.classList.toggle('open');
+        overlay.classList.toggle('active');
+      });
+      overlay.addEventListener('click', function() {
+        hamburger.setAttribute('aria-expanded', 'false');
+        mainNav.classList.remove('open');
+        overlay.classList.remove('active');
+      });
+      // 点击导航项后收起
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 740) {
+            hamburger.setAttribute('aria-expanded', 'false');
+            mainNav.classList.remove('open');
+            overlay.classList.remove('active');
+          }
+        });
+      });
+      // Esc 关闭
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+          hamburger.setAttribute('aria-expanded', 'false');
+          mainNav.classList.remove('open');
+          overlay.classList.remove('active');
+        }
+      });
+    }
+
+    // 回到顶部
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 搜索筛选（仅筛选精选卡片和更新条目，简单演示）
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+
+    function performSearch() {
+      const query = searchInput.value.trim().toLowerCase();
+      if (!query) return;
+
+      // 收集页面上所有可搜索的文本块
+      const searchables = document.querySelectorAll('.card-title, .card-desc, .update-title, .update-summary, .news-title, .news-summary, .comment-text, .tag-pill, .timeline-title, .timeline-desc, .faq-list summary');
+      let found = false;
+      searchables.forEach(el => {
+        if (el.textContent.toLowerCase().includes(query)) {
+          found = true;
+          el.style.outline = '2px solid var(--primary)';
+          el.style.outlineOffset = '2px';
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          el.style.outline = 'none';
+        }
+      });
+      if (!found) {
+        alert('没有找到与“' + query + '”相关的内容，试试其他关键词。');
+      }
+    }
+
+    if (searchBtn) {
+      searchBtn.addEventListener('click', performSearch);
+    }
+    if (searchInput) {
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          performSearch();
+        }
+      });
+    }
+
+    // 清除高亮（点击空白处）
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.search-box') && !e.target.closest('.card') && !e.target.closest('.update-item') && !e.target.closest('.news-item')) {
+        document.querySelectorAll('[style*="outline: 2px solid"]').forEach(el => {
+          el.style.outline = 'none';
+        });
+      }
+    });
+  })();
+</script>
+</body>
+        </html>
