@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6080旧番动漫在线 - 经典怀旧番剧观看指南</title>
+    <meta name="description" content="6080旧番动漫在线汇聚1980至2010年代经典TV动画、OVA与剧场版，提供怀旧番剧分类索引、观看顺序指南及深度解析，适合想系统补完老番的动漫爱好者。">
+    <meta name="keywords" content="6080旧番动漫在线">
+    <style>
+        :root {
+            --primary: #d64b2a;
+            --primary-light: #f06a4a;
+            --primary-dark: #a83218;
+            --bg: #f7f2e9;
+            --surface: #ffffff;
+            --text: #1f1a16;
+            --text-secondary: #5a4e44;
+            --text-muted: #8a7e72;
+            --border: #e3d9cc;
+            --radius-card: 14px;
+            --radius-btn: 30px;
+            --radius-tag: 20px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.06);
+            --shadow-hover: 0 10px 24px rgba(0,0,0,0.1);
+            --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            --announce-height: 40px;
+            --header-height: 64px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-padding-top: calc(var(--announce-height) + var(--header-height) + 12px);
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 吸顶公告条 */
+        .announce-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--primary-dark);
+            color: #fff;
+            font-size: 0.85rem;
+            height: var(--announce-height);
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+        .announce-bar::-webkit-scrollbar {
+            display: none;
+        }
+        .announce-inner {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            padding: 0 24px;
+            max-width: 1320px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .announce-brand {
+            font-weight: 700;
+            color: #ffd9b3;
+            letter-spacing: 0.5px;
+        }
+        .announce-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: #f0e0d0;
+        }
+        .announce-item .date {
+            background: rgba(255,255,255,0.18);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+        .announce-item .tag {
+            color: #ffd9b3;
+            font-weight: 600;
+        }
+
+        /* 吸顶页头 */
+        .site-header {
+            position: sticky;
+            top: var(--announce-height);
+            z-index: 99;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+        }
+        .header-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        .logo svg {
+            width: 36px;
+            height: 36px;
+        }
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            letter-spacing: -0.3px;
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .main-nav a {
+            padding: 6px 12px;
+            border-radius: var(--radius-btn);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+        .main-nav a:hover {
+            background: var(--primary-light);
+            color: #fff;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 6px 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 98;
+        }
+
+        /* 首屏 */
+        .hero {
+            padding: 48px 0 40px;
+            background: linear-gradient(155deg, #fcf4ea 0%, #f3e4d4 60%, #ecd9c6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            right: -80px;
+            top: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(214,75,42,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content {
+            flex: 1 1 55%;
+        }
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            max-width: 700px;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: var(--radius-btn);
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            display: inline-block;
+            border: 2px solid var(--primary);
+            color: var(--primary-dark);
+            padding: 10px 26px;
+            border-radius: var(--radius-btn);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+        .hero-visual {
+            flex: 1 1 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-visual svg {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            filter: drop-shadow(0 8px 24px rgba(168,50,24,0.12));
+        }
+
+        /* 布局：三栏门户 */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 180px 1fr 260px;
+            gap: 28px;
+            padding: 40px 0 60px;
+            align-items: start;
+        }
+
+        /* 左侧频道索引 */
+        .channel-sidebar {
+            position: sticky;
+            top: calc(var(--announce-height) + var(--header-height) + 20px);
+        }
+        .channel-sidebar h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .channel-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .channel-list a {
+            display: block;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: background 0.15s, color 0.15s;
+            border-left: 3px solid transparent;
+        }
+        .channel-list a:hover,
+        .channel-list a.active {
+            background: #fcf0e8;
+            color: var(--primary-dark);
+            border-left-color: var(--primary);
+        }
+
+        /* 中主内容 */
+        .main-content {
+            min-width: 0;
+        }
+        .section {
+            margin-bottom: 48px;
+        }
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .section-header h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.3px;
+        }
+        .section-header .more-link {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            border-bottom: 1px dashed var(--primary);
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .anime-card {
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.25s, transform 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+        .anime-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        .anime-card img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            background: #e8ddd2;
+        }
+        .anime-card-body {
+            padding: 14px 16px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .anime-card-body h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .anime-card-body .type-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            background: #f0e6dc;
+            color: var(--primary-dark);
+            padding: 2px 10px;
+            border-radius: var(--radius-tag);
+            font-weight: 600;
+            margin-bottom: 8px;
+            align-self: flex-start;
+        }
+        .anime-card-body p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            flex: 1;
+            margin-bottom: 10px;
+        }
+        .card-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 8px;
+        }
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* 紧凑列表 */
+        .compact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .list-item {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            align-items: flex-start;
+        }
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        .list-item-img {
+            width: 80px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #e8ddd2;
+        }
+        .list-item-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .list-item-content h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .list-item-content p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .list-item-date {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .list-item-progress {
+            font-size: 0.75rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        /* 分类入口 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .category-chip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 10px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+            text-align: center;
+        }
+        .category-chip:hover {
+            background: #fcf0e8;
+            border-color: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        /* 深度解析 */
+        .deep-analysis {
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            padding: 28px 30px;
+            box-shadow: var(--shadow);
+        }
+        .deep-analysis h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 24px 0 12px;
+            color: var(--primary-dark);
+        }
+        .deep-analysis h3:first-of-type {
+            margin-top: 0;
+        }
+        .deep-analysis p {
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+        .deep-analysis ul {
+            margin: 12px 0 16px 20px;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .deep-analysis li {
+            margin-bottom: 6px;
+        }
+        .deep-analysis .note {
+            background: #fcf4ea;
+            border-left: 4px solid var(--primary);
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin: 18px 0;
+            font-size: 0.92rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .faq-item {
+            background: var(--surface);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .faq-item summary {
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.15s;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary:hover {
+            background: #fcf4ea;
+        }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 400;
+            line-height: 1;
+        }
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+        .faq-answer {
+            padding: 0 20px 18px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* 用户评论 */
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .comment-item {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 14px 18px;
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .comment-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #e8ddd2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--primary-dark);
+            flex-shrink: 0;
+        }
+        .comment-body {
+            flex: 1;
+            min-width: 0;
+        }
+        .comment-body .nickname {
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 2px;
+        }
+        .comment-body p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .comment-body .comment-date {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* 相关资讯 */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .news-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 14px 18px;
+            box-shadow: var(--shadow);
+        }
+        .news-date {
+            font-size: 0.8rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            flex-shrink: 0;
+            min-width: 70px;
+        }
+        .news-content h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .news-content p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        /* 相关推荐标签 */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag-cloud a {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-tag);
+            padding: 8px 18px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .tag-cloud a:hover {
+            background: #fcf0e8;
+            border-color: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        /* 补充板块：热门榜单 */
+        .ranking-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            counter-reset: rank;
+        }
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            background: var(--surface);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        .ranking-item::before {
+            counter-increment: rank;
+            content: counter(rank);
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--primary);
+            min-width: 24px;
+            text-align: center;
+        }
+        .ranking-item .rank-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .ranking-item .rank-score {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* 右侧辅助栏 */
+        .right-sidebar {
+            position: sticky;
+            top: calc(var(--announce-height) + var(--header-height) + 20px);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .sidebar-card {
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+        .sidebar-card h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .sidebar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .sidebar-list-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 0.85rem;
+        }
+        .sidebar-list-item .num {
+            font-weight: 800;
+            color: var(--primary);
+            min-width: 18px;
+        }
+        .sidebar-list-item .title {
+            flex: 1;
+        }
+        .sidebar-list-item .meta {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 2px;
+        }
+        .update-stream {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .stream-item {
+            font-size: 0.82rem;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        .stream-item:last-child {
+            border-bottom: none;
+        }
+        .stream-item .stream-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .stream-item .stream-time {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        /* 互动板块 */
+        .interact-box {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .interact-box .btn-outline {
+            flex: 1;
+            text-align: center;
+            font-size: 0.85rem;
+            padding: 10px 12px;
+        }
+
+        /* 页尾 */
+        .site-footer {
+            background: #1f1a16;
+            color: #cfc5b8;
+            padding: 48px 0 32px;
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+        .footer-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        .footer-brand .logo-text {
+            color: #f0e0d0;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .footer-brand p {
+            color: #a89a8c;
+            max-width: 300px;
+        }
+        .footer-col h4 {
+            color: #f0e0d0;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .footer-col a {
+            display: block;
+            color: #a89a8c;
+            padding: 3px 0;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: #f0e0d0;
+        }
+        .footer-bottom {
+            max-width: 1320px;
+            margin: 32px auto 0;
+            padding: 20px 24px 0;
+            border-top: 1px solid #3a322b;
+            color: #8a7e72;
+            font-size: 0.78rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* 回到顶部 */
+        .back-to-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-hover);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.2s;
+            z-index: 90;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            transform: translateY(-3px);
+        }
+
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr 260px;
+            }
+            .channel-sidebar {
+                display: none;
+            }
+            .main-nav {
+                gap: 0;
+            }
+            .category-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 820px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .right-sidebar {
+                position: static;
+            }
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 740px) {
+            .menu-toggle {
+                display: block;
+            }
+            .main-nav {
+                display: none;
+                position: fixed;
+                top: calc(var(--announce-height) + var(--header-height));
+                left: 0;
+                right: 0;
+                background: var(--surface);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 4px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow-hover);
+                z-index: 99;
+            }
+            .main-nav.open {
+                display: flex;
+            }
+            .main-nav a {
+                padding: 10px 12px;
+                width: 100%;
+            }
+            .overlay.active {
+                display: block;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .card-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce-bar" role="banner" aria-label="更新公告">
+    <div class="announce-inner">
+        <span class="announce-brand">6080旧番动漫在线</span>
+        <span class="announce-item"><span class="date">11月8日</span> 新增《机动战士高达 逆袭的夏亚》4K修复版</span>
+        <span class="announce-item"><span class="tag">经典补完</span> 《星际牛仔》全26集·BDrip 上线</span>
+        <span class="announce-item"><span class="date">11月6日</span> 《攻壳机动队 SAC》第二季 更新</span>
+    </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+    <div class="header-inner">
+        <a href="/" class="logo" aria-label="6080旧番动漫在线首页">
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <rect x="2" y="6" width="36" height="28" rx="4" stroke="#a83218" stroke-width="2.5" fill="#fcf0e8"/>
+                <circle cx="14" cy="20" r="3" fill="#d64b2a"/>
+                <circle cx="26" cy="20" r="3" fill="#d64b2a"/>
+                <path d="M8 28L18 16L26 24L32 14" stroke="#d64b2a" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <span class="logo-text">6080旧番动漫在线</span>
+        </a>
+        <button class="menu-toggle" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+        <nav class="main-nav" id="mainNav" aria-label="主题导航">
+            <a href="/#overview">领域概览</a>
+            <a href="/#featured">精选推荐</a>
+            <a href="/#updates">最新更新</a>
+            <a href="/#categories">分类入口</a>
+            <a href="/#deep-analysis">深度解析</a>
+            <a href="/#guide">观看指南</a>
+            <a href="/#faq">常见问题</a>
+            <a href="/#comments">评论</a>
+            <a href="/#news">资讯</a>
+            <a href="/#interact">投稿互动</a>
+        </nav>
+    </div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<main>
+    <!-- 首屏 -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <h1>6080旧番动漫在线</h1>
+                <p class="hero-desc">
+                    汇集1980—2010年代TV动画、OVA与剧场版，按机甲、科幻、热血、日常等类型整理观看次序与版本信息，提供旧番补完的选片参照。
+                </p>
+                <div class="hero-actions">
+                    <a href="/#featured" class="btn-primary">浏览精选旧番</a>
+                    <a href="/#guide" class="btn-outline">观看顺序指南</a>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <svg viewBox="0 0 380 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="30" width="340" height="220" rx="16" fill="#fcf0e8" stroke="#e3d9cc" stroke-width="2"/>
+                    <rect x="40" y="50" width="140" height="100" rx="8" fill="#f0e0d0"/>
+                    <rect x="200" y="50" width="140" height="46" rx="6" fill="#f0e0d0"/>
+                    <rect x="200" y="104" width="140" height="46" rx="6" fill="#f0e0d0"/>
+                    <rect x="40" y="162" width="300" height="12" rx="6" fill="#e8d5c0"/>
+                    <rect x="40" y="182" width="260" height="10" rx="5" fill="#ede0d2"/>
+                    <rect x="40" y="200" width="280" height="10" rx="5" fill="#ede0d2"/>
+                    <rect x="40" y="218" width="180" height="10" rx="5" fill="#ede0d2"/>
+                    <circle cx="60" cy="260" r="6" fill="#d64b2a" opacity="0.5"/>
+                    <circle cx="80" cy="260" r="6" fill="#d64b2a" opacity="0.3"/>
+                    <circle cx="100" cy="260" r="6" fill="#d64b2a" opacity="0.15"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 三栏布局 -->
+    <div class="container main-layout">
+        <!-- 左侧频道索引 -->
+        <aside class="channel-sidebar" aria-label="频道索引">
+            <h2>频道</h2>
+            <nav class="channel-list">
+                <a href="/#overview">领域概览</a>
+                <a href="/#featured">精选推荐</a>
+                <a href="/#updates">最新更新</a>
+                <a href="/#categories">分类入口</a>
+                <a href="/#deep-analysis">深度解析</a>
+                <a href="/#guide">体验指南</a>
+                <a href="/#faq">常见问题</a>
+                <a href="/#comments">用户评论</a>
+                <a href="/#news">相关资讯</a>
+                <a href="/#related">相关推荐</a>
+                <a href="/#ranking">热门榜单</a>
+                <a href="/#interact">投稿互动</a>
+            </nav>
+        </aside>
+
+        <!-- 中主内容 -->
+        <div class="main-content">
+            <!-- 1. 主题领域概览 -->
+            <section id="overview" class="section">
+                <div class="section-header">
+                    <h2>旧番动画的版图与看点</h2>
+                </div>
+                <div class="deep-analysis" style="padding:24px 28px;">
+                    <p>
+                        旧番所指的区间大致从1979年《机动战士高达》首播到2010年前后，涵盖赛璐珞手绘与早期数字制作两个阶段。这个领域最核心的分野在制作形态：TV系列受限于预算与档期，大量使用兼用卡和总集篇；OVA则面向影碟市场，单集预算高出TV数倍，《飞跃巅峰》《MACROSS PLUS》都属此类；剧场版再往前一步，以《阿基拉》《攻壳机动队》为代表，追求大银幕作画密度。
+                    </p>
+                    <p>
+                        按题材看，机甲、科幻、热血少年漫改是三条主线。机甲系绕不开《高达》宇宙世纪与《超时空要塞》系列，前者有TV、剧场版、OVA三层文本，后者以歌与三角关系为结构。科幻方向从《机动警察》《星际牛仔》到《攻壳机动队 SAC》，各自对应不同的赛博朋克或太空歌剧传统。日常类旧番常被忽略，但《横滨购物纪行》《水星领航员》这类治愈系在画面修复后仍有稳定的观看群体。
+                    </p>
+                    <p>
+                        观看旧番绕不开版本问题。录像带时代的VHS转录、2000年代的DVD、2010年后的BD修复，同一部作品在不同介质下画幅与调色都有差异。例如《机动战士Z高达》剧场版三部曲对TV版情节的压缩与重绘，直接影响初看者的理解路径。选片时先确认自己要看的是TV原版还是剧场总集篇，比选画质更优先。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. 精选内容推荐 -->
+            <section id="featured" class="section">
+                <div class="section-header">
+                    <h2>精选旧番推荐</h2>
+                    <a href="/#ranking" class="more-link">查看热度榜 →</a>
+                </div>
+                <div class="card-grid">
+                    <article class="anime-card">
+                        <img src="https://picsum.photos/seed/6080gundam1/400/300" alt="《机动战士高达 逆袭的夏亚》海报" width="400" height="300" loading="lazy">
+                        <div class="anime-card-body">
+                            <span class="type-tag">剧场版 · 1988</span>
+                            <h3>机动战士高达 逆袭的夏亚</h3>
+                            <p>宇宙世纪0093年，夏亚与阿姆罗的最终对决。作画密度在80年代剧场版动画中属顶尖，片尾《BEYOND THE TIME》与画面同步率极高。</p>
+                            <div class="card-meta">
+                                <span>热度 9.2</span>
+                                <span>修复版 11/8 上线</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="anime-card">
+                        <img src="https://picsum.photos/seed/6080bebop2/400/300" alt="《星际牛仔》史派克与比夏斯对峙场景" width="400" height="300" loading="lazy">
+                        <div class="anime-card-body">
+                            <span class="type-tag">TV · 1998</span>
+                            <h3>星际牛仔</h3>
+                            <p>渡边信一郎监督，菅野洋子配乐。26集单元剧与主线交织，每集片头标题卡设计各不相同，BD版保留了胶片颗粒感。</p>
+                            <div class="card-meta">
+                                <span>评分 9.4</span>
+                                <span>全26集BDrip</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="anime-card">
+                        <img src="https://picsum.photos/seed/6080gits3/400/300" alt="《攻壳机动队 SAC》草薙素子义体特写" width="400" height="300" loading="lazy">
+                        <div class="anime-card-body">
+                            <span class="type-tag">TV · 2002</span>
+                            <h3>攻壳机动队 STAND ALONE COMPLEX</h3>
+                            <p>神山健治将士郎正宗原作拆解为“笑面男”事件主线，每集独立案件与 overarching plot 双线并进。第二季11/6更新。</p>
+                            <div class="card-meta">
+                                <span>更新至 S2E12</span>
+                                <span>热度 9.0</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="anime-card">
+                        <img src="https://picsum.photos/seed/6080eva4/400/300" alt="《新世纪福音战士》初号机觉醒画面" width="400" height="300" loading="lazy">
+                        <div class="anime-card-body">
+                            <span class="type-tag">TV · 1995</span>
+                            <h3>新世纪福音战士</h3>
+                            <p>TV版26集与剧场版《Air/真心为你》结局差异巨大，补完顺序影响对角色动机的理解。推荐先看TV再上剧场版。</p>
+                            <div class="card-meta">
+                                <span>评分 9.3</span>
+                                <span>TV+旧剧场版</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="anime-card">
+                        <img src="https://picsum.photos/seed/6080macross5/400/300" alt="《超时空要塞 可曾记得爱》林明美演唱会场景" width="400" height="300" loading="lazy">
+                        <div class="anime-card-body">
+                            <span class="type-tag">剧场版 · 1984</span>
+                            <h3>超时空要塞 可曾记得爱</h3>
+                            <p>TV版《超时空要塞》的剧场重构，作画与歌曲全面升级。林明美与早濑未沙的选择在剧场版中有不同侧重。</p>
+                            <div class="card-meta">
+                                <span>热度 8.8</span>
+                                <span>4K扫描版</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="anime-card">
+                        <img src="https://picsum.photos/seed/6080lain6/400/300" alt="《玲音》主角岩仓玲音与网络影像叠化" width="400" height="300" loading="lazy">
+                        <div class="anime-card-body">
+                            <span class="type-tag">TV · 1998</span>
+                            <h3>玲音</h3>
+                            <p>13集实验性动画，围绕网络集体无意识展开。画面大量使用广角畸变与重复帧，叙事顺序非线性，适合二刷。</p>
+                            <div class="card-meta">
+                                <span>评分 8.7</span>
+                                <span>修复版</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 3. 最新更新 -->
+            <section id="updates" class="section">
+                <div class="section-header">
+                    <h2>近日更新与修复动态</h2>
+                </div>
+                <div class="compact-list">
+                    <div class="list-item">
+                        <img src="https://picsum.photos/seed/6080update1/80/60" alt="《机动战士高达 逆袭的夏亚》4K修复画面" class="list-item-img" width="80" height="60" loading="lazy">
+                        <div class="list-item-content">
+                            <h4>机动战士高达 逆袭的夏亚 4K修复版</h4>
+                            <p>11月8日上线，源自2018年日版4K扫描，保留原始胶片颗粒，HDR调色未做过度锐化。</p>
+                        </div>
+                        <span class="list-item-date">11/08</span>
+                    </div>
+                    <div class="list-item">
+                        <img src="https://picsum.photos/seed/6080update2/80/60" alt="《星际牛仔》BDrip片头标题卡" class="list-item-img" width="80" height="60" loading="lazy">
+                        <div class="list-item-content">
+                            <h4>星际牛仔 全26集 BDrip</h4>
+                            <p>11月8日整季上线，采用2018年北美Funimation版片源，附赠无字幕OP/ED。</p>
+                        </div>
+                        <span class="list-item-date">11/08</span>
+                    </div>
+                    <div class="list-item">
+                        <img src="https://picsum.photos/seed/6080update3/80/60" alt="《攻壳机动队 SAC》第二季塔奇克马对话场景" class="list-item-img" width="80" height="60" loading="lazy">
+                        <div class="list-item-content">
+                            <h4>攻壳机动队 SAC 第二季 第12集</h4>
+                            <p>11月6日更新第12集“废弃物处理”，涉及个别的十一人主线推进，塔奇克马对话段落加长。</p>
+                        </div>
+                        <span class="list-item-date">11/06</span>
+                    </div>
+                    <div class="list-item">
+                        <img src="https://picsum.photos/seed/6080update4/80/60" alt="《飞跃巅峰》钢巴斯塔合体画面" class="list-item-img" width="80" height="60" loading="lazy">
+                        <div class="list-item-content">
+                            <h4>飞跃巅峰 OVA 全6集</h4>
+                            <p>11月5日上线，1988年GAINAX制作，收录原版与2012年BD修复版双画质切换。</p>
+                        </div>
+                        <span class="list-item-date">11/05</span>
+                    </div>
+                    <div class="list-item">
+                        <img src="https://picsum.photos/seed/6080update5/80/60" alt="《机动警察 剧场版》英格拉姆启动" class="list-item-img" width="80" height="60" loading="lazy">
+                        <div class="list-item-content">
+                            <h4>机动警察 剧场版</h4>
+                            <p>11月4日上线押井守1989年剧场版，附2007年《东京毁灭战》4K重制对比。</p>
+                        </div>
+                        <span class="list-item-date">11/04</span>
+                    </div>
+                    <div class="list-item">
+                        <img src="https://picsum.photos/seed/6080update6/80/60" alt="《水星领航员》灯里划船场景" class="list-item-img" width="80" height="60" loading="lazy">
+                        <div class="list-item-content">
+                            <h4>水星领航员 第一季</h4>
+                            <p>11月3日上线，2005年TV版，全13集，附佐藤顺一监督访谈文字版。</p>
+                        </div>
+                        <span class="list-item-date">11/03</span>
+                    </div>
+                    <div class="list-item">
+                        <img src="https://picsum.photos/seed/6080update7/80/60" alt="《玲音》网络信号故障画面" class="list-item-img" width="80" height="60" loading="lazy">
+                        <div class="list-item-content">
+                            <h4>玲音 全13集 修复版</h4>
+                            <p>11月2日上线，基于2010年日本BD BOX修复，保留4:3原始画幅。</p>
+                        </div>
+                        <span class="list-item-date">11/02</span>
+                    </div>
+                    <div class="list-item">
+                        <img src="https://picsum.photos/seed/6080update8/80/60" alt="《罗德岛战记》英雄骑士传片头" class="list-item-img" width="80" height="60" loading="lazy">
+                        <div class="list-item-content">
+                            <h4>罗德岛战记 英雄骑士传</h4>
+                            <p>11月1日上线，1998年TV版全27集，收录原版与2013年BD版。</p>
+                        </div>
+                        <span class="list-item-date">11/01</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 分类入口 -->
+            <section id="categories" class="section">
+                <div class="section-header">
+                    <h2>按类型查找旧番</h2>
+                </div>
+                <div class="category-grid">
+                    <a href="/#featured" class="category-chip">机甲动画</a>
+                    <a href="/#featured" class="category-chip">科幻赛博</a>
+                    <a href="/#featured" class="category-chip">热血少年</a>
+                    <a href="/#featured" class="category-chip">治愈日常</a>
+                    <a href="/#featured" class="category-chip">OVA 短篇</a>
+                    <a href="/#featured" class="category-chip">剧场版名作</a>
+                    <a href="/#featured" class="category-chip">90年代 TV</a>
+                    <a href="/#featured" class="category-chip">80年代经典</a>
+                </div>
+            </section>
+
+            <!-- 5. 深度解析 -->
+            <section id="deep-analysis" class="section">
+                <div class="section-header">
+                    <h2>旧番补完的判断维度</h2>
+                </div>
+                <div class="deep-analysis">
+                    <h3>TV版、OVA、剧场版的取舍逻辑</h3>
+                    <p>
+                        同一部作品在不同介质下的观看价值差异很大。以《机动战士高达》为例，初代TV版43集包含大量重复战斗画面，而剧场版三部曲将其压缩至约6小时，画面重绘比例超过70%。初看者从剧场版入手效率更高，但TV版独有的单元剧情节在后续OVA《第08MS小队》中才有呼应。判断依据很简单：先确认自己愿意投入的小时数。50小时以上选TV原版，10小时以内选剧场总集篇。
+                    </p>
+                    <h3>作画修复与原始画质的取舍</h3>
+                    <p>
+                        2000年代的DVD版与2010年后的BD版在色彩倾向上常有争议。《星际牛仔》BD版被部分观众批评暗部过黑，丢失了DVD版中赛璐珞的透明感。反过来，《机动警察 剧场版》的4K修复被押井守本人认可，增加了胶片扫描的中间步骤。具体到一部片，打开播放器对比两个版本的同一静止帧，看暗部细节是否糊成一片，比看评测文字更直接。
+                    </p>
+                    <div class="note">
+                        可核对的判断结构：一部旧番的“版本可信度”可以拆成四项——扫描分辨率（2K/4K）、调色监督是否署名、原始胶片/数字母带来源、是否保留原始画幅比例。四项全有明确出处，版本风险降低；缺两项以上，建议等对比评测再决定投入时间。
+                    </div>
+                    <h3>剧情顺序与衍生作品的关系</h3>
+                    <p>
+                        《超时空要塞》系列是典型的顺序敏感案例。初代TV 36集、剧场版《可曾记得爱》以及后续《Plus》《7》《F》共享“歌与三角关系”的框架，但时间线并不连续。按制作顺序观看，会对林明美与早濑未沙的选择有更完整的背景理解；按时间线跳跃观看，则容易在《F》中迷失人物关系的参照系。类似情况出现在《攻壳机动队》——1995年剧场版、2002年SAC、2004年SAC 2nd GIG、2006年SSS，神山健治与押井守的版本互为平行而非续集。
+                    </p>
+                    <h3>旧番中的类型混合与观看预期</h3>
+                    <p>
+                        《星际牛仔》表面是太空赏金猎人单元剧，每集却套用不同电影类型：黑帮片、恐怖片、西部片、科幻片。这种混合意味着观众不可能对每一集保持同等兴趣。第5集“Ballad of Fallen Angels”是黑帮悲剧，第11集“Toys in the Attic”是密闭空间恐怖，第24集“Hard Luck Woman”则回到公路片基调。按类型偏好选看单集，比按顺序硬啃全部26集更实际。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 6. 体验指南 -->
+            <section id="guide" class="section">
+                <div class="section-header">
+                    <h2>旧番观看路径与比较方法</h2>
+                </div>
+                <div class="deep-analysis" style="padding:22px 28px;">
+                    <p>
+                        补旧番的顺序建议从“一小时以内的单集”开始，而不是直接跳进年番。先看《星际牛仔》任意一集、《攻壳机动队 SAC》的“笑面男”开篇，或者《飞跃巅峰》第1集。这些单集在有限时间内呈现了制作水准与叙事密度，能帮你判断是否愿意追完整季。
+                    </p>
+                    <p>
+                        比较两部长篇时，看三个硬指标：单集平均作画张数（可查制作笔记或访谈）、音乐使用方式（是主题曲循环还是场景配乐）、总集篇占全片比例。以《机动战士Z高达》TV版50集为例，总集篇占4集，约8%，在年番中属正常水平。《新世纪福音战士》TV版26集中总集篇1集，但最后两集因制作周期压缩大量使用静止画与独白，这是制作条件影响成片的典型案例。
+                    </p>
+                    <p>
+                        判断一部旧番值不值得投入时间，先问自己能否接受它的时代特征：4:3画幅、胶片颗粒、手绘赛璐珞的色块感。如果这些需要“忍耐”，那修复版画质再高也解决不了观看体验问题。反过来，如果这些正是你想看的，那么《机动警察 剧场版》的雨夜场景、《阿基拉》的手绘爆炸，在BD版中的表现远超流媒体压缩版。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 7. FAQ -->
+            <section id="faq" class="section">
+                <div class="section-header">
+                    <h2>旧番常见问题</h2>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>《机动战士高达》初代TV和剧场版先看哪个？</summary>
+                        <div class="faq-answer">
+                            剧场版三部曲压缩了TV版43集，重绘画面超过70%，适合初看者快速掌握一年战争主线。TV版独有单元剧情节在后续《第08MS小队》《0080》中才有呼应，打算深入宇宙世纪线再回头补TV版。
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>《星际牛仔》BD版和DVD版画质差多少？</summary>
+                        <div class="faq-answer">
+                            BD版源自2018年北美Funimation的4K扫描，暗部细节更清晰但部分观众认为失去了DVD版赛璐珞的透明感。第5集教堂枪战场景中，BD版彩绘玻璃的色阶过渡更平滑，DVD版则有胶片特有的颗粒跳跃。
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>《攻壳机动队 SAC》和1995年剧场版剧情连着吗？</summary>
+                        <div class="faq-answer">
+                            SAC系列与1995年押井守剧场版是平行关系，共用草薙素子、巴特等角色和公安九课设定，但故事线互不衔接。SAC第一季“笑面男”事件与1995剧场版的“傀儡师”事件没有前后因果关系，可以从任一部切入。
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>《新世纪福音战士》旧剧场版《Air/真心为你》必须看吗？</summary>
+                        <div class="faq-answer">
+                            TV版第25、26集在制作周期末尾以独白和静止画完成，旧剧场版《Air/真心为你》则用完整作画呈现了人类补完计划的具体过程。两者结局互补，补完TV版后看旧剧场版能补上大量被省略的视觉信息。
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>为什么旧番的4:3画幅在宽屏上左右有黑边？</summary>
+                        <div class="faq-answer">
+                            1990年代及之前的TV动画以4:3比例制作，2000年后才逐步过渡到16:9。修复版若保留原始画幅，宽屏播放时左右留黑边是正常现象。部分BD版提供“拉伸至16:9”选项，但会裁切上下画面，不建议开启。
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>《超时空要塞》TV版和剧场版《可曾记得爱》结局一样吗？</summary>
+                        <div class="faq-answer">
+                            剧场版《可曾记得爱》对TV版结局做了重构，林明美与早濑未沙的三角关系在剧场版中有不同的重心分配。TV版结尾的战后处理与剧场版的高潮决战在情节安排上并不完全一致，两个版本可以对照看。
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- 8. 用户评论 -->
+            <section id="comments" class="section">
+                <div class="section-header">
+                    <h2>观众评论</h2>
+                </div>
+                <div class="comment-list">
+                    <div class="comment-item">
+                        <div class="comment-avatar">老</div>
+                        <div class="comment-body">
+                            <div class="nickname">老番补完计划</div>
+                            <p>《逆袭的夏亚》4K版刚看完，片尾曲响起的时候鸡皮疙瘩还是起来了。不过暗部确实比之前DVD版亮了不少，夏亚头盔反光那段细节多了。</p>
+                            <div class="comment-date">11月8日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">B</div>
+                        <div class="comment-body">
+                            <div class="nickname">Bebop_1998</div>
+                            <p>星际牛仔第5集教堂那段，BD版把彩绘玻璃的蓝色调太亮了，DVD版那种脏脏的暗调反而更对味。个人看法。</p>
+                            <div class="comment-date">11月7日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">少</div>
+                        <div class="comment-body">
+                            <div class="nickname">少佐的义体</div>
+                            <p>SAC第二季第12集塔奇克马那段对话比第一季更长了，但信息量确实撑得住。神山健治对AI的讨论放到现在看还是不过时。</p>
+                            <div class="comment-date">11月7日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">E</div>
+                        <div class="comment-body">
+                            <div class="nickname">EVA-01</div>
+                            <p>TV版最后两集当年看到一半差点弃了，后来补了旧剧场版才明白怎么回事。制作进度崩了就是崩了，但这个补完方式也算独一份。</p>
+                            <div class="comment-date">11月6日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">飞</div>
+                        <div class="comment-body">
+                            <div class="nickname">飞跃巅峰爱好者</div>
+                            <p>飞跃巅峰第6集那个黑白画面切换真的神，1988年就能做出这种效果。现在的新番反而很少敢这么干了。</p>
+                            <div class="comment-date">11月6日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">L</div>
+                        <div class="comment-body">
+                            <div class="nickname">lain_net</div>
+                            <p>玲音修复版看了第一集，广角畸变画面在4:3下压迫感更强。不过那个画质修复有点太干净了，少了点录像带时代的毛刺感。</p>
+                            <div class="comment-date">11月5日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">阿</div>
+                        <div class="comment-body">
+                            <div class="nickname">阿姆罗的浮游炮</div>
+                            <p>高达初代TV版我看了三遍才把人物关系理顺，剧场版反而没那味。可能我先入为主了吧。</p>
+                            <div class="comment-date">11月5日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">水</div>
+                        <div class="comment-body">
+                            <div class="nickname">水星领航员</div>
+                            <p>ARIA第一季终于上了，佐藤顺一的访谈文字版比想象中长，讲了很多关于威尼斯取材的事。</p>
+                            <div class="comment-date">11月4日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">M</div>
+                        <div class="comment-body">
+                            <div class="nickname">MACROSS_PLUS</div>
+                            <p>《可曾记得爱》4K版林明美演唱会那段，对比TV版完全是两个量级的作画。不过剧情节奏还是TV版扎实。</p>
+                            <div class="comment-date">11月4日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">机</div>
+                        <div class="comment-body">
+                            <div class="nickname">机动警察8号机</div>
+                            <p>押井守的机动警察剧场版2，雨夜那段在4K版里看哭了。英格拉姆启动的液压声都听得清清楚楚。</p>
+                            <div class="comment-date">11月3日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">罗</div>
+                        <div class="comment-body">
+                            <div class="nickname">罗德岛骑士</div>
+                            <p>英雄骑士传的BD版把OP换成了原版，之前DVD版是重新剪辑的。这个细节好评。</p>
+                            <div class="comment-date">11月3日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">路</div>
+                        <div class="comment-body">
+                            <div class="nickname">路过的赛璐珞</div>
+                            <p>说实话很多旧番现在看节奏太慢了，一集20分钟信息量还不如现在10分钟。但那种慢有慢的看头，看你怎么想了。</p>
+                            <div class="comment-date">11月2日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">Z</div>
+                        <div class="comment-body">
+                            <div class="nickname">Z高达驾驶员</div>
+                            <p>Z高达TV版50集看到后面有点累，总集篇4集我直接跳了。剧场版三部曲改了不少剧情，卡缪的结局都不一样了。</p>
+                            <div class="comment-date">11月2日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">攻</div>
+                        <div class="comment-body">
+                            <div class="nickname">攻壳老粉</div>
+                            <p>SAC第二季第12集那个废弃物处理的案子，其实和第一季的笑面男事件有暗线关联。神山埋线索的能力确实强。</p>
+                            <div class="comment-date">11月1日</div>
+                        </div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-avatar">星</div>
+                        <div class="comment-body">
+                            <div class="nickname">星际牛仔不 cowboy</div>
+                            <p>第24集最后那段，史派克说“我本来想当个好人”，然后剑鱼II冲进红龙总部。看多少遍都难受。</p>
+                            <div class="comment-date">10月31日</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. 相关资讯 -->
+            <section id="news" class="section">
+                <div class="section-header">
+                    <h2>旧番修复与发行资讯</h2>
+                </div>
+                <div class="news-list">
+                    <div class="news-item">
+                        <span class="news-date">11月8日</span>
+                        <div class="news-content">
+                            <h4>《逆袭的夏亚》4K修复版上线，保留胶片颗粒</h4>
+                            <p>修复基于2018年日版4K扫描，调色由原摄影监督参与监修，HDR版本单独提供。片尾曲部分未做裁切。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">11月7日</span>
+                        <div class="news-content">
+                            <h4>《星际牛仔》BDrip全套上线，附无字幕OP/ED</h4>
+                            <p>片源来自Funimation 2018年发行的北美版，每集附带一条评论音轨，第5集有渡边信一郎与菅野洋子的对谈。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">11月5日</span>
+                        <div class="news-content">
+                            <h4>《飞跃巅峰》OVA双版本上线，含2012年BD修复</h4>
+                            <p>1988年原版与2012年修复版可切换，修复版对第6集黑白段落做了重新扫描，对比度略有提升。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">11月3日</span>
+                        <div class="news-content">
+                            <h4>《水星领航员》第一季上线，附佐藤顺一访谈</h4>
+                            <p>访谈文字版约8000字，涉及威尼斯取景细节与配乐录制过程，与BD BOX附录内容一致。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">11月1日</span>
+                        <div class="news-content">
+                            <h4>《罗德岛战记 英雄骑士传》BD版上线，OP恢复原版</h4>
+                            <p>此前DVD版OP为重新剪辑，本次BD版恢复了1998年TV放送时的原始OP画面，片尾字幕字体也做了调整。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">10月30日</span>
+                        <div class="news-content">
+                            <h4>《机动警察 剧场版》4K版追加导演评论音轨</h4>
+                            <p>押井守与出渊裕的对谈音轨为2025年新录，时长约95分钟，涉及雨夜场景的作画张数分配。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. 相关推荐 -->
+            <section id="related" class="section">
+                <div class="section-header">
+                    <h2>按方向找片</h2>
+                </div>
+                <div class="tag-cloud">
+                    <a href="/#featured">赛博朋克动画</a>
+                    <a href="/#featured">太空歌剧</a>
+                    <a href="/#featured">80年代OVA</a>
+                    <a href="/#featured">渡边信一郎作品</a>
+                    <a href="/#featured">押井守剧场版</a>
+                    <a href="/#featured">高达宇宙世纪</a>
+                    <a href="/#featured">治愈系旧番</a>
+                    <a href="/#featured">实验性叙事</a>
+                </div>
+            </section>
+
+            <!-- 11. 补充板块：热门榜单 -->
+            <section id="ranking" class="section">
+                <div class="section-header">
+                    <h2>本周旧番热度榜</h2>
+                </div>
+                <div class="ranking-list">
+                    <div class="ranking-item">
+                        <span class="rank-title">机动战士高达 逆袭的夏亚</span>
+                        <span class="rank-score">4K修复 · 热度9.2</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-title">星际牛仔</span>
+                        <span class="rank-score">BDrip · 热度9.1</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-title">攻壳机动队 SAC 第二季</span>
+                        <span class="rank-score">更新中 · 热度8.9</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-title">新世纪福音战士</span>
+                        <span class="rank-score">TV+剧场版 · 热度8.8</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-title">超时空要塞 可曾记得爱</span>
+                        <span class="rank-score">4K · 热度8.6</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-title">飞跃巅峰</span>
+                        <span class="rank-score">双版本 · 热度8.5</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 互动板块 -->
+            <section id="interact" class="section">
+                <div class="section-header">
+                    <h2>投稿与交流</h2>
+                </div>
+                <div class="interact-box">
+                    <a href="/#interact" class="btn-outline">上传旧番截图</a>
+                    <a href="/#interact" class="btn-outline">推荐冷门旧番</a>
+                    <a href="/#interact" class="btn-outline">参与版本对比讨论</a>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- 右侧辅助栏 -->
+        <aside class="right-sidebar" aria-label="辅助信息">
+            <div class="sidebar-card">
+                <h3>近期更新</h3>
+                <div class="update-stream">
+                    <div class="stream-item">
+                        <div class="stream-title">《逆袭的夏亚》4K修复</div>
+                        <div class="stream-time">11月8日 09:12</div>
+                    </div>
+                    <div class="stream-item">
+                        <div class="stream-title">《星际牛仔》全26集BDrip</div>
+                        <div class="stream-time">11月8日 08:40</div>
+                    </div>
+                    <div class="stream-item">
+                        <div class="stream-title">《攻壳机动队 SAC》S2E12</div>
+                        <div class="stream-time">11月6日 14:20</div>
+                    </div>
+                    <div class="stream-item">
+                        <div class="stream-title">《飞跃巅峰》OVA双版本</div>
+                        <div class="stream-time">11月5日 11:05</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-card">
+                <h3>热门条目</h3>
+                <div class="sidebar-list">
+                    <div class="sidebar-list-item">
+                        <span class="num">1</span>
+                        <span class="title">逆袭的夏亚</span>
+                    </div>
+                    <div class="sidebar-list-item">
+                        <span class="num">2</span>
+                        <span class="title">星际牛仔</span>
+                    </div>
+                    <div class="sidebar-list-item">
+                        <span class="num">3</span>
+                        <span class="title">攻壳 SAC</span>
+                    </div>
+                    <div class="sidebar-list-item">
+                        <span class="num">4</span>
+                        <span class="title">EVA TV版</span>
+                    </div>
+                    <div class="sidebar-list-item">
+                        <span class="num">5</span>
+                        <span class="title">可曾记得爱</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-card">
+                <h3>版本状态</h3>
+                <div class="sidebar-list">
+                    <div class="sidebar-list-item">
+                        <span class="title">逆袭的夏亚</span>
+                        <span class="meta">4K修复·HDR</span>
+                    </div>
+                    <div class="sidebar-list-item">
+                        <span class="title">星际牛仔</span>
+                        <span class="meta">Funimation BD</span>
+                    </div>
+                    <div class="sidebar-list-item">
+                        <span class="title">攻壳 SAC S2</span>
+                        <span class="meta">更新至第12集</span>
+                    </div>
+                    <div class="sidebar-list-item">
+                        <span class="title">飞跃巅峰</span>
+                        <span class="meta">原版+2012修复</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="logo-text">6080旧番动漫在线</div>
+            <p>收录1979至2010年代TV动画、OVA与剧场版，覆盖机甲、科幻、治愈等类型，按年份与版本整理条目信息。内容跨度超过三十年，每周更新修复版与冷门旧番。</p>
+        </div>
+        <div class="footer-col">
+            <h4>频道</h4>
+            <a href="/#overview">领域概览</a>
+            <a href="/#featured">精选推荐</a>
+            <a href="/#updates">最新更新</a>
+            <a href="/#categories">分类入口</a>
+        </div>
+        <div class="footer-col">
+            <h4>深入</h4>
+            <a href="/#deep-analysis">深度解析</a>
+            <a href="/#guide">观看指南</a>
+            <a href="/#faq">常见问题</a>
+            <a href="/#comments">观众评论</a>
+        </div>
+        <div class="footer-col">
+            <h4>互动</h4>
+            <a href="/#news">修复资讯</a>
+            <a href="/#ranking">热度榜</a>
+            <a href="/#interact">投稿交流</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 6080旧番动漫在线 · 内容为示例条目，不构成观看引导</span>
+        <span>最近更新：2026年11月8日</span>
+    </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+<script>
+    (function() {
+        // 移动端菜单
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.getElementById('mainNav');
+        const overlay = document.getElementById('overlay');
+
+        function closeMenu() {
+            mainNav.classList.remove('open');
+            overlay.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isOpen = mainNav.classList.toggle('open');
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                overlay.classList.toggle('active', isOpen);
+            });
+        }
+
+        if (overlay) {
+            overlay.addEventListener('click', closeMenu);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+                closeMenu();
+            }
+        });
+
+        // 点击导航后自动收起
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 740) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // 回到顶部
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 频道高亮
+        const channelLinks = document.querySelectorAll('.channel-list a');
+        const sections = document.querySelectorAll('.section[id]');
+        function highlightChannel() {
+            let currentId = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 200) {
+                    currentId = section.id;
+                }
+            });
+            channelLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '/#' + currentId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', highlightChannel);
+        highlightChannel();
+
+        // 平滑滚动预留偏移
+        document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href').replace('/#', '');
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offset = document.querySelector('.announce-bar').offsetHeight + document.querySelector('.site-header').offsetHeight + 12;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                    history.pushState(null, '', '/#' + targetId);
+                }
+            });
+        });
+    })();
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "6080旧番动漫在线",
+    "description": "汇集1980至2010年代经典TV动画、OVA与剧场版，提供怀旧番剧分类索引、观看顺序指南及深度解析。",
+    "url": "https://example.com/",
+    "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "《机动战士高达》初代TV和剧场版先看哪个？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "剧场版三部曲压缩了TV版43集，重绘画面超过70%，适合初看者快速掌握一年战争主线。TV版独有单元剧情节在后续《第08MS小队》《0080》中才有呼应，打算深入宇宙世纪线再回头补TV版。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "《星际牛仔》BD版和DVD版画质差多少？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "BD版源自2018年北美Funimation的4K扫描，暗部细节更清晰但部分观众认为失去了DVD版赛璐珞的透明感。第5集教堂枪战场景中，BD版彩绘玻璃的色阶过渡更平滑，DVD版则有胶片特有的颗粒跳跃。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "《攻壳机动队 SAC》和1995年剧场版剧情连着吗？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SAC系列与1995年押井守剧场版是平行关系，共用草薙素子、巴特等角色和公安九课设定，但故事线互不衔接。SAC第一季“笑面男”事件与1995剧场版的“傀儡师”事件没有前后因果关系，可以从任一部切入。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "《新世纪福音战士》旧剧场版《Air/真心为你》必须看吗？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "TV版第25、26集在制作周期末尾以独白和静止画完成，旧剧场版《Air/真心为你》则用完整作画呈现了人类补完计划的具体过程。两者结局互补，补完TV版后看旧剧场版能补上大量被省略的视觉信息。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "为什么旧番的4:3画幅在宽屏上左右有黑边？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "1990年代及之前的TV动画以4:3比例制作，2000年后才逐步过渡到16:9。修复版若保留原始画幅，宽屏播放时左右留黑边是正常现象。部分BD版提供“拉伸至16:9”选项，但会裁切上下画面，不建议开启。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "《超时空要塞》TV版和剧场版《可曾记得爱》结局一样吗？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "剧场版《可曾记得爱》对TV版结局做了重构，林明美与早濑未沙的三角关系在剧场版中有不同的重心分配。TV版结尾的战后处理与剧场版的高潮决战在情节安排上并不完全一致，两个版本可以对照看。"
+            }
+        }
+    ]
+}
+</script>
+</body>
+  </html>
